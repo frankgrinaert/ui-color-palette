@@ -299,7 +299,7 @@ export default function ColorPalette() {
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text)
     setCopied(text)
-    setTimeout(() => setCopied(""), 2000)
+    setTimeout(() => setCopied(""), 1000)
   }
 
   const copyColumnToClipboard = (colorName: string) => {
