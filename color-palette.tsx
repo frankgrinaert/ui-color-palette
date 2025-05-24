@@ -316,7 +316,7 @@ export default function ColorPalette() {
     
     navigator.clipboard.writeText(formattedOutput)
     setCopied(`${colorName}-column`)
-    setTimeout(() => setCopied(""), 2000)
+    setTimeout(() => setCopied(""), 1000)
   }
 
   // Use the original color scales directly
