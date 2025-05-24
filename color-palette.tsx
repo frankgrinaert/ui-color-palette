@@ -302,6 +302,23 @@ export default function ColorPalette() {
     setTimeout(() => setCopied(""), 2000)
   }
 
+  const copyColumnToClipboard = (colorName: string) => {
+    const columnData = steps.reduce((acc, step) => {
+      acc[step] = colorScales[colorName][step]
+      return acc
+    }, {} as Record<number, string>)
+    
+    const formattedOutput = `${colorName}: {\n${
+      Object.entries(columnData)
+        .map(([step, hex]) => `  ${step}: "${hex}"`)
+        .join(',\n')
+    }\n}`
+    
+    navigator.clipboard.writeText(formattedOutput)
+    setCopied(`${colorName}-column`)
+    setTimeout(() => setCopied(""), 2000)
+  }
+
   // Use the original color scales directly
   const colorScales = originalColorScales
 
@@ -312,27 +329,27 @@ export default function ColorPalette() {
           <tbody>
             {steps.map((step) => (
               <tr key={step}>
-              <td className="p-0 relative w-20">
-                <div className="w-full flex flex-col justify-between p-4">
-                  <div className="text-sm text-right">
-                    {(() => {
-                      const avgContrast = colorNames.reduce((sum, colorName) => {
-                        const hexColor = colorScales[colorName][step]
-                        return hexColor ? sum + getContrastRatio(hexColor) : sum
-                      }, 0) / colorNames.length
-                      
-                      const contrastValue = avgContrast.toFixed(1)
-                      const style = {
-                        color: avgContrast >= 4.5 ? colorScales.green[60] :
-                              avgContrast >= 3 ? colorScales.orange[60] :
-                              colorScales.red[60]
-                      }
-                      
-                      return <span style={style}>{contrastValue}</span>
-                    })()}
+                <td className="p-0 relative w-20">
+                  <div className="w-full flex flex-col justify-between p-3">
+                    <div className="text-sm text-right">
+                      {(() => {
+                        const avgContrast = colorNames.reduce((sum, colorName) => {
+                          const hexColor = colorScales[colorName][step]
+                          return hexColor ? sum + getContrastRatio(hexColor) : sum
+                        }, 0) / colorNames.length
+                        
+                        const contrastValue = avgContrast.toFixed(1)
+                        const style = {
+                          color: avgContrast >= 4.5 ? colorScales.green[50] :
+                                avgContrast >= 3 ? colorScales.orange[50] :
+                                colorScales.red[50]
+                        }
+                        
+                        return <span style={style}>{contrastValue}</span>
+                      })()}
+                    </div>
                   </div>
-                </div>
-              </td>
+                </td>
                 {colorNames.map((colorName) => {
                   const hexColor = colorScales[colorName][step]
 
@@ -340,7 +357,7 @@ export default function ColorPalette() {
                   if (!hexColor) {
                     return (
                       <td key={`${colorName}-${step}`} className="p-0 relative bg-red-500">
-                        <div className="w-full flex flex-col justify-between p-4">
+                        <div className="w-full flex flex-col justify-between p-3">
                           <div className="text-white text-xs mb-1">
                             ERROR: {colorName}-{step}
                           </div>
@@ -360,7 +377,7 @@ export default function ColorPalette() {
                       className="p-0 relative cursor-pointer"
                       onClick={() => copyToClipboard(hexColor)}
                     >
-                      <div className="w-full flex flex-col justify-between p-4">
+                      <div className="w-full flex flex-col justify-between p-3">
                         <div className={useWhiteText ? "text-white text-xs font-semibold mb-1" : "text-black text-xs font-semibold mb-1"}>
                           {colorName}-{step}
                         </div>
@@ -388,6 +405,19 @@ export default function ColorPalette() {
                 })}
               </tr>
             ))}
+            <tr>
+              <td className="p-0 relative bg-gray-100 w-20"></td>
+              {colorNames.map((colorName) => (
+                <td key={`${colorName}-copy`} className="p-0 relative bg-gray-100">
+                  <button
+                    onClick={() => copyColumnToClipboard(colorName)}
+                    className="w-full p-3 text-sm hover:bg-gray-200 transition-colors"
+                  >
+                    {copied === `${colorName}-column` ? "Copied!" : "Copy"}
+                  </button>
+                </td>
+              ))}
+            </tr>
           </tbody>
         </table>
       </div>
