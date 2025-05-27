@@ -307,13 +307,12 @@ export default function ColorPalette() {
       acc[step] = colorScales[colorName][step]
       return acc
     }, {} as Record<number, string>)
-    
-    const formattedOutput = `${colorName}: {\n${
-      Object.entries(columnData)
-        .map(([step, hex]) => `  ${step}: "${hex}"`)
-        .join(',\n')
-    }\n}`
-    
+
+    const formattedOutput = `"${colorName}": {\n${Object.entries(columnData)
+      .map(([step, hex]) => `  "${step}": "${hex}"`)
+      .join(',\n')
+      }\n}`
+
     navigator.clipboard.writeText(formattedOutput)
     setCopied(`${colorName}-column`)
     setTimeout(() => setCopied(""), 1000)
@@ -337,14 +336,14 @@ export default function ColorPalette() {
                           const hexColor = colorScales[colorName][step]
                           return hexColor ? sum + getContrastRatio(hexColor) : sum
                         }, 0) / colorNames.length
-                        
+
                         const contrastValue = avgContrast.toFixed(1)
                         const style = {
                           color: avgContrast >= 4.5 ? colorScales.green[50] :
-                                avgContrast >= 3 ? colorScales.orange[50] :
-                                colorScales.red[50]
+                            avgContrast >= 3 ? colorScales.orange[50] :
+                              colorScales.red[50]
                         }
-                        
+
                         return <span style={style}>{contrastValue}</span>
                       })()}
                     </div>
