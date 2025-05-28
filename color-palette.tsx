@@ -231,6 +231,18 @@ const originalColorScales: ColorScales = {
     90: chroma.mix(carbon.green[90], carbon.teal[90], 0.5).hex(),
     100: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
   },
+  // yellow: {
+  //   10: carbon.yellow[10],
+  //   20: carbon.yellow[20],
+  //   30: carbon.yellow[30],
+  //   40: carbon.yellow[40],
+  //   50: carbon.yellow[50],
+  //   60: carbon.yellow[60],
+  //   70: carbon.yellow[70],
+  //   80: carbon.yellow[80],
+  //   90: carbon.yellow[90],
+  //   100: carbon.yellow[100],
+  // },
   orange: {
     10: chroma.mix(carbon.orange[10], carbon.yellow[10], 0.1).hex(),
     20: chroma.mix(carbon.orange[20], carbon.yellow[20], 0.05).hex(),
