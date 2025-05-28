@@ -32,6 +32,20 @@ function shouldUseWhiteText(hexColor: string): boolean {
   return chroma.contrast(hexColor, "#ffffff") >= chroma.contrast(hexColor, "#000000")
 }
 
+const brand = {
+  'wfp': '#007dbc',
+  'navy': '#000f59',
+  'aquamarine': '#008eb2',
+  'darkgreen': '#005d45',
+  'green': '#03924a',
+  'ivory': '#ece1b1',
+  'earthybrown': '#aa5628',
+  'orange': '#f24c02',
+  'red': '#e3002b',
+  'purple': '#ac1294',
+  'burgundy': '#950158',
+}
+
 const carbon = {
   yellow: {
     10: "#fcf4d6",
@@ -181,7 +195,7 @@ const carbon = {
 
 // Original color scales with only hex values
 const originalColorScales: ColorScales = {
-  gray: {
+  neutral: {
     10: carbon.coolGray[10],
     20: carbon.coolGray[20],
     30: carbon.coolGray[30],
@@ -205,18 +219,6 @@ const originalColorScales: ColorScales = {
     90: chroma.mix(carbon.cyan[90], carbon.blue[90], 0.8).hex(),
     100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
   },
-  aqua: {
-    10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.5).hex(),
-    20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.5).hex(),
-    30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.5).hex(),
-    40: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.5).hex(),
-    50: chroma.mix(carbon.cyan[50], carbon.teal[50], 0.5).hex(),
-    60: chroma.mix(carbon.cyan[60], carbon.teal[60], 0.5).hex(),
-    70: chroma.mix(carbon.cyan[70], carbon.teal[70], 0.5).hex(),
-    80: chroma.mix(carbon.cyan[80], carbon.teal[80], 0.5).hex(),
-    90: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.5).hex(),
-    100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.5).hex(),
-  },
   green: {
     10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
     20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
@@ -230,16 +232,17 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
   },
   orange: {
-    10: chroma.mix(carbon.orange[10], carbon.red[10], 0.1).hex(),
-    20: chroma.mix(carbon.orange[20], carbon.red[20], 0.16).hex(),
+    10: chroma.mix(carbon.orange[10], carbon.yellow[10], 0.1).hex(),
+    20: chroma.mix(carbon.orange[20], carbon.yellow[20], 0.05).hex(),
     30: chroma.mix(carbon.orange[30], carbon.red[30], 0.2).hex(),
-    40: chroma.mix(carbon.orange[40], carbon.red[40], 0.25).hex(),
-    50: chroma.mix(carbon.orange[50], carbon.red[50], 0.3).hex(),
-    60: chroma.mix(carbon.orange[60], carbon.red[60], 0.35).hex(),
-    70: chroma.mix(carbon.orange[70], carbon.red[70], 0.4).hex(),
-    80: chroma.mix(carbon.orange[80], carbon.red[80], 0.4).hex(),
-    90: chroma.mix(carbon.orange[90], carbon.red[90], 0.4).hex(),
-    100: chroma.mix(carbon.orange[100], carbon.red[100], 0.4).hex(),
+    40: chroma.mix(carbon.orange[40], carbon.red[40], 0.35).hex(),
+    50: chroma.mix(carbon.orange[50], carbon.red[50], 0.5).hex(),
+    61: brand.orange,
+    60: chroma.mix(carbon.orange[60], carbon.red[60], 0.5).hex(),
+    70: chroma.mix(carbon.orange[70], carbon.red[70], 0.5).hex(),
+    80: chroma.mix(carbon.orange[80], carbon.red[80], 0.5).hex(),
+    90: chroma.mix(carbon.orange[90], carbon.red[90], 0.5).hex(),
+    100: chroma.mix(carbon.orange[100], carbon.red[100], 0.5).hex(),
   },
   red: {
     10: chroma.mix(carbon.red[10], carbon.magenta[10], 0.2).hex(),
@@ -265,6 +268,18 @@ const originalColorScales: ColorScales = {
   //   90: chroma.mix(carbon.yellow[90], carbon.gray[90], 0.55).hex(),
   //   100: chroma.mix(carbon.yellow[100], carbon.gray[100], 0.55).hex(),
   // },
+  aqua: {
+    10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.5).hex(),
+    20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.5).hex(),
+    30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.5).hex(),
+    40: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.5).hex(),
+    50: chroma.mix(carbon.cyan[50], carbon.teal[50], 0.5).hex(),
+    60: chroma.mix(carbon.cyan[60], carbon.teal[60], 0.5).hex(),
+    70: chroma.mix(carbon.cyan[70], carbon.teal[70], 0.5).hex(),
+    80: chroma.mix(carbon.cyan[80], carbon.teal[80], 0.5).hex(),
+    90: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.5).hex(),
+    100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.5).hex(),
+  },
   purple: {
     10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
     20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
@@ -278,16 +293,16 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
   },
   brown: {
-    10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1]).hex(),
-    20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 0, 1]).hex(),
-    30: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 0.5, 1]).hex(),
-    40: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 1, 1]).hex(),
-    50: chroma.average([carbon.yellow[50], carbon.orange[50], carbon.gray[50]], 'oklab', [1, 2.5, 1]).hex(),
-    60: chroma.average([carbon.yellow[60], carbon.orange[60], carbon.gray[60]], 'oklab', [1, 7, 1]).hex(),
-    70: chroma.average([carbon.yellow[70], carbon.orange[70], carbon.gray[70]], 'oklab', [0, 10, 1]).hex(),
-    80: chroma.average([carbon.yellow[80], carbon.orange[80], carbon.gray[80]], 'oklab', [0, 10, 1]).hex(),
-    90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [0, 10, 1]).hex(),
-    100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [0, 10, 1]).hex(),
+    10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1.5]).hex(),
+    20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 0, 1.5]).hex(),
+    30: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 0.5, 1.5]).hex(),
+    40: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 1, 1.5]).hex(),
+    50: chroma.average([carbon.yellow[50], carbon.orange[50], carbon.gray[50]], 'oklab', [1, 2.5, 1.5]).hex(),
+    60: chroma.average([carbon.yellow[60], carbon.orange[60], carbon.gray[60]], 'oklab', [1, 7, 1.5]).hex(),
+    70: chroma.average([carbon.yellow[70], carbon.orange[70], carbon.gray[70]], 'oklab', [0, 10, 1.5]).hex(),
+    80: chroma.average([carbon.yellow[80], carbon.orange[80], carbon.gray[80]], 'oklab', [0, 10, 1.5]).hex(),
+    90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [0, 10, 1.5]).hex(),
+    100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [0, 10, 1.5]).hex(),
   }
 }
 
