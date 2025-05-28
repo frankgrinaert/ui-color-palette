@@ -405,9 +405,9 @@ export default function ColorPalette() {
               </tr>
             ))}
             <tr>
-              <td className="p-0 relative bg-gray-100 w-20"></td>
+              <td className="p-0 relative w-20"></td>
               {colorNames.map((colorName) => (
-                <td key={`${colorName}-copy`} className="p-0 relative bg-gray-100">
+                <td key={`${colorName}-copy`} className="p-0 relative">
                   <button
                     onClick={() => copyColumnToClipboard(colorName)}
                     className="w-full p-3 text-sm hover:bg-gray-200 transition-colors"
