@@ -219,6 +219,30 @@ const originalColorScales: ColorScales = {
     90: chroma.mix(carbon.cyan[90], carbon.blue[90], 0.8).hex(),
     100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
   },
+  // blue: { /* brand */
+  //   10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
+  //   20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
+  //   30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.16).hex(),
+  //   40: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.16).hex(),
+  //   50: chroma.mix(carbon.cyan[50], carbon.teal[50], 0.16).hex(),
+  //   60: chroma.mix(carbon.cyan[60], carbon.teal[60], 0.16).hex(),
+  //   70: chroma.mix(carbon.cyan[70], carbon.teal[70], 0.16).hex(),
+  //   80: chroma.mix(carbon.cyan[80], carbon.teal[80], 0.16).hex(),
+  //   90: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.16).hex(),
+  //   100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.16).hex(),
+  // },
+  // navy: { /* brand */
+  //   10: chroma.mix(carbon.cyan[10], carbon.blue[10], 1.0).hex(),
+  //   20: chroma.mix(carbon.cyan[20], carbon.blue[20], 1.0).hex(),
+  //   30: chroma.mix(carbon.cyan[30], carbon.blue[30], 1.0).hex(),
+  //   40: chroma.mix(carbon.cyan[40], carbon.blue[40], 1.0).hex(),
+  //   50: chroma.mix(carbon.cyan[50], carbon.blue[50], 1.0).hex(),
+  //   60: chroma.mix(carbon.cyan[60], carbon.blue[60], 1.0).hex(),
+  //   70: chroma.mix(carbon.cyan[70], carbon.blue[70], 1.0).hex(),
+  //   80: chroma.mix(carbon.cyan[80], carbon.blue[80], 1.0).hex(),
+  //   90: chroma.mix(carbon.cyan[90], carbon.blue[90], 1.0).hex(),
+  //   100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
+  // },
   green: {
     10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
     20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
@@ -231,6 +255,30 @@ const originalColorScales: ColorScales = {
     90: chroma.mix(carbon.green[90], carbon.teal[90], 0.5).hex(),
     100: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
   },
+  // green: { /* brand */
+  //   10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
+  //   20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
+  //   30: chroma.mix(carbon.green[30], carbon.teal[30], 0.2).hex(),
+  //   40: chroma.mix(carbon.green[40], carbon.teal[40], 0.2).hex(),
+  //   50: chroma.mix(carbon.green[50], carbon.teal[50], 0.2).hex(),
+  //   60: chroma.mix(carbon.green[60], carbon.teal[60], 0.2).hex(),
+  //   70: chroma.mix(carbon.green[70], carbon.teal[70], 0.2).hex(),
+  //   80: chroma.mix(carbon.green[80], carbon.teal[80], 0.2).hex(),
+  //   90: chroma.mix(carbon.green[90], carbon.teal[90], 0.2).hex(),
+  //   100: chroma.mix(carbon.green[100], carbon.teal[100], 0.2).hex(),
+  // },
+  // darkgreen: { /* brand */
+  //   10: chroma.mix(carbon.green[10], carbon.teal[10], 0.5).hex(),
+  //   20: chroma.mix(carbon.green[20], carbon.teal[20], 0.5).hex(),
+  //   30: chroma.mix(carbon.green[30], carbon.teal[30], 0.5).hex(),
+  //   40: chroma.mix(carbon.green[40], carbon.teal[40], 0.5).hex(),
+  //   50: chroma.mix(carbon.green[50], carbon.teal[50], 0.5).hex(),
+  //   60: chroma.mix(carbon.green[60], carbon.teal[60], 0.5).hex(),
+  //   70: chroma.mix(carbon.green[70], carbon.teal[70], 0.5).hex(),
+  //   80: chroma.mix(carbon.green[80], carbon.teal[80], 0.5).hex(),
+  //   90: chroma.mix(carbon.green[90], carbon.teal[90], 0.5).hex(),
+  //   100: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
+  // },
   // yellow: {
   //   10: carbon.yellow[10],
   //   20: carbon.yellow[20],
@@ -268,18 +316,6 @@ const originalColorScales: ColorScales = {
     90: chroma.mix(carbon.red[90], carbon.magenta[90], 0.2).hex(),
     100: chroma.mix(carbon.red[100], carbon.magenta[100], 0.2).hex(),
   },
-  // ivory: {
-  //   10: chroma.mix(carbon.yellow[10], carbon.gray[10], 0.55).hex(),
-  //   20: chroma.mix(carbon.yellow[20], carbon.gray[20], 0.55).hex(),
-  //   30: chroma.mix(carbon.yellow[30], carbon.gray[30], 0.55).hex(),
-  //   40: chroma.mix(carbon.yellow[40], carbon.gray[40], 0.55).hex(),
-  //   50: chroma.mix(carbon.yellow[50], carbon.gray[50], 0.55).hex(),
-  //   60: chroma.mix(carbon.yellow[60], carbon.gray[60], 0.55).hex(),
-  //   70: chroma.mix(carbon.yellow[70], carbon.gray[70], 0.55).hex(),
-  //   80: chroma.mix(carbon.yellow[80], carbon.gray[80], 0.55).hex(),
-  //   90: chroma.mix(carbon.yellow[90], carbon.gray[90], 0.55).hex(),
-  //   100: chroma.mix(carbon.yellow[100], carbon.gray[100], 0.55).hex(),
-  // },
   aqua: {
     10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.5).hex(),
     20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.5).hex(),
@@ -304,6 +340,55 @@ const originalColorScales: ColorScales = {
     90: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
     100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
   },
+  // purple: { /* brand */
+  //   10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
+  //   20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
+  //   30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
+  //   40: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.35).hex(),
+  //   50: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.35).hex(),
+  //   60: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.35).hex(),
+  //   70: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.35).hex(),
+  //   80: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.35).hex(),
+  //   90: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.35).hex(),
+  //   100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.35).hex(),
+  // },
+  // burgundy: { /* brand */
+  //   10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.1).hex(),
+  //   20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.1).hex(),
+  //   30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.1).hex(),
+  //   40: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.1).hex(),
+  //   50: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.1).hex(),
+  //   60: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.1).hex(),
+  //   70: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.1).hex(),
+  //   80: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.1).hex(),
+  //   90: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
+  //   100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
+  // },
+  // ivory: { /* brand */
+  //   10: chroma.mix(carbon.yellow[10], carbon.gray[10], 0.55).hex(),
+  //   20: chroma.mix(carbon.yellow[20], carbon.gray[20], 0.55).hex(),
+  //   30: chroma.mix(carbon.yellow[30], carbon.gray[30], 0.55).hex(),
+  //   40: chroma.mix(carbon.yellow[40], carbon.gray[40], 0.55).hex(),
+  //   50: chroma.mix(carbon.yellow[50], carbon.gray[50], 0.55).hex(),
+  //   60: chroma.mix(carbon.yellow[60], carbon.gray[60], 0.55).hex(),
+  //   70: chroma.mix(carbon.yellow[70], carbon.gray[70], 0.55).hex(),
+  //   80: chroma.mix(carbon.yellow[80], carbon.gray[80], 0.55).hex(),
+  //   90: chroma.mix(carbon.yellow[90], carbon.gray[90], 0.55).hex(),
+  //   100: chroma.mix(carbon.yellow[100], carbon.gray[100], 0.55).hex(),
+  // },
+  // brown: { /* brand */
+  //   10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 8, 1.5]).hex(),
+  //   20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 8, 1.5]).hex(),
+  //   30: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 8, 1.5]).hex(),
+  //   40: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 8, 1.5]).hex(),
+  //   50: chroma.average([carbon.yellow[50], carbon.orange[50], carbon.gray[50]], 'oklab', [1, 8, 1.5]).hex(),
+  //   // 60: brand.earthybrown,
+  //   60: chroma.average([carbon.yellow[60], carbon.orange[60], carbon.gray[60]], 'oklab', [1, 8, 1.5]).hex(),
+  //   70: chroma.average([carbon.yellow[70], carbon.orange[70], carbon.gray[70]], 'oklab', [1, 8, 1.5]).hex(),
+  //   80: chroma.average([carbon.yellow[80], carbon.orange[80], carbon.gray[80]], 'oklab', [1, 8, 1.5]).hex(),
+  //   90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [1, 8, 1.5]).hex(),
+  //   100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 8, 1.5]).hex(),
+  // },
   brown: {
     10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1.5]).hex(),
     20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 0, 1.5]).hex(),
@@ -311,10 +396,10 @@ const originalColorScales: ColorScales = {
     40: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 1, 1.5]).hex(),
     50: chroma.average([carbon.yellow[50], carbon.orange[50], carbon.gray[50]], 'oklab', [1, 2.5, 1.5]).hex(),
     60: chroma.average([carbon.yellow[60], carbon.orange[60], carbon.gray[60]], 'oklab', [1, 7, 1.5]).hex(),
-    70: chroma.average([carbon.yellow[70], carbon.orange[70], carbon.gray[70]], 'oklab', [0, 10, 1.5]).hex(),
-    80: chroma.average([carbon.yellow[80], carbon.orange[80], carbon.gray[80]], 'oklab', [0, 10, 1.5]).hex(),
-    90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [0, 10, 1.5]).hex(),
-    100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [0, 10, 1.5]).hex(),
+    70: chroma.average([carbon.yellow[70], carbon.orange[70], carbon.gray[70]], 'oklab', [1, 10, 1.5]).hex(),
+    80: chroma.average([carbon.yellow[80], carbon.orange[80], carbon.gray[80]], 'oklab', [1, 10, 1.5]).hex(),
+    90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [1, 10, 1.5]).hex(),
+    100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 10, 1.5]).hex(),
   }
 }
 
@@ -355,27 +440,6 @@ export default function ColorPalette() {
           <tbody>
             {steps.map((step) => (
               <tr key={step}>
-                <td className="p-0 relative w-20">
-                  <div className="w-full flex flex-col justify-between p-3">
-                    <div className="text-sm text-right">
-                      {(() => {
-                        const avgContrast = colorNames.reduce((sum, colorName) => {
-                          const hexColor = colorScales[colorName][step]
-                          return hexColor ? sum + getContrastRatio(hexColor) : sum
-                        }, 0) / colorNames.length
-
-                        const contrastValue = avgContrast.toFixed(1)
-                        const style = {
-                          color: avgContrast >= 4.5 ? colorScales.green[50] :
-                            avgContrast >= 3 ? colorScales.orange[50] :
-                              colorScales.red[50]
-                        }
-
-                        return <span style={style}>{contrastValue}</span>
-                      })()}
-                    </div>
-                  </div>
-                </td>
                 {colorNames.map((colorName) => {
                   const hexColor = colorScales[colorName][step]
 
@@ -429,10 +493,30 @@ export default function ColorPalette() {
                     </td>
                   )
                 })}
+                <td className="p-0 relative w-20">
+                  <div className="w-full flex flex-col justify-between p-3">
+                    <div className="text-sm">
+                      {(() => {
+                        const avgContrast = colorNames.reduce((sum, colorName) => {
+                          const hexColor = colorScales[colorName][step]
+                          return hexColor ? sum + getContrastRatio(hexColor) : sum
+                        }, 0) / colorNames.length
+
+                        const contrastValue = avgContrast.toFixed(1)
+                        const style = {
+                          color: avgContrast >= 4.5 ? colorScales.green[50] :
+                            avgContrast >= 3 ? colorScales.orange[50] :
+                              colorScales.red[50]
+                        }
+
+                        return <span style={style}>{contrastValue}</span>
+                      })()}
+                    </div>
+                  </div>
+                </td>
               </tr>
             ))}
             <tr>
-              <td className="p-0 relative w-20"></td>
               {colorNames.map((colorName) => (
                 <td key={`${colorName}-copy`} className="p-0 relative">
                   <button
@@ -443,6 +527,7 @@ export default function ColorPalette() {
                   </button>
                 </td>
               ))}
+              <td className="p-0 relative w-20"></td>
             </tr>
           </tbody>
         </table>
