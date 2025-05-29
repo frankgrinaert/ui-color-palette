@@ -193,7 +193,6 @@ const carbon = {
   },
 }
 
-// Original color scales with only hex values
 const originalColorScales: ColorScales = {
   neutral: {
     10: carbon.coolGray[10],
