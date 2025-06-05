@@ -33,17 +33,17 @@ function shouldUseWhiteText(hexColor: string): boolean {
 }
 
 const brand = {
-  'wfp': '#007dbc',
-  'navy': '#000f59',
-  'aquamarine': '#008eb2',
-  'darkgreen': '#005d45',
-  'green': '#03924a',
-  'ivory': '#ece1b1',
-  'earthybrown': '#aa5628',
-  'orange': '#f24c02',
-  'red': '#e3002b',
-  'purple': '#ac1294',
-  'burgundy': '#950158',
+  'wfp': '#0077C8',
+  'navy': '#002E5D',
+  'aquamarine': '#00AEC7',
+  'darkgreen': '#00664F',
+  'green': '#009F4D',
+  'ivory': '#F1E6B2',
+  'earthybrown': '#B86125',
+  'orange': '#FC4C02',
+  'red': '#E4002B',
+  'purple': '#AD1AAC',
+  'burgundy': '#890C58',
 }
 
 const carbon = {
