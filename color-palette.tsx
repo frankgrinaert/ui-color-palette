@@ -195,6 +195,7 @@ const carbon = {
 
 const originalColorScales: ColorScales = {
   blue: { /* merged */
+    0: brand.wfp,
     10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
     20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
     30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.16).hex(),
@@ -207,6 +208,7 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
   },
   // blue: { /* brand */
+  //   0: brand.wfp,
   //   10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
   //   20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
   //   30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.16).hex(),
@@ -219,6 +221,7 @@ const originalColorScales: ColorScales = {
   //   100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.16).hex(),
   // },
   // navy: { /* brand */
+  //   0: brand.navy,
   //   10: chroma.mix(carbon.cyan[10], carbon.blue[10], 1.0).hex(),
   //   20: chroma.mix(carbon.cyan[20], carbon.blue[20], 1.0).hex(),
   //   30: chroma.mix(carbon.cyan[30], carbon.blue[30], 1.0).hex(),
@@ -231,6 +234,7 @@ const originalColorScales: ColorScales = {
   //   100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
   // },
   green: { /* merged */
+    0: brand.green,
     10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
     20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
     30: chroma.mix(carbon.green[30], carbon.teal[30], 0.2).hex(),
@@ -243,6 +247,7 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
   },
   // green: { /* brand */
+  //   0: brand.green,
   //   10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
   //   20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
   //   30: chroma.mix(carbon.green[30], carbon.teal[30], 0.2).hex(),
@@ -255,6 +260,7 @@ const originalColorScales: ColorScales = {
   //   100: chroma.mix(carbon.green[100], carbon.teal[100], 0.2).hex(),
   // },
   // darkgreen: { /* brand */
+  //   0: brand.darkgreen,
   //   10: chroma.mix(carbon.green[10], carbon.teal[10], 0.5).hex(),
   //   20: chroma.mix(carbon.green[20], carbon.teal[20], 0.5).hex(),
   //   30: chroma.mix(carbon.green[30], carbon.teal[30], 0.5).hex(),
@@ -279,6 +285,7 @@ const originalColorScales: ColorScales = {
   //   100: carbon.yellow[100],
   // },
   orange: {
+    0: brand.orange,
     10: chroma.mix(carbon.orange[10], carbon.yellow[10], 0.0).hex(),
     20: chroma.mix(carbon.orange[20], carbon.yellow[20], 0.1).hex(),
     30: chroma.mix(carbon.orange[30], carbon.red[30], 0.2).hex(),
@@ -292,6 +299,7 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.orange[100], carbon.red[100], 0.4).hex(),
   },
   red: {
+    0: brand.red,
     10: chroma.mix(carbon.red[10], carbon.magenta[10], 0.2).hex(),
     20: chroma.mix(carbon.red[20], carbon.magenta[20], 0.2).hex(),
     30: chroma.mix(carbon.red[30], carbon.magenta[30], 0.2).hex(),
@@ -304,6 +312,7 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.red[100], carbon.magenta[100], 0.2).hex(),
   },
   aqua: {
+    0: brand.aquamarine,
     10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.5).hex(),
     20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.5).hex(),
     30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.5).hex(),
@@ -316,6 +325,7 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.5).hex(),
   },
   purple: { /* merged */
+    0: brand.purple,
     10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
     20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
     30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
@@ -328,6 +338,7 @@ const originalColorScales: ColorScales = {
     100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
   },
   // purple: { /* brand */
+  //   0: brand.purple,
   //   10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
   //   20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
   //   30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
@@ -340,6 +351,7 @@ const originalColorScales: ColorScales = {
   //   100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.35).hex(),
   // },
   // burgundy: { /* brand */
+  //   0: brand.burgundy,
   //   10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.1).hex(),
   //   20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.1).hex(),
   //   30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.1).hex(),
@@ -352,6 +364,7 @@ const originalColorScales: ColorScales = {
   //   100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
   // },
   // ivory: { /* brand */
+  //   0: brand.ivory,
   //   10: chroma.mix(carbon.yellow[10], carbon.gray[10], 0.55).hex(),
   //   20: chroma.mix(carbon.yellow[20], carbon.gray[20], 0.55).hex(),
   //   30: chroma.mix(carbon.yellow[30], carbon.gray[30], 0.55).hex(),
@@ -364,6 +377,7 @@ const originalColorScales: ColorScales = {
   //   100: chroma.mix(carbon.yellow[100], carbon.gray[100], 0.55).hex(),
   // },
   // brown: { /* brand */
+  //   0: brand.earthybrown,
   //   10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 8, 1.5]).hex(),
   //   20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 8, 1.5]).hex(),
   //   30: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 8, 1.5]).hex(),
@@ -377,6 +391,7 @@ const originalColorScales: ColorScales = {
   //   100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 8, 1.5]).hex(),
   // },
   brown: { /* merged */
+    0: brand.earthybrown,
     10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1.5]).hex(),
     20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 0, 1.5]).hex(),
     30: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 0.5, 1.5]).hex(),
@@ -389,6 +404,7 @@ const originalColorScales: ColorScales = {
     100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 10, 1.5]).hex(),
   },
   neutral: {
+    0: "white",
     10: carbon.coolGray[10],
     20: carbon.coolGray[20],
     30: carbon.coolGray[30],
@@ -405,7 +421,7 @@ const originalColorScales: ColorScales = {
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = Object.keys(originalColorScales)
-  const steps = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  const steps = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text)
