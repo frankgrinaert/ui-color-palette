@@ -194,8 +194,8 @@ const carbon = {
 }
 
 const originalColorScales: ColorScales = {
-  neutral: {
-    100: carbon.coolGray[10],
+  Neutral: {
+    95: carbon.coolGray[10],
     90: carbon.coolGray[20],
     80: carbon.coolGray[30],
     70: carbon.coolGray[40],
@@ -206,8 +206,8 @@ const originalColorScales: ColorScales = {
     20: carbon.coolGray[90],
     10: carbon.coolGray[100],
   },
-  blue: {
-    100: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
+  "WFP-Blue": {
+    95: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
     90: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
     80: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.16).hex(),
     70: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.16).hex(),
@@ -219,7 +219,7 @@ const originalColorScales: ColorScales = {
     10: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
   },
   // blue: { /* brand */
-  //   100: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
+  //   95: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
   //   90: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
   //   80: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.16).hex(),
   //   70: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.16).hex(),
@@ -230,8 +230,8 @@ const originalColorScales: ColorScales = {
   //   20: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.16).hex(),
   //   10: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.16).hex(),
   // },
-  navy: { /* brand */
-    100: chroma.mix(carbon.cyan[10], carbon.blue[10], 1.0).hex(),
+  "Dark-Blue": { /* brand */
+    95: chroma.mix(carbon.cyan[10], carbon.blue[10], 1.0).hex(),
     90: chroma.mix(carbon.cyan[20], carbon.blue[20], 1.0).hex(),
     80: chroma.mix(carbon.cyan[30], carbon.blue[30], 1.0).hex(),
     70: chroma.mix(carbon.cyan[40], carbon.blue[40], 1.0).hex(),
@@ -242,8 +242,8 @@ const originalColorScales: ColorScales = {
     20: chroma.mix(carbon.cyan[90], carbon.blue[90], 1.0).hex(),
     10: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
   },
-  green: {
-    100: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
+  Success: {
+    95: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
     90: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
     80: chroma.mix(carbon.green[30], carbon.teal[30], 0.2).hex(),
     70: chroma.mix(carbon.green[40], carbon.teal[40], 0.2).hex(),
@@ -255,7 +255,7 @@ const originalColorScales: ColorScales = {
     10: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
   },
   // green: { /* brand */
-  //   100: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
+  //   95: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
   //   90: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
   //   80: chroma.mix(carbon.green[30], carbon.teal[30], 0.2).hex(),
   //   70: chroma.mix(carbon.green[40], carbon.teal[40], 0.2).hex(),
@@ -266,20 +266,20 @@ const originalColorScales: ColorScales = {
   //   20: chroma.mix(carbon.green[90], carbon.teal[90], 0.2).hex(),
   //   10: chroma.mix(carbon.green[100], carbon.teal[100], 0.2).hex(),
   // },
-  // darkgreen: { /* brand */
-  //   100: chroma.mix(carbon.green[10], carbon.teal[10], 0.5).hex(),
-  //   90: chroma.mix(carbon.green[20], carbon.teal[20], 0.5).hex(),
-  //   80: chroma.mix(carbon.green[30], carbon.teal[30], 0.5).hex(),
-  //   70: chroma.mix(carbon.green[40], carbon.teal[40], 0.5).hex(),
-  //   60: chroma.mix(carbon.green[50], carbon.teal[50], 0.5).hex(),
-  //   50: chroma.mix(carbon.green[60], carbon.teal[60], 0.5).hex(),
-  //   40: chroma.mix(carbon.green[70], carbon.teal[70], 0.5).hex(),
-  //   30: chroma.mix(carbon.green[80], carbon.teal[80], 0.5).hex(),
-  //   20: chroma.mix(carbon.green[90], carbon.teal[90], 0.5).hex(),
-  //   10: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
-  // },
+  "Content3-": { /* brand */
+    95: chroma.mix(carbon.green[10], carbon.teal[10], 0.5).hex(),
+    90: chroma.mix(carbon.green[20], carbon.teal[20], 0.5).hex(),
+    80: chroma.mix(carbon.green[30], carbon.teal[30], 0.5).hex(),
+    70: chroma.mix(carbon.green[40], carbon.teal[40], 0.5).hex(),
+    60: chroma.mix(carbon.green[50], carbon.teal[50], 0.5).hex(),
+    50: chroma.mix(carbon.green[60], carbon.teal[60], 0.5).hex(),
+    40: chroma.mix(carbon.green[70], carbon.teal[70], 0.5).hex(),
+    30: chroma.mix(carbon.green[80], carbon.teal[80], 0.5).hex(),
+    20: chroma.mix(carbon.green[90], carbon.teal[90], 0.5).hex(),
+    10: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
+  },
   // yellow: {
-  //   100: carbon.yellow[10],
+  //   95: carbon.yellow[10],
   //   90: carbon.yellow[20],
   //   80: carbon.yellow[30],
   //   70: carbon.yellow[40],
@@ -290,8 +290,8 @@ const originalColorScales: ColorScales = {
   //   20: carbon.yellow[90],
   //   10: carbon.yellow[100],
   // },
-  orange: {
-    100: chroma.mix(carbon.orange[10], carbon.yellow[10], 0.0).hex(),
+  Alert: {
+    95: chroma.mix(carbon.orange[10], carbon.yellow[10], 0.0).hex(),
     90: chroma.mix(carbon.orange[20], carbon.yellow[20], 0.1).hex(),
     80: chroma.mix(carbon.orange[30], carbon.red[30], 0.2).hex(),
     70: chroma.mix(carbon.orange[40], carbon.red[40], 0.3).hex(),
@@ -303,8 +303,8 @@ const originalColorScales: ColorScales = {
     20: chroma.mix(carbon.orange[90], carbon.red[90], 0.4).hex(),
     10: chroma.mix(carbon.orange[100], carbon.red[100], 0.4).hex(),
   },
-  red: {
-    100: chroma.mix(carbon.red[10], carbon.magenta[10], 0.2).hex(),
+  Error: {
+    95: chroma.mix(carbon.red[10], carbon.magenta[10], 0.2).hex(),
     90: chroma.mix(carbon.red[20], carbon.magenta[20], 0.2).hex(),
     80: chroma.mix(carbon.red[30], carbon.magenta[30], 0.2).hex(),
     70: chroma.mix(carbon.red[40], carbon.magenta[40], 0.2).hex(),
@@ -315,8 +315,8 @@ const originalColorScales: ColorScales = {
     20: chroma.mix(carbon.red[90], carbon.magenta[90], 0.2).hex(),
     10: chroma.mix(carbon.red[100], carbon.magenta[100], 0.2).hex(),
   },
-  aqua: {
-    100: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.5).hex(),
+  "Content1-": {
+    95: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.5).hex(),
     90: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.5).hex(),
     80: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.5).hex(),
     70: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.5).hex(),
@@ -327,20 +327,20 @@ const originalColorScales: ColorScales = {
     20: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.5).hex(),
     10: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.5).hex(),
   },
-  purple: {
-    100: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
-    90: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
-    80: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
-    70: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.35).hex(),
-    60: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.35).hex(),
-    50: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.3).hex(),
-    40: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.2).hex(),
-    30: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.1).hex(),
-    20: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
-    10: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
-  },
+  // purple: {
+  //   95: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
+  //   90: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
+  //   80: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
+  //   70: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.35).hex(),
+  //   60: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.35).hex(),
+  //   50: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.3).hex(),
+  //   40: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.2).hex(),
+  //   30: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.1).hex(),
+  //   20: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
+  //   10: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
+  // },
   // purple: { /* brand */
-  //   100: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
+  //   95: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
   //   90: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
   //   80: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
   //   70: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.35).hex(),
@@ -351,20 +351,20 @@ const originalColorScales: ColorScales = {
   //   20: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.35).hex(),
   //   10: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.35).hex(),
   // },
-  // burgundy: { /* brand */
-  //   100: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.1).hex(),
-  //   90: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.1).hex(),
-  //   80: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.1).hex(),
-  //   70: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.1).hex(),
-  //   60: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.1).hex(),
-  //   50: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.1).hex(),
-  //   40: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.1).hex(),
-  //   30: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.1).hex(),
-  //   20: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
-  //   10: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
-  // },
-  ivory: { /* brand */
-    100: chroma.mix(carbon.yellow[10], carbon.gray[10], 0.55).hex(),
+  "Content2-": { /* brand */
+    95: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.1).hex(),
+    90: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.1).hex(),
+    80: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.1).hex(),
+    70: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.1).hex(),
+    60: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.1).hex(),
+    50: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.1).hex(),
+    40: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.1).hex(),
+    30: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.1).hex(),
+    20: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
+    10: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
+  },
+  "Content5-": { /* brand */
+    95: chroma.mix(carbon.yellow[10], carbon.gray[10], 0.55).hex(),
     90: chroma.mix(carbon.yellow[20], carbon.gray[20], 0.55).hex(),
     80: chroma.mix(carbon.yellow[30], carbon.gray[30], 0.55).hex(),
     70: chroma.mix(carbon.yellow[40], carbon.gray[40], 0.55).hex(),
@@ -375,8 +375,8 @@ const originalColorScales: ColorScales = {
     20: chroma.mix(carbon.yellow[90], carbon.gray[90], 0.55).hex(),
     10: chroma.mix(carbon.yellow[100], carbon.gray[100], 0.55).hex(),
   },
-  brown: { /* brand */
-    100: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 8, 1.5]).hex(),
+  "Content4-": { /* brand */
+    95: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 8, 1.5]).hex(),
     90: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 8, 1.5]).hex(),
     80: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 8, 1.5]).hex(),
     70: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 8, 1.5]).hex(),
@@ -389,7 +389,7 @@ const originalColorScales: ColorScales = {
     10: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 8, 1.5]).hex(),
   },
   // brown: {
-  //   100: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1.5]).hex(),
+  //   95: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1.5]).hex(),
   //   90: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 0, 1.5]).hex(),
   //   80: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 0.5, 1.5]).hex(),
   //   70: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 1, 1.5]).hex(),
@@ -405,7 +405,7 @@ const originalColorScales: ColorScales = {
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = Object.keys(originalColorScales)
-  const steps = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  const steps = [10, 20, 30, 40, 50, 60, 70, 80, 90, 95]
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text)
@@ -415,12 +415,22 @@ export default function ColorPalette() {
 
   const copyColumnToClipboard = (colorName: string) => {
     const columnData = steps.reduce((acc, step) => {
-      acc[step] = colorScales[colorName][step]
+      const colorKey = `${colorName}${step}`
+      acc[colorKey] = {
+        value: colorScales[colorName][step],
+        type: "color"
+      }
       return acc
-    }, {} as Record<number, string>)
+    }, {} as Record<string, { value: string, type: string, description?: string }>)
 
     const formattedOutput = `"${colorName}": {\n${Object.entries(columnData)
-      .map(([step, hex]) => `  "${step}": "${hex}"`)
+      .map(([step, data]) => {
+        const indent = '    ' // 4 spaces for indentation
+        const dataString = data.description
+          ? `{\n${indent}  "value": "${data.value}",\n${indent}  "type": "${data.type}",\n${indent}  "description": "${data.description}"\n${indent}}`
+          : `{\n${indent}  "value": "${data.value}",\n${indent}  "type": "${data.type}"\n${indent}}`
+        return `${indent}"${step}": ${dataString}`
+      })
       .join(',\n')
       }\n}`
 
@@ -503,9 +513,9 @@ export default function ColorPalette() {
 
                         const contrastValue = avgContrast.toFixed(1)
                         const style = {
-                          color: avgContrast >= 4.5 ? colorScales.green[50] :
-                            avgContrast >= 3 ? colorScales.orange[50] :
-                              colorScales.red[50]
+                          color: avgContrast >= 4.5 ? colorScales.Success[50] :
+                            avgContrast >= 3 ? colorScales.Alert[50] :
+                              colorScales.Error[50]
                         }
 
                         return <span style={style}>{contrastValue}</span>
