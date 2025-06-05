@@ -194,7 +194,7 @@ const carbon = {
 }
 
 const originalColorScales: ColorScales = {
-  blue: { /* merged */
+  bluevy: { /* merged */
     0: brand.wfp,
     10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
     20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
@@ -233,7 +233,7 @@ const originalColorScales: ColorScales = {
   //   90: chroma.mix(carbon.cyan[90], carbon.blue[90], 1.0).hex(),
   //   100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
   // },
-  green: { /* merged */
+  greener: { /* merged */
     0: brand.green,
     10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
     20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
@@ -324,7 +324,7 @@ const originalColorScales: ColorScales = {
     90: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.5).hex(),
     100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.5).hex(),
   },
-  purple: { /* merged */
+  purpundy: { /* merged */
     0: brand.purple,
     10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
     20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
@@ -390,7 +390,7 @@ const originalColorScales: ColorScales = {
   //   90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [1, 8, 1.5]).hex(),
   //   100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 8, 1.5]).hex(),
   // },
-  brown: { /* merged */
+  brovory: { /* merged */
     0: brand.earthybrown,
     10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1.5]).hex(),
     20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 0, 1.5]).hex(),
@@ -519,7 +519,7 @@ export default function ColorPalette() {
 
                         const contrastValue = avgContrast.toFixed(1)
                         const style = {
-                          color: avgContrast >= 4.5 ? colorScales.green[50] :
+                          color: avgContrast >= 4.5 ? colorScales.greener[50] :
                             avgContrast >= 3 ? colorScales.orange[50] :
                               colorScales.red[50]
                         }
