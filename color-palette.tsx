@@ -77,7 +77,7 @@ const carbon = {
     10: "#fff1f1",
     20: "#ffd7d9",
     // 30: "#ffb3b8",
-    30: chroma.mix("#ff8389", "#ffd7d9", 0.1).hex(),
+    30: chroma.mix("#ffb3b8", "#ffd7d9", 0.1).hex(),
     40: "#ff8389",
     50: "#fa4d56",
     60: "#da1e28",
