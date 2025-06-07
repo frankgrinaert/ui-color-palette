@@ -110,7 +110,8 @@ const carbon = {
   blue: {
     10: "#edf5ff",
     20: "#d0e2ff",
-    30: "#a6c8ff",
+    // 30: "#a6c8ff",
+    30: chroma.mix("#a6c8ff", "#d0e2ff", 0.4).hex(),
     40: "#78a9ff",
     50: "#4589ff",
     60: "#0f62fe",
@@ -122,7 +123,8 @@ const carbon = {
   cyan: {
     10: "#e5f6ff",
     20: "#bae6ff",
-    30: "#82cfff",
+    // 30: "#82cfff",
+    30: chroma.mix("#82cfff", "#bae6ff", 0.1).hex(),
     40: "#33b1ff",
     50: "#1192e8",
     60: "#0072c3",
@@ -158,7 +160,8 @@ const carbon = {
   coolGray: {
     10: "#f2f4f8",
     20: "#dde1e6",
-    30: "#c1c7cd",
+    // 30: "#c1c7cd",
+    30: chroma.mix("#c1c7cd", "#dde1e6", 0.1).hex(),
     40: "#a2a9b0",
     50: "#878d96",
     60: "#697077",
