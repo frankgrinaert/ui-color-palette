@@ -35,7 +35,7 @@ function shouldUseWhiteText(hexColor: string): boolean {
 const brand = {
   'wfp': '#0077C8',
   'navy': '#002E5D',
-  'aquamarine': '#00AEC7',
+  'aqua': '#00AEC7',
   'darkgreen': '#00664F',
   'green': '#009F4D',
   'ivory': '#F1E6B2',
@@ -323,7 +323,7 @@ const originalColorScales: ColorScales = {
     10: chroma.mix(carbon.red[100], carbon.magenta[100], 0.25).hex(),
   },
   aqua: {
-    0: brand.aquamarine,
+    0: brand.aqua,
     95: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.75).hex(),
     90: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.75).hex(),
     80: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.75).hex(),
@@ -443,9 +443,9 @@ export default function ColorPalette() {
     // "purple",
     "purpundy",
     // "burgundy",
-    // "ivory",
+    "ivory",
     "ivorown",
-    // "brown",
+    "brown",
     "neutral"
   ]
   const steps = [95, 90, 80, 70, 60, 50, 40, 30, 20, 10]
