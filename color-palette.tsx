@@ -50,7 +50,8 @@ const carbon = {
   yellow: {
     10: "#fcf4d6",
     20: "#fddc69",
-    30: "#f1c21b",
+    // 30: "#f1c21b",
+    30: chroma.mix("#f1c21b", "#fddc69", 0.1).hex(),
     40: "#d2a106",
     50: "#b28600",
     60: "#8e6a00",
@@ -62,7 +63,8 @@ const carbon = {
   orange: {
     10: "#fff2e8",
     20: "#ffd9be",
-    30: "#ffb784",
+    // 30: "#ffb784",
+    30: chroma.mix("#ffb784", "#ffd9be", 0.1).hex(),
     40: "#ff832b",
     50: "#eb6200",
     60: "#ba4e00",
@@ -74,7 +76,8 @@ const carbon = {
   red: {
     10: "#fff1f1",
     20: "#ffd7d9",
-    30: "#ffb3b8",
+    // 30: "#ffb3b8",
+    30: chroma.mix("#ff8389", "#ffd7d9", 0.1).hex(),
     40: "#ff8389",
     50: "#fa4d56",
     60: "#da1e28",
@@ -86,7 +89,8 @@ const carbon = {
   magenta: {
     10: "#fff0f7",
     20: "#ffd6e8",
-    30: "#ffafd2",
+    // 30: "#ffafd2",
+    30: chroma.mix("#ffafd2", "#ffd6e8", 0.1).hex(),
     40: "#ff7eb6",
     50: "#ee5396",
     60: "#d02670",
@@ -98,7 +102,8 @@ const carbon = {
   purple: {
     10: "#f6f2ff",
     20: "#e8daff",
-    30: "#d4bbff",
+    // 30: "#d4bbff",
+    30: chroma.mix("#d4bbff", "#e8daff", 0.1).hex(),
     40: "#be95ff",
     50: "#a56eff",
     60: "#8a3ffc",
@@ -136,7 +141,8 @@ const carbon = {
   teal: {
     10: "#d9fbfb",
     20: "#9ef0f0",
-    30: "#3ddbd9",
+    // 30: "#3ddbd9",
+    30: chroma.mix("#3ddbd9", "#9ef0f0", 0.1).hex(),
     40: "#08bdba",
     50: "#009d9a",
     60: "#007d79",
@@ -148,7 +154,8 @@ const carbon = {
   green: {
     10: "#defbe6",
     20: "#a7f0ba",
-    30: "#6fdc8c",
+    // 30: "#6fdc8c",
+    30: chroma.mix("#6fdc8c", "#a7f0ba", 0.1).hex(),
     40: "#42be65",
     50: "#24a148",
     60: "#198038",
@@ -173,7 +180,8 @@ const carbon = {
   gray: {
     10: "#f4f4f4",
     20: "#e0e0e0",
-    30: "#c6c6c6",
+    // 30: "#c6c6c6",
+    30: chroma.mix("#c6c6c6", "#e0e0e0", 0.1).hex(),
     40: "#a8a8a8",
     50: "#8d8d8d",
     60: "#6f6f6f",
@@ -185,7 +193,8 @@ const carbon = {
   warmGray: {
     10: "#f7f3f2",
     20: "#e5e0df",
-    30: "#cac5c4",
+    // 30: "#cac5c4",
+    30: chroma.mix("#cac5c4", "#e5e0df", 0.1).hex(),
     40: "#ada8a8",
     50: "#8f8b8b",
     60: "#726e6e",
