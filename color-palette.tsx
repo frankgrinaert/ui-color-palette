@@ -548,32 +548,32 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "blue100": {
-    "value": "#eff5fc",
+    "value": "#ecf5fb",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "blue200": {
-    "value": "#d7e7f7",
+    "value": "#d4e8f6",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "blue300": {
-    "value": "#b3d0ee",
+    "value": "#add3ed",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "blue400": {
-    "value": "#85b4e3",
+    "value": "#77b6e2",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "blue500": {
-    "value": "#4790d3",
+    "value": "#3292d3",
     "type": "color",
     "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "blue600": {
-    "value": "#0072c1",
+    "value": "#0072c0",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
@@ -583,17 +583,17 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "blue800": {
-    "value": "#004273",
+    "value": "#004270",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "blue900": {
-    "value": "#002c50",
+    "value": "#002d4c",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "blue1000": {
-    "value": "#001930",
+    "value": "#00192b",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
@@ -1234,9 +1234,9 @@ const originalColorScales: ColorScales = {
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = [
-    // "blue",
+    "blue",
     "bluvy",
-    // "navy",
+    "navy",
     // "green",
     "greeen",
     // "darkgreen",
