@@ -53,29 +53,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "neutral200": {
-    "value": "#e0e1e1",
+    "value": "#e5e5e5",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "neutral300": {
-    "value": "#c4c4c5",
+    "value": "#cdcdce",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "neutral400": {
-    "value": "#a7a7a8",
+    "value": "#afafb0",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "neutral500": {
-    "value": "#8e8e90",
+    "value": "#8b8b8d",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "neutral600": {
-    "value": "#707072",
+    "value": "#6e6f71",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "neutral700": {
     "value": "#58585a",
@@ -83,19 +83,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "neutral800": {
-    "value": "#404042",
+    "value": "#404041",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "neutral900": {
-    "value": "#2b2c2d",
+    "value": "#2a2b2c",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "neutral1000": {
-    "value": "#181819",
+    "value": "#171818",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "red100": {
     "value": "#fef1f4",
@@ -103,29 +103,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "red200": {
-    "value": "#fbd8df",
+    "value": "#fbdde3",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "red300": {
-    "value": "#f7b1be",
+    "value": "#f8bec9",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "red400": {
-    "value": "#f2879b",
+    "value": "#f494a6",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "red500": {
-    "value": "#ee5b77",
+    "value": "#ed5773",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "red600": {
-    "value": "#e2002b",
+    "value": "#df002a",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "red700": {
     "value": "#b40022",
@@ -133,19 +133,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "red800": {
-    "value": "#870019",
+    "value": "#860019",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "red900": {
-    "value": "#5f0012",
+    "value": "#5d0012",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "red1000": {
-    "value": "#3a000b",
+    "value": "#39000b",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "orange100": {
     "value": "#fff1eb",
@@ -153,29 +153,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "orange200": {
-    "value": "#fedaca",
+    "value": "#fedfd2",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "orange300": {
-    "value": "#feb292",
+    "value": "#fec0a5",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "orange400": {
-    "value": "#fd8654",
+    "value": "#fd9468",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "orange500": {
-    "value": "#fc540d",
+    "value": "#fc4d04",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "orange600": {
-    "value": "#cc3e02",
+    "value": "#ca3d02",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "orange700": {
     "value": "#a13101",
@@ -183,19 +183,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "orange800": {
-    "value": "#772401",
+    "value": "#762401",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "orange900": {
-    "value": "#521901",
+    "value": "#511801",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "orange1000": {
-    "value": "#300e00",
+    "value": "#2e0e00",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "brown100": {
     "value": "#faf3ef",
@@ -203,29 +203,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "brown200": {
-    "value": "#f0ddd0",
+    "value": "#f3e3d9",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "brown300": {
-    "value": "#e1bda4",
+    "value": "#e6c8b3",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "brown400": {
-    "value": "#d29c76",
+    "value": "#d6a582",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "brown500": {
-    "value": "#c57d4c",
+    "value": "#c37a48",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "brown600": {
-    "value": "#ac5b23",
+    "value": "#aa5922",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "brown700": {
     "value": "#88471b",
@@ -233,19 +233,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "brown800": {
-    "value": "#643414",
+    "value": "#623414",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "brown900": {
-    "value": "#43240e",
+    "value": "#42230d",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "brown1000": {
-    "value": "#261408",
+    "value": "#251407",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "ivorown100": {
     "value": "#faf5e1",
@@ -253,29 +253,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "ivorown200": {
-    "value": "#eee0ac",
+    "value": "#f0e5b1",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "ivorown300": {
-    "value": "#e0bf89",
+    "value": "#e5ca94",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "ivorown400": {
-    "value": "#d29d65",
+    "value": "#d6a76f",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "ivorown500": {
-    "value": "#c47e44",
+    "value": "#c37a40",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "ivorown600": {
-    "value": "#ac5b23",
+    "value": "#aa5922",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "ivorown700": {
     "value": "#88471b",
@@ -283,19 +283,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "ivorown800": {
-    "value": "#643414",
+    "value": "#623414",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "ivorown900": {
-    "value": "#43240e",
+    "value": "#42230d",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "ivorown1000": {
-    "value": "#261408",
+    "value": "#251407",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "ivory100": {
     "value": "#faf5e1",
@@ -303,29 +303,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "ivory200": {
-    "value": "#ebe1ae",
+    "value": "#f0e5b1",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "ivory300": {
-    "value": "#cdc498",
+    "value": "#d8cea0",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "ivory400": {
-    "value": "#b0a882",
+    "value": "#b8b088",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "ivory500": {
-    "value": "#958e6e",
+    "value": "#938c6c",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "ivory600": {
-    "value": "#767157",
+    "value": "#756f56",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "ivory700": {
     "value": "#5d5844",
@@ -333,19 +333,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "ivory800": {
-    "value": "#444132",
+    "value": "#444032",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "ivory900": {
-    "value": "#2e2c22",
+    "value": "#2d2b22",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "ivory1000": {
-    "value": "#1a1813",
+    "value": "#191813",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "green100": {
     "value": "#e9f7f0",
@@ -353,29 +353,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "green200": {
-    "value": "#c5e9d6",
+    "value": "#ccecdb",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "green300": {
-    "value": "#8ad3ae",
+    "value": "#9ddaba",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "green400": {
-    "value": "#4abb81",
+    "value": "#5dc28e",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "green500": {
-    "value": "#0ca455",
+    "value": "#05a151",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "green600": {
-    "value": "#00833f",
+    "value": "#00803e",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "green700": {
     "value": "#006732",
@@ -383,19 +383,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "green800": {
-    "value": "#004b25",
+    "value": "#004a24",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "green900": {
-    "value": "#003319",
+    "value": "#003218",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "green1000": {
-    "value": "#001d0e",
+    "value": "#001c0e",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "greeen100": {
     "value": "#e9f7f0",
@@ -403,29 +403,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "greeen200": {
-    "value": "#c5e9d6",
+    "value": "#ccecdb",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "greeen300": {
-    "value": "#8ad3ae",
+    "value": "#9ddaba",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "greeen400": {
-    "value": "#4abb81",
+    "value": "#5dc28e",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "greeen500": {
-    "value": "#0ca455",
+    "value": "#05a151",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "greeen600": {
-    "value": "#00824e",
+    "value": "#007f4e",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "greeen700": {
     "value": "#00644e",
@@ -433,19 +433,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "greeen800": {
-    "value": "#004a3a",
+    "value": "#004939",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "greeen900": {
-    "value": "#003227",
+    "value": "#003126",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "greeen1000": {
-    "value": "#001d17",
+    "value": "#001c16",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "darkgreen100": {
     "value": "#eff5f4",
@@ -453,29 +453,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "darkgreen200": {
-    "value": "#d3e5e1",
+    "value": "#d9e8e5",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "darkgreen300": {
-    "value": "#a9cbc3",
+    "value": "#b5d3cc",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "darkgreen400": {
-    "value": "#7db1a5",
+    "value": "#8ab9af",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "darkgreen500": {
-    "value": "#569a8b",
+    "value": "#539888",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "darkgreen600": {
-    "value": "#287e6a",
+    "value": "#257c69",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "darkgreen700": {
     "value": "#00644e",
@@ -483,19 +483,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "darkgreen800": {
-    "value": "#004a3a",
+    "value": "#004939",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "darkgreen900": {
-    "value": "#003227",
+    "value": "#003126",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "darkgreen1000": {
-    "value": "#001d17",
+    "value": "#001c16",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "aqua100": {
     "value": "#e5f7f9",
@@ -503,29 +503,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "aqua200": {
-    "value": "#bae9f0",
+    "value": "#c3ecf2",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "aqua300": {
-    "value": "#71d2e0",
+    "value": "#8bdae5",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "aqua400": {
-    "value": "#1db7cd",
+    "value": "#39c0d3",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "aqua500": {
-    "value": "#009cb2",
+    "value": "#0099b0",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "aqua600": {
-    "value": "#007c8e",
+    "value": "#007a8c",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "aqua700": {
     "value": "#00616f",
@@ -535,17 +535,17 @@ const leonardo = {
   "aqua800": {
     "value": "#004752",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "aqua900": {
-    "value": "#003139",
+    "value": "#003037",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "aqua1000": {
-    "value": "#001c21",
+    "value": "#001b1f",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "blue100": {
     "value": "#eff5fc",
@@ -553,29 +553,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "blue200": {
-    "value": "#d1e3f5",
+    "value": "#d7e7f7",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "blue300": {
-    "value": "#a5c8eb",
+    "value": "#b3d0ee",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "blue400": {
-    "value": "#77ace0",
+    "value": "#85b4e3",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "blue500": {
-    "value": "#4b92d5",
+    "value": "#4790d3",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "blue600": {
-    "value": "#0074c2",
+    "value": "#0072c1",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "blue700": {
     "value": "#005b9a",
@@ -585,17 +585,17 @@ const leonardo = {
   "blue800": {
     "value": "#004273",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "blue900": {
-    "value": "#002e52",
+    "value": "#002c50",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "blue1000": {
-    "value": "#001932",
+    "value": "#001930",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "bluvy100": {
     "value": "#ecf5fb",
@@ -603,29 +603,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "bluvy200": {
-    "value": "#cde4f4",
+    "value": "#d4e8f6",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "bluvy300": {
-    "value": "#9ccaea",
+    "value": "#add3ed",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "bluvy400": {
-    "value": "#68aede",
+    "value": "#77b6e2",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "bluvy500": {
-    "value": "#3995d4",
+    "value": "#3292d3",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "bluvy600": {
-    "value": "#0073c3",
+    "value": "#0072c1",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "bluvy700": {
     "value": "#005b9e",
@@ -633,19 +633,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "bluvy800": {
-    "value": "#00417a",
+    "value": "#004178",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "bluvy900": {
-    "value": "#002c58",
+    "value": "#002b56",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "bluvy1000": {
-    "value": "#001933",
+    "value": "#001832",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "navy100": {
     "value": "#f1f4f6",
@@ -653,29 +653,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "navy200": {
-    "value": "#dae1e8",
+    "value": "#dfe5eb",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "navy300": {
-    "value": "#b8c5d2",
+    "value": "#c3ced9",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "navy400": {
-    "value": "#97a9bd",
+    "value": "#a0b1c2",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "navy500": {
-    "value": "#7891aa",
+    "value": "#758ea8",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "navy600": {
-    "value": "#557393",
+    "value": "#537292",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "navy700": {
     "value": "#365b80",
@@ -683,19 +683,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "navy800": {
-    "value": "#19426d",
+    "value": "#18426c",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "navy900": {
-    "value": "#002c58",
+    "value": "#002b56",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "navy1000": {
-    "value": "#001933",
+    "value": "#001832",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "purple100": {
     "value": "#faf1fa",
@@ -703,29 +703,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "purple200": {
-    "value": "#f1d9f1",
+    "value": "#f3def3",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "purple300": {
-    "value": "#e5b5e4",
+    "value": "#e9c0e8",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "purple400": {
-    "value": "#d68ed6",
+    "value": "#db9ada",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "purple500": {
-    "value": "#ca6ac9",
+    "value": "#c866c8",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "purple600": {
-    "value": "#b837b7",
+    "value": "#b735b6",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "purple700": {
     "value": "#9a179a",
@@ -733,19 +733,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "purple800": {
-    "value": "#731172",
+    "value": "#711171",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "purple900": {
-    "value": "#4f0c4f",
+    "value": "#4d0c4d",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "purple1000": {
-    "value": "#2e072e",
+    "value": "#2d072d",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "purpundy100": {
     "value": "#faf1fa",
@@ -753,29 +753,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "purpundy200": {
-    "value": "#f1d9f1",
+    "value": "#f3def3",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "purpundy300": {
-    "value": "#e5b5e4",
+    "value": "#e9c0e8",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "purpundy400": {
-    "value": "#d68ed6",
+    "value": "#db9ada",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "purpundy500": {
-    "value": "#ca6ac9",
+    "value": "#c866c8",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "purpundy600": {
-    "value": "#b837b7",
+    "value": "#b735b6",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "purpundy700": {
     "value": "#9f158c",
@@ -783,19 +783,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "purpundy800": {
-    "value": "#7d0b51",
+    "value": "#7c0b50",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "purpundy900": {
-    "value": "#570838",
+    "value": "#560737",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "purpundy1000": {
-    "value": "#330521",
+    "value": "#330421",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   },
   "burgundy100": {
     "value": "#f9f3f6",
@@ -803,29 +803,29 @@ const leonardo = {
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1:1 against background #f5f5f5"
   },
   "burgundy200": {
-    "value": "#eedce7",
+    "value": "#f0e1ea",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #f5f5f5"
   },
   "burgundy300": {
-    "value": "#debad0",
+    "value": "#e3c5d7",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.45:1 against background #f5f5f5"
   },
   "burgundy400": {
-    "value": "#cd97b8",
+    "value": "#d2a1bf",
     "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #f5f5f5"
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2:1 against background #f5f5f5"
   },
   "burgundy500": {
-    "value": "#be78a2",
+    "value": "#bc75a0",
     "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3:1 against background #f5f5f5"
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.1:1 against background #f5f5f5"
   },
   "burgundy600": {
-    "value": "#ab5188",
+    "value": "#aa4f86",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.5:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 4.6:1 against background #f5f5f5"
   },
   "burgundy700": {
     "value": "#992d6f",
@@ -833,19 +833,19 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 6.5:1 against background #f5f5f5"
   },
   "burgundy800": {
-    "value": "#7d0b51",
+    "value": "#7c0b50",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.41:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 9.5:1 against background #f5f5f5"
   },
   "burgundy900": {
-    "value": "#570838",
+    "value": "#560737",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 12.83:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 13:1 against background #f5f5f5"
   },
   "burgundy1000": {
-    "value": "#330521",
+    "value": "#330421",
     "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.2:1 against background #f5f5f5"
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 16.3:1 against background #f5f5f5"
   }
 }
 
