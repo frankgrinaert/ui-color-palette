@@ -247,6 +247,56 @@ const leonardo = {
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
   },
+  "carbonorange100": {
+    "value": "#fff3e9",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.09:1 against background #ffffff"
+  },
+  "carbonorange200": {
+    "value": "#ffdfc8",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.25:1 against background #ffffff"
+  },
+  "carbonorange300": {
+    "value": "#ffbe8f",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #ffffff"
+  },
+  "carbonorange400": {
+    "value": "#ff9346",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #ffffff"
+  },
+  "carbonorange500": {
+    "value": "#ec6301",
+    "type": "color",
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.3:1 against background #ffffff"
+  },
+  "carbonorange600": {
+    "value": "#bb4e00",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 5:1 against background #ffffff"
+  },
+  "carbonorange700": {
+    "value": "#8b3900",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 7.8:1 against background #ffffff"
+  },
+  "carbonorange800": {
+    "value": "#622a00",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 11.3:1 against background #ffffff"
+  },
+  "carbonorange900": {
+    "value": "#421c00",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 15:1 against background #ffffff"
+  },
+  "carbonorange1000": {
+    "value": "#271100",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
+  },
   "ivorown100": {
     "value": "#faf5e3",
     "type": "color",
@@ -494,6 +544,56 @@ const leonardo = {
   },
   "darkgreen1000": {
     "value": "#001b12",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
+  },
+  "carbonteal100": {
+    "value": "#d7fbfb",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.09:1 against background #ffffff"
+  },
+  "carbonteal200": {
+    "value": "#a8f2f2",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.25:1 against background #ffffff"
+  },
+  "carbonteal300": {
+    "value": "#55e0df",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #ffffff"
+  },
+  "carbonteal400": {
+    "value": "#11c2bf",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #ffffff"
+  },
+  "carbonteal500": {
+    "value": "#009e9b",
+    "type": "color",
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.3:1 against background #ffffff"
+  },
+  "carbonteal600": {
+    "value": "#007c79",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 5:1 against background #ffffff"
+  },
+  "carbonteal700": {
+    "value": "#005c5d",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 7.8:1 against background #ffffff"
+  },
+  "carbonteal800": {
+    "value": "#004144",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 11.3:1 against background #ffffff"
+  },
+  "carbonteal900": {
+    "value": "#022b30",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 15:1 against background #ffffff"
+  },
+  "carbonteal1000": {
+    "value": "#08191b",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
   },
@@ -1101,16 +1201,16 @@ const originalColorScales: ColorScales = {
   // },
   orange: {
     0: brand.orange,
-    95: leonardo.orange100.value,
-    90: leonardo.orange200.value,
-    80: leonardo.orange300.value,
-    70: leonardo.orange400.value,
-    60: leonardo.orange500.value,
-    50: leonardo.orange600.value,
-    40: leonardo.orange700.value,
-    30: leonardo.orange800.value,
-    20: leonardo.orange900.value,
-    10: leonardo.orange1000.value,
+    95: leonardo.carbonorange100.value,
+    90: leonardo.carbonorange200.value,
+    80: leonardo.carbonorange300.value,
+    70: leonardo.carbonorange400.value,
+    60: leonardo.carbonorange500.value,
+    50: leonardo.carbonorange600.value,
+    40: leonardo.carbonorange700.value,
+    30: leonardo.carbonorange800.value,
+    20: leonardo.carbonorange900.value,
+    10: leonardo.carbonorange1000.value,
   },
   red: {
     0: brand.red,
@@ -1127,16 +1227,16 @@ const originalColorScales: ColorScales = {
   },
   aqua: {
     0: brand.aqua,
-    95: leonardo.aqua100.value,
-    90: leonardo.aqua200.value,
-    80: leonardo.aqua300.value,
-    70: leonardo.aqua400.value,
-    60: leonardo.aqua500.value,
-    50: leonardo.aqua600.value,
-    40: leonardo.aqua700.value,
-    30: leonardo.aqua800.value,
-    20: leonardo.aqua900.value,
-    10: leonardo.aqua1000.value,
+    95: leonardo.carbonteal100.value,
+    90: leonardo.carbonteal200.value,
+    80: leonardo.carbonteal300.value,
+    70: leonardo.carbonteal400.value,
+    60: leonardo.carbonteal500.value,
+    50: leonardo.carbonteal600.value,
+    40: leonardo.carbonteal700.value,
+    30: leonardo.carbonteal800.value,
+    20: leonardo.carbonteal900.value,
+    10: leonardo.carbonteal1000.value,
   },
   purpundy: {
     0: brand.purple,
