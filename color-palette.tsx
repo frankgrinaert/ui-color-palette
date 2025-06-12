@@ -80,7 +80,7 @@ const v6 = {
     50: "#AFDBBB",
     60: "#D5ECDD",
   },
-  dgreen: {
+  darkgreen: {
     10: "#003A27",
     20: "#005D45",
     30: "#0D9577",
@@ -171,13 +171,13 @@ const originalColorScales: ColorScales = {
     50: v6.aqua[50],
     60: v6.aqua[60],
   },
-  aquanew: {
-    10: v6.aqua[10],
-    20: v6.aqua[20],
-    30: v6.aqua[30],
-    40: v6.aqua[40],
-    50: v6.aqua[50],
-    60: v6.aqua[60],
+  NEWaqua: {
+    10: chroma(v6.aqua[10]).set('oklch.h', '-10').hex(),
+    20: chroma(v6.aqua[20]).set('oklch.h', '-10').hex(),
+    30: chroma(v6.aqua[30]).set('oklch.h', '-10').hex(),
+    40: chroma(v6.aqua[40]).set('oklch.h', '-10').hex(),
+    50: chroma(v6.aqua[50]).set('oklch.h', '-10').hex(),
+    60: chroma(v6.aqua[60]).set('oklch.h', '-10').hex(),
   },
   green: {
     10: v6.green[10],
@@ -187,13 +187,13 @@ const originalColorScales: ColorScales = {
     50: v6.green[50],
     60: v6.green[60],
   },
-  dgreen: {
-    10: v6.dgreen[10],
-    20: v6.dgreen[20],
-    30: v6.dgreen[30],
-    40: v6.dgreen[40],
-    50: v6.dgreen[50],
-    60: v6.dgreen[60],
+  darkgreen: {
+    10: v6.darkgreen[10],
+    20: v6.darkgreen[20],
+    30: v6.darkgreen[30],
+    40: v6.darkgreen[40],
+    50: v6.darkgreen[50],
+    60: v6.darkgreen[60],
   },
   ivory: {
     10: v6.ivory[10],
@@ -219,13 +219,13 @@ const originalColorScales: ColorScales = {
     50: v6.orange[50],
     60: v6.orange[60],
   },
-  orangenew: {
-    10: v6.orange[10],
-    20: v6.orange[20],
-    30: v6.orange[30],
-    40: v6.orange[40],
-    50: v6.orange[50],
-    60: v6.orange[60],
+  NEWorange: {
+    10: chroma(v6.orange[10]).set('oklch.h', '+12').hex(),
+    20: chroma(v6.orange[20]).set('oklch.h', '+12').hex(),
+    30: chroma(v6.orange[30]).set('oklch.h', '+12').hex(),
+    40: chroma(v6.orange[40]).set('oklch.h', '+12').hex(),
+    50: chroma(v6.orange[50]).set('oklch.h', '+12').hex(),
+    60: chroma(v6.orange[60]).set('oklch.h', '+12').hex(),
   },
   purple: {
     10: v6.purple[10],
@@ -264,19 +264,19 @@ const originalColorScales: ColorScales = {
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = [
+    "red",
+    // "orange",
+    "NEWorange",
+    "brown",
+    "ivory",
+    "green",
+    "darkgreen",
+    // "aqua",
+    "NEWaqua",
     "blue",
     "navy",
-    "aqua",
-    "aquanew",
-    "green",
-    "dgreen",
-    "ivory",
-    "brown",
-    "orange",
-    "orangenew",
     "purple",
     "burgundy",
-    "red",
     "black"
   ]
   const steps = [
