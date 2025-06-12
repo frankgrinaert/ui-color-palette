@@ -377,7 +377,7 @@ export default function ColorPalette() {
                     onClick={() => copyColumnToClipboard(colorName)}
                     className="w-full p-3 text-sm hover:bg-gray-200 transition-colors"
                   >
-                    {copied === `${colorName}-column` ? "Copied!" : "Copy"}
+                    {copied === `${colorName}-column` ? "Copied!" : "Copy all"}
                   </button>
                 </td>
               ))}
