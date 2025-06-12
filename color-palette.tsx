@@ -23,8 +23,9 @@ function getContrastRatio(hex: string): number {
   return chroma.contrast(hex, "#ffffff")
 }
 
-function truncateToTwoDecimals(num: number): string {
-  return (Math.floor(num * 100) / 100).toString()
+function truncateDecimals(num: number, decimals: number): string {
+  const multiplier = Math.pow(10, decimals)
+  return (Math.floor(num * multiplier) / multiplier).toString()
 }
 
 // Function to determine if text should be white or black based on background color
@@ -1467,7 +1468,7 @@ export default function ColorPalette() {
                             useWhiteText ? "text-white text-xs font-semibold" : "text-black text-xs font-semibold"
                           }
                         >
-                          {truncateToTwoDecimals(contrastRatio)}
+                          {truncateDecimals(contrastRatio, 1)}
                         </div>
                       </div>
                       {copied === hexColor && (
@@ -1482,15 +1483,15 @@ export default function ColorPalette() {
                   <div className="w-full flex flex-col justify-between p-3">
                     <div className="text-sm">
                       {(() => {
-                        const avgContrast = colorNames.reduce((sum, colorName) => {
+                        const minContrast = colorNames.reduce((acc, colorName) => {
                           const hexColor = colorScales[colorName][step]
-                          return hexColor ? sum + getContrastRatio(hexColor) : sum
-                        }, 0) / colorNames.length
+                          return hexColor ? Math.min(acc, getContrastRatio(hexColor)) : acc
+                        }, Infinity)
 
-                        const contrastValue = avgContrast.toFixed(1)
+                        const contrastValue = truncateDecimals(minContrast, 1)
                         const style = {
-                          color: avgContrast >= 4.5 ? colorScales.greeen[50] :
-                            avgContrast >= 3 ? colorScales.orange[50] :
+                          color: minContrast >= 4.5 ? colorScales.greeen[50] :
+                            minContrast >= 3 ? colorScales.orange[50] :
                               colorScales.red[50]
                         }
 
