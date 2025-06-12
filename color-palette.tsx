@@ -72,14 +72,6 @@ const v6 = {
     50: "#6DCDE3",
     60: "#B9E3EB",
   },
-  "aqua-new": {
-    10: "#003C4D",
-    20: "#008EB2",
-    30: "#00A2C0",
-    40: "#36B9D5",
-    50: "#6DCDE3",
-    60: "#B9E3EB",
-  },
   green: {
     10: "#035537",
     20: "#03924A",
@@ -88,7 +80,7 @@ const v6 = {
     50: "#AFDBBB",
     60: "#D5ECDD",
   },
-  "dark-green": {
+  dgreen: {
     10: "#003A27",
     20: "#005D45",
     30: "#0D9577",
@@ -104,7 +96,7 @@ const v6 = {
     50: "#fff",
     60: "#fff"
   },
-  "earthy-brown": {
+  brown: {
     10: "#6A3713",
     20: "#AA5628",
     30: "#CC8153",
@@ -113,20 +105,12 @@ const v6 = {
     60: "#F4D7C4",
   },
   orange: {
-    10: "#FC4C02",
-    20: "#FC4C02",
-    30: "#FD6A00",
-    40: "#FD8C00",
-    50: "#FEB900",
-    60: "#FEDD00",
-  },
-  "orange-new": {
-    10: "#003C4D",
-    20: "#008EB2",
-    30: "#00A2C0",
-    40: "#36B9D5",
-    50: "#6DCDE3",
-    60: "#B9E3EB",
+    10: "#9A331B",
+    20: "#F0512D",
+    30: "#F37455",
+    40: "#F8A07E",
+    50: "#FBC4A8",
+    60: "#FEDFCE",
   },
   purple: {
     10: "#65175C",
@@ -164,116 +148,116 @@ const v6 = {
 
 const originalColorScales: ColorScales = {
   blue: {
-    10: "#004670",
-    20: "#007DBC",
-    30: "#0092CB",
-    40: "#11ABDE",
-    50: "#89D1F4",
-    60: "#B9E5FB",
+    10: v6.blue[10],
+    20: v6.blue[20],
+    30: v6.blue[30],
+    40: v6.blue[40],
+    50: v6.blue[50],
+    60: v6.blue[60],
   },
   navy: {
-    10: "#00153B",
-    20: "#002F5A",
-    30: "#2A5B89",
-    40: "#6490B6",
-    50: "#89B2D0",
-    60: "#BDD7EA",
+    10: v6.navy[10],
+    20: v6.navy[20],
+    30: v6.navy[30],
+    40: v6.navy[40],
+    50: v6.navy[50],
+    60: v6.navy[60],
   },
   aqua: {
-    10: "#003C4D",
-    20: "#008EB2",
-    30: "#00A2C0",
-    40: "#36B9D5",
-    50: "#6DCDE3",
-    60: "#B9E3EB",
+    10: v6.aqua[10],
+    20: v6.aqua[20],
+    30: v6.aqua[30],
+    40: v6.aqua[40],
+    50: v6.aqua[50],
+    60: v6.aqua[60],
   },
-  "aqua-new": {
-    10: "#003C4D",
-    20: "#008EB2",
-    30: "#00A2C0",
-    40: "#36B9D5",
-    50: "#6DCDE3",
-    60: "#B9E3EB",
+  aquanew: {
+    10: v6.aqua[10],
+    20: v6.aqua[20],
+    30: v6.aqua[30],
+    40: v6.aqua[40],
+    50: v6.aqua[50],
+    60: v6.aqua[60],
   },
   green: {
-    10: "#035537",
-    20: "#03924A",
-    30: "#4EB16F",
-    40: "#74C48A",
-    50: "#AFDBBB",
-    60: "#D5ECDD",
+    10: v6.green[10],
+    20: v6.green[20],
+    30: v6.green[30],
+    40: v6.green[40],
+    50: v6.green[50],
+    60: v6.green[60],
   },
-  "dark-green": {
-    10: "#003A27",
-    20: "#005D45",
-    30: "#0D9577",
-    40: "#65B899",
-    50: "#95D3C3",
-    60: "#CAE8DE",
+  dgreen: {
+    10: v6.dgreen[10],
+    20: v6.dgreen[20],
+    30: v6.dgreen[30],
+    40: v6.dgreen[40],
+    50: v6.dgreen[50],
+    60: v6.dgreen[60],
   },
   ivory: {
-    10: "#A4885F",
-    20: "#ECE1B1",
-    30: "#F5E9CE",
-    40: "#F9F4DF",
-    50: "#fff",
-    60: "#fff"
+    10: v6.ivory[10],
+    20: v6.ivory[20],
+    30: v6.ivory[30],
+    40: v6.ivory[40],
+    50: v6.ivory[50],
+    60: v6.ivory[60],
   },
-  "earthy-brown": {
-    10: "#6A3713",
-    20: "#AA5628",
-    30: "#CC8153",
-    40: "#D79772",
-    50: "#ECB897",
-    60: "#F4D7C4",
+  brown: {
+    10: v6.brown[10],
+    20: v6.brown[20],
+    30: v6.brown[30],
+    40: v6.brown[40],
+    50: v6.brown[50],
+    60: v6.brown[60],
   },
   orange: {
-    10: "#FC4C02",
-    20: "#FC4C02",
-    30: "#FD6A00",
-    40: "#FD8C00",
-    50: "#FEB900",
-    60: "#FEDD00",
+    10: v6.orange[10],
+    20: v6.orange[20],
+    30: v6.orange[30],
+    40: v6.orange[40],
+    50: v6.orange[50],
+    60: v6.orange[60],
   },
-  "orange-new": {
-    10: "#003C4D",
-    20: "#008EB2",
-    30: "#00A2C0",
-    40: "#36B9D5",
-    50: "#6DCDE3",
-    60: "#B9E3EB",
+  orangenew: {
+    10: v6.orange[10],
+    20: v6.orange[20],
+    30: v6.orange[30],
+    40: v6.orange[40],
+    50: v6.orange[50],
+    60: v6.orange[60],
   },
   purple: {
-    10: "#65175C",
-    20: "#AC1294",
-    30: "#B24F9E",
-    40: "#C372AF",
-    50: "#DFA5CB",
-    60: "#F0D2E5",
+    10: v6.purple[10],
+    20: v6.purple[20],
+    30: v6.purple[30],
+    40: v6.purple[40],
+    50: v6.purple[50],
+    60: v6.purple[60],
   },
   burgundy: {
-    10: "#4A003B",
-    20: "#950158",
-    30: "#9A436E",
-    40: "#DA7DA9",
-    50: "#F7ADC5",
-    60: "#FBD4DD",
+    10: v6.burgundy[10],
+    20: v6.burgundy[20],
+    30: v6.burgundy[30],
+    40: v6.burgundy[40],
+    50: v6.burgundy[50],
+    60: v6.burgundy[60],
   },
   red: {
-    10: "#7F1724",
-    20: "#E3002B",
-    30: "#F04B5D",
-    40: "#F69896",
-    50: "#F9B9B7",
-    60: "#FCDCD8",
+    10: v6.red[10],
+    20: v6.red[20],
+    30: v6.red[30],
+    40: v6.red[40],
+    50: v6.red[50],
+    60: v6.red[60],
   },
   black: {
-    10: "#000000",
-    20: "#231F20",
-    30: "#636466",
-    40: "#939598",
-    50: "#B1B3B6",
-    60: "#DADBDC",
+    10: v6.black[10],
+    20: v6.black[20],
+    30: v6.black[30],
+    40: v6.black[40],
+    50: v6.black[50],
+    60: v6.black[60],
   },
 }
 
@@ -283,13 +267,13 @@ export default function ColorPalette() {
     "blue",
     "navy",
     "aqua",
-    "aqua-new",
+    "aquanew",
     "green",
-    "dark-green",
+    "dgreen",
     "ivory",
-    "earthy-brown",
+    "brown",
     "orange",
-    "orange-new",
+    "orangenew",
     "purple",
     "burgundy",
     "red",
@@ -384,22 +368,6 @@ export default function ColorPalette() {
                     </td>
                   )
                 })}
-                <td className="p-0 relative w-20">
-                  <div className="w-full flex flex-col justify-between p-3">
-                    <div className="text-sm">
-                      {(() => {
-                        const minContrast = colorNames.reduce((acc, colorName) => {
-                          const hexColor = colorScales[colorName][step]
-                          return hexColor ? Math.min(acc, getContrastRatio(hexColor)) : acc
-                        }, Infinity)
-
-                        const contrastValue = truncateDecimals(minContrast, 1)
-
-                        return <span>{contrastValue}</span>
-                      })()}
-                    </div>
-                  </div>
-                </td>
               </tr>
             ))}
             <tr>
