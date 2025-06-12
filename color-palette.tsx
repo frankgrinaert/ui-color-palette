@@ -381,7 +381,6 @@ export default function ColorPalette() {
                   </button>
                 </td>
               ))}
-              <td className="p-0 relative w-20"></td>
             </tr>
           </tbody>
         </table>
