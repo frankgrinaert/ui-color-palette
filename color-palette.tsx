@@ -265,14 +265,14 @@ export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = [
     "red",
-    // "orange",
-    "NEWorange",
+    "orange",
+    // "NEWorange",
     "brown",
     "ivory",
     "green",
     "darkgreen",
-    // "aqua",
-    "NEWaqua",
+    "aqua",
+    // "NEWaqua",
     "blue",
     "navy",
     "purple",
