@@ -1234,21 +1234,21 @@ const originalColorScales: ColorScales = {
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = [
-    // "blue",
-    "bluvy",
-    // "navy",
-    // "green",
-    "greeen",
-    // "darkgreen",
+    "blue",
+    // "bluvy",
+    "navy",
+    "green",
+    // "greeen",
+    "darkgreen",
     "orange",
     "red",
     "aqua",
-    // "purple",
-    "purpundy",
-    // "burgundy",
-    // "ivory",
-    "ivorown",
-    // "brown",
+    "purple",
+    // "purpundy",
+    "burgundy",
+    "ivory",
+    // "ivorown",
+    "brown",
     "neutral"
   ]
   const steps = [
