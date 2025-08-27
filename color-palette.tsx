@@ -1171,7 +1171,7 @@ export default function ColorPalette() {
     "aqua",
     // "purple",
     "purpundy",
-    "burgundy",
+    // "burgundy",
     // "ivory",
     "ivorown",
     // "brown",
