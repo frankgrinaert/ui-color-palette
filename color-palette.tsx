@@ -1172,9 +1172,9 @@ export default function ColorPalette() {
     // "purple",
     "purpundy",
     // "burgundy",
-    // "ivory",
-    "ivorown",
-    // "brown",
+    "ivory",
+    // "ivorown",
+    "brown",
     "neutral"
   ]
   const steps = [
