@@ -34,17 +34,50 @@ function shouldUseWhiteText(hexColor: string): boolean {
 }
 
 const brand = {
-  'wfp': '#0077C8',
-  'navy': '#002E5D',
-  'aqua': '#00AEC7',
-  'darkgreen': '#00664F',
-  'green': '#009F4D',
-  'ivory': '#F1E6B2',
-  'earthybrown': '#B86125',
-  'orange': '#FC4C02',
-  'red': '#E4002B',
-  'purple': '#AD1AAC',
-  'burgundy': '#890C58',
+  'blue': {
+    'pantone': '#0077C8',
+    'wfp': '#007DBC',
+  },
+  'navy': {
+    'pantone': '#002E5D',
+    'wfp': '#002F5A',
+  },
+  'aqua': {
+    'pantone': '#00AEC7',
+    'wfp': '#008EB2',
+  },
+  'darkgreen': {
+    "pantone": '#00664F',
+    "wfp": '#005D45',
+  },
+  'green': {
+    'pantone': '#009F4D',
+    'wfp': '#009F4D',
+  },
+  'ivory': {
+    'pantone': '#F1E6B2',
+    'wfp': '#ECE1B1',
+  },
+  'earthybrown': {
+    'pantone': '#B86125',
+    'wfp': '#AA5628',
+  },
+  'orange': {
+    'pantone': '#FC4C02',
+    'wfp': '#F0512D',
+  },
+  'red': {
+    'pantone': '#E4002B',
+    'wfp': '#E3002B',
+  },
+  'purple': {
+    'pantone': '#AD1AAC',
+    'wfp': '#AC1294',
+  },
+  'burgundy': {
+    'pantone': '#890C58',
+    'wfp': '#950158',
+  },
 }
 
 const leonardo = {
@@ -932,7 +965,8 @@ const leonardo = {
 
 const originalColorScales: ColorScales = {
   bluvy: {
-    0: brand.wfp,
+    0: brand.blue.wfp,
+    1: brand.blue.pantone,
     50: leonardo.bluvy100.value,
     100: leonardo.bluvy200.value,
     200: leonardo.bluvy300.value,
@@ -946,7 +980,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.bluvy1100.value,
   },
   blue: {
-    0: brand.wfp,
+    0: brand.blue.wfp,
+    1: brand.blue.pantone,
     50: leonardo.blue100.value,
     100: leonardo.blue200.value,
     200: leonardo.blue300.value,
@@ -960,7 +995,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.blue1100.value,
   },
   navy: {
-    0: brand.navy,
+    0: brand.navy.wfp,
+    1: brand.navy.pantone,
     50: leonardo.navy100.value,
     100: leonardo.navy200.value,
     200: leonardo.navy300.value,
@@ -974,7 +1010,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.navy1100.value,
   },
   greeen: {
-    0: brand.green,
+    0: brand.green.wfp,
+    1: brand.green.pantone,
     50: leonardo.greeen100.value,
     100: leonardo.greeen200.value,
     200: leonardo.greeen300.value,
@@ -988,7 +1025,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.greeen1100.value,
   },
   green: {
-    0: brand.green,
+    0: brand.green.wfp,
+    1: brand.green.pantone,
     50: leonardo.green100.value,
     100: leonardo.green200.value,
     200: leonardo.green300.value,
@@ -1002,7 +1040,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.green1100.value,
   },
   darkgreen: {
-    0: brand.darkgreen,
+    0: brand.darkgreen.wfp,
+    1: brand.darkgreen.pantone,
     50: leonardo.darkgreen100.value,
     100: leonardo.darkgreen200.value,
     200: leonardo.darkgreen300.value,
@@ -1016,7 +1055,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.darkgreen1100.value,
   },
   orange: {
-    0: brand.orange,
+    0: brand.orange.wfp,
+    1: brand.orange.pantone,
     50: leonardo.orange100.value,
     100: leonardo.orange200.value,
     200: leonardo.orange300.value,
@@ -1030,7 +1070,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.orange1100.value,
   },
   red: {
-    0: brand.red,
+    0: brand.red.wfp,
+    1: brand.red.pantone,
     50: leonardo.red100.value,
     100: leonardo.red200.value,
     200: leonardo.red300.value,
@@ -1044,7 +1085,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.red1100.value,
   },
   aqua: {
-    0: brand.aqua,
+    0: brand.aqua.wfp,
+    1: brand.aqua.pantone,
     50: leonardo.aqua100.value,
     100: leonardo.aqua200.value,
     200: leonardo.aqua300.value,
@@ -1058,7 +1100,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.aqua1100.value,
   },
   purpundy: {
-    0: brand.purple,
+    0: brand.purple.wfp,
+    1: brand.purple.pantone,
     50: leonardo.purpundy100.value,
     100: leonardo.purpundy200.value,
     200: leonardo.purpundy300.value,
@@ -1072,7 +1115,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.purpundy1100.value,
   },
   purple: {
-    0: brand.purple,
+    0: brand.purple.wfp,
+    1: brand.purple.pantone,
     50: leonardo.purple100.value,
     100: leonardo.purple200.value,
     200: leonardo.purple300.value,
@@ -1086,7 +1130,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.purple1100.value,
   },
   burgundy: {
-    0: brand.burgundy,
+    0: brand.burgundy.wfp,
+    1: brand.burgundy.pantone,
     50: leonardo.burgundy100.value,
     100: leonardo.burgundy200.value,
     200: leonardo.burgundy300.value,
@@ -1100,7 +1145,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.burgundy1100.value,
   },
   ivory: {
-    0: brand.ivory,
+    0: brand.ivory.wfp,
+    1: brand.ivory.pantone,
     50: leonardo.ivory100.value,
     100: leonardo.ivory200.value,
     200: leonardo.ivory300.value,
@@ -1114,7 +1160,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.ivory1100.value,
   },
   brown: {
-    0: brand.earthybrown,
+    0: brand.earthybrown.wfp,
+    1: brand.earthybrown.pantone,
     50: leonardo.brown100.value,
     100: leonardo.brown200.value,
     200: leonardo.brown300.value,
@@ -1128,7 +1175,8 @@ const originalColorScales: ColorScales = {
     950: leonardo.brown1100.value,
   },
   ivorown: {
-    0: brand.ivory,
+    0: brand.ivory.wfp,
+    1: brand.ivory.pantone,
     50: leonardo.ivorown100.value,
     100: leonardo.ivorown200.value,
     200: leonardo.ivorown300.value,
@@ -1143,6 +1191,7 @@ const originalColorScales: ColorScales = {
   },
   neutral: {
     0: "white",
+    1: "white",
     50: leonardo.neutral100.value,
     100: leonardo.neutral200.value,
     200: leonardo.neutral300.value,
@@ -1160,25 +1209,26 @@ const originalColorScales: ColorScales = {
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = [
-    // "blue",
+    "blue",
     "bluvy",
-    // "navy",
-    // "green",
+    "navy",
+    "green",
     "greeen",
-    // "darkgreen",
+    "darkgreen",
     "orange",
     "red",
     "aqua",
-    // "purple",
+    "purple",
     "purpundy",
-    // "burgundy",
-    // "ivory",
+    "burgundy",
+    "ivory",
     "ivorown",
-    // "brown",
+    "brown",
     "neutral"
   ]
   const steps = [
-    // 0,
+    0,
+    1,
     50,
     100,
     200,
