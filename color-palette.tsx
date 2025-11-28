@@ -252,61 +252,6 @@ const leonardo = {
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
   },
-  "yorange100": {
-    "value": "#fff8f4",
-    "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.05:1 against background #ffffff"
-  },
-  "yorange200": {
-    "value": "#ffece1",
-    "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #ffffff"
-  },
-  "yorange300": {
-    "value": "#ffd7c1",
-    "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.33:1 against background #ffffff"
-  },
-  "yorange400": {
-    "value": "#ffbe9d",
-    "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #ffffff"
-  },
-  "yorange500": {
-    "value": "#ff925f",
-    "type": "color",
-    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #ffffff"
-  },
-  "yorange600": {
-    "value": "#f35b01",
-    "type": "color",
-    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.3:1 against background #ffffff"
-  },
-  "yorange700": {
-    "value": "#c93f00",
-    "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 5:1 against background #ffffff"
-  },
-  "yorange800": {
-    "value": "#9a2800",
-    "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 7.8:1 against background #ffffff"
-  },
-  "yorange900": {
-    "value": "#721900",
-    "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 11.3:1 against background #ffffff"
-  },
-  "yorange1000": {
-    "value": "#4f0e00",
-    "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 15:1 against background #ffffff"
-  },
-  "yorange1100": {
-    "value": "#330600",
-    "type": "color",
-    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
-  },
   "brown100": {
     "value": "#fdf7f3",
     "type": "color",
@@ -418,57 +363,57 @@ const leonardo = {
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
   },
   "ivory100": {
-    "value": "#fffbca",
+    "value": "#fbf9eb",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.05:1 against background #ffffff"
   },
   "ivory200": {
-    "value": "#faefbb",
+    "value": "#f6efce",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #ffffff"
   },
   "ivory300": {
-    "value": "#eadfac",
+    "value": "#eadfab",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.33:1 against background #ffffff"
   },
   "ivory400": {
-    "value": "#d7cd9c",
+    "value": "#d8cd9a",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #ffffff"
   },
   "ivory500": {
-    "value": "#b9af83",
+    "value": "#baaf7d",
     "type": "color",
     "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #ffffff"
   },
   "ivory600": {
-    "value": "#968e69",
+    "value": "#988e5d",
     "type": "color",
     "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.3:1 against background #ffffff"
   },
   "ivory700": {
-    "value": "#766f51",
+    "value": "#7a6f3f",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 5:1 against background #ffffff"
   },
   "ivory800": {
-    "value": "#57523b",
+    "value": "#5c5222",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 7.8:1 against background #ffffff"
   },
   "ivory900": {
-    "value": "#3e3a29",
+    "value": "#443a06",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 11.3:1 against background #ffffff"
   },
   "ivory1000": {
-    "value": "#29271a",
+    "value": "#2f2600",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 15:1 against background #ffffff"
   },
   "ivory1100": {
-    "value": "#18160e",
+    "value": "#1f1500",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
   },
@@ -1021,6 +966,61 @@ const leonardo = {
     "value": "#34001c",
     "type": "color",
     "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
+  },
+  "yorange100": {
+    "value": "#fff8f4",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.05:1 against background #ffffff"
+  },
+  "yorange200": {
+    "value": "#ffece1",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.15:1 against background #ffffff"
+  },
+  "yorange300": {
+    "value": "#ffd7c1",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.33:1 against background #ffffff"
+  },
+  "yorange400": {
+    "value": "#ffbe9d",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 1.6:1 against background #ffffff"
+  },
+  "yorange500": {
+    "value": "#ff925f",
+    "type": "color",
+    "description": "Do not use for UI elements or text. WCAG 2.x (relative luminance) contrast is 2.2:1 against background #ffffff"
+  },
+  "yorange600": {
+    "value": "#f35b01",
+    "type": "color",
+    "description": "Color can be used for UI elements or large text. WCAG 2.x (relative luminance) contrast is 3.3:1 against background #ffffff"
+  },
+  "yorange700": {
+    "value": "#c93f00",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 5:1 against background #ffffff"
+  },
+  "yorange800": {
+    "value": "#9a2800",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 7.8:1 against background #ffffff"
+  },
+  "yorange900": {
+    "value": "#721900",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 11.3:1 against background #ffffff"
+  },
+  "yorange1000": {
+    "value": "#4f0e00",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 15:1 against background #ffffff"
+  },
+  "yorange1100": {
+    "value": "#330600",
+    "type": "color",
+    "description": "Color can be used for small text. WCAG 2.x (relative luminance) contrast is 18:1 against background #ffffff"
   }
 }
 
@@ -1287,22 +1287,22 @@ export default function ColorPalette() {
   const colorNames = [
     
     "neutral",
-    // "navy",
-    "bluvy",
-    // "blue",
+    "navy",
+    // "bluvy",
+    "blue",
     "aqua",
-    // "green",
-    "greeen",
-    // "darkgreen",
+    "green",
+    // "greeen",
+    "darkgreen",
     "ivory",
     // "ivorown",
     "brown",
-    "yorange",
-    // "orange",
+    // "yorange",
+    "orange",
     "red",
-    // "burgundy",
-    "purpundy",
-    // "purple"
+    "burgundy",
+    // "purpundy",
+    "purple"
   ]
   const steps = [
     // 0,
@@ -1347,7 +1347,7 @@ export default function ColorPalette() {
 
   return (
     <div className="font-mono">
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto p-4">
         <table className="w-full border-collapse table-fixed">
           <tbody>
             {steps.map((step) => (
@@ -1405,7 +1405,7 @@ export default function ColorPalette() {
                     </td>
                   )
                 })}
-                <td className="p-0 relative w-20">
+                <td className="p-0 relative w-12">
                   <div className="w-full flex flex-col justify-between p-3">
                     <div className="text-sm">
                       {(() => {
