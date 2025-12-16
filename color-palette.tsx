@@ -109,164 +109,66 @@ function getBrandColor(name: keyof typeof brand): CssColor {
   return brand[name][BRAND_SOURCE] as CssColor
 }
 
+type ColorSpace = "OKLCH" | "RGB"
+
+type ColorConfig =
+  | { name: string; keys: CssColor[]; colorspace: ColorSpace; smooth: boolean }
+  | { name: string; keys: string[]; colorspace: ColorSpace; smooth: boolean }
+
 function createLeonardoPalette(): LeonardoTokens {
-  // Base colors (same parameters you use in the Leonardo UI)
-  const neutral = new LeonardoColor({
-    name: "neutral",
-    colorKeys: ["#000000"],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: false,
-  })
+  const configs: ColorConfig[] = [
+    { name: "neutral", keys: ["#000000"], colorspace: "OKLCH", smooth: false },
+    { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
+    { name: "orange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
+    { name: "yorange", keys: ["#f35b00"], colorspace: "RGB", smooth: true },
+    { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
+    {
+      name: "ivorown",
+      keys: [getBrandColor("ivory"), getBrandColor("earthybrown")],
+      colorspace: "OKLCH",
+      smooth: true,
+    },
+    { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
+    { name: "green", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
+    {
+      name: "greeen",
+      keys: [getBrandColor("green"), getBrandColor("darkgreen")],
+      colorspace: "OKLCH",
+      smooth: true,
+    },
+    { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
+    { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
+    { name: "blue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
+    {
+      name: "bluvy",
+      keys: [getBrandColor("blue"), getBrandColor("navy")],
+      colorspace: "RGB",
+      smooth: true,
+    },
+    { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
+    { name: "purple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
+    {
+      name: "purpundy",
+      keys: [getBrandColor("purple"), getBrandColor("burgundy")],
+      colorspace: "OKLCH",
+      smooth: true,
+    },
+    { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
+  ]
 
-  const red = new LeonardoColor({
-    name: "red",
-    colorKeys: [getBrandColor("red")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const orange = new LeonardoColor({
-    name: "orange",
-    colorKeys: [getBrandColor("orange")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const yorange = new LeonardoColor({
-    name: "yorange",
-    colorKeys: ["#f35b00"],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "RGB",
-    smooth: true,
-  })
-
-  const brown = new LeonardoColor({
-    name: "brown",
-    colorKeys: [getBrandColor("earthybrown")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const ivorown = new LeonardoColor({
-    name: "ivorown",
-    colorKeys: [getBrandColor("ivory"), getBrandColor("earthybrown")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const ivory = new LeonardoColor({
-    name: "ivory",
-    colorKeys: [getBrandColor("ivory")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: false,
-  })
-
-  const green = new LeonardoColor({
-    name: "green",
-    colorKeys: [getBrandColor("green")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const greeen = new LeonardoColor({
-    name: "greeen",
-    colorKeys: [getBrandColor("green"), getBrandColor("darkgreen")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const darkgreen = new LeonardoColor({
-    name: "darkgreen",
-    colorKeys: [getBrandColor("darkgreen")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const aqua = new LeonardoColor({
-    name: "aqua",
-    colorKeys: [getBrandColor("aqua")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const blue = new LeonardoColor({
-    name: "blue",
-    colorKeys: [getBrandColor("blue")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "RGB",
-    smooth: true,
-  })
-
-  const bluvy = new LeonardoColor({
-    name: "bluvy",
-    colorKeys: [getBrandColor("blue"), getBrandColor("navy")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "RGB",
-    smooth: true,
-  })
-
-  const navy = new LeonardoColor({
-    name: "navy",
-    colorKeys: [getBrandColor("navy")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "RGB",
-    smooth: true,
-  })
-
-  const purple = new LeonardoColor({
-    name: "purple",
-    colorKeys: [getBrandColor("purple")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const purpundy = new LeonardoColor({
-    name: "purpundy",
-    colorKeys: [getBrandColor("purple"), getBrandColor("burgundy")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
-
-  const burgundy = new LeonardoColor({
-    name: "burgundy",
-    colorKeys: [getBrandColor("burgundy")],
-    ratios: LEONARDO_RATIOS,
-    colorspace: "OKLCH",
-    smooth: true,
-  })
+  const colors = configs.map(
+    ({ name, keys, colorspace, smooth }) =>
+      new LeonardoColor({
+        name,
+        colorKeys: keys as CssColor[],
+        ratios: LEONARDO_RATIOS,
+        colorspace,
+        smooth,
+      }),
+  )
 
   const theme = new LeonardoTheme({
-    colors: [
-      neutral,
-      red,
-      orange,
-      yorange,
-      brown,
-      ivorown,
-      ivory,
-      green,
-      greeen,
-      darkgreen,
-      aqua,
-      blue,
-      bluvy,
-      navy,
-      purple,
-      purpundy,
-      burgundy,
-    ],
+    colors,
     backgroundColor: LEONARDO_BACKGROUND as unknown as BackgroundColor,
     lightness: 100,
     contrast: 1,
