@@ -68,8 +68,8 @@ const brand = {
     'wfp': '#F0512D',
   },
   'yellorange': {
-    'pantone': (() => { const [l, c, h] = chroma('#FC4C02').oklch(); return chroma.oklch(l, c, (h || 0) + 10).hex() })(),
-    'wfp': (() => { const [l, c, h] = chroma('#F0512D').oklch(); return chroma.oklch(l, c, (h || 0) + 10).hex() })(),
+    'pantone': chroma("#FC4C02").set('oklch.h', '+10').hex(),
+    'wfp': chroma("#F0512D").set('oklch.h', '+10').hex(),
   },
   'red': {
     'pantone': '#E4002B',
@@ -309,7 +309,7 @@ const originalColorScales: ColorScales = {
     950: leonardo.orange1100.value,
   },
   yellorange: {
-    0: getBrandColor("yellorange"),
+    0: getBrandColor("orange"),
     50: leonardo.yellorange100.value,
     100: leonardo.yellorange200.value,
     200: leonardo.yellorange300.value,
@@ -450,7 +450,7 @@ export default function ColorPalette() {
     "ivory",
     "brown",
     "yellorange",
-    "orange",
+    // "orange",
     "red",
     // "burgundy",
     "purplemix",
