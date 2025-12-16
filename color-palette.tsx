@@ -68,8 +68,8 @@ const brand = {
     'wfp': '#F0512D',
   },
   'yellorange': {
-    'pantone': '#FC4C02',
-    'wfp': '#F0512D',
+    'pantone': (() => { const [l, c, h] = chroma('#FC4C02').oklch(); return chroma.oklch(l, c, (h || 0) + 10).hex() })(),
+    'wfp': (() => { const [l, c, h] = chroma('#F0512D').oklch(); return chroma.oklch(l, c, (h || 0) + 10).hex() })(),
   },
   'red': {
     'pantone': '#E4002B',
@@ -124,7 +124,7 @@ function createLeonardoPalette(): LeonardoTokens {
     { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
     { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
     { name: "orange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
-    { name: "yellorange", keys: [getBrandColor("yellorange")], colorspace: "OKLCH", smooth: true },
+    { name: "yellorange", keys: [getBrandColor("yellorange")], colorspace: "RGB", smooth: true },
     { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
     { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
     { name: "green", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
