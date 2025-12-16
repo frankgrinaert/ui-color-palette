@@ -98,6 +98,15 @@ const brand = {
   },
 }
 
+type BrandSource = "pantone" | "wfp"
+
+// Toggle this between "pantone" and "wfp" to switch all Leonardo inputs
+const BRAND_SOURCE: BrandSource = "pantone"
+
+function getBrandColor(name: keyof typeof brand): CssColor {
+  return brand[name][BRAND_SOURCE] as CssColor
+}
+
 function createLeonardoPalette(): LeonardoTokens {
   // Base colors (same parameters you use in the Leonardo UI)
   const neutral = new LeonardoColor({
@@ -110,7 +119,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const red = new LeonardoColor({
     name: "red",
-    colorKeys: [brand.red.pantone as CssColor],
+    colorKeys: [getBrandColor("red")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -118,7 +127,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const orange = new LeonardoColor({
     name: "orange",
-    colorKeys: [brand.orange.pantone as CssColor],
+    colorKeys: [getBrandColor("orange")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -134,7 +143,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const brown = new LeonardoColor({
     name: "brown",
-    colorKeys: [brand.earthybrown.pantone as CssColor],
+    colorKeys: [getBrandColor("earthybrown")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -142,7 +151,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const ivorown = new LeonardoColor({
     name: "ivorown",
-    colorKeys: [brand.ivory.pantone as CssColor, brand.earthybrown.pantone as CssColor],
+    colorKeys: [getBrandColor("ivory"), getBrandColor("earthybrown")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -150,7 +159,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const ivory = new LeonardoColor({
     name: "ivory",
-    colorKeys: [brand.ivory.pantone as CssColor],
+    colorKeys: [getBrandColor("ivory")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: false,
@@ -158,7 +167,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const green = new LeonardoColor({
     name: "green",
-    colorKeys: [brand.green.pantone as CssColor],
+    colorKeys: [getBrandColor("green")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -166,7 +175,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const greeen = new LeonardoColor({
     name: "greeen",
-    colorKeys: [brand.green.pantone as CssColor, brand.darkgreen.pantone as CssColor],
+    colorKeys: [getBrandColor("green"), getBrandColor("darkgreen")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -174,7 +183,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const darkgreen = new LeonardoColor({
     name: "darkgreen",
-    colorKeys: [brand.darkgreen.pantone as CssColor],
+    colorKeys: [getBrandColor("darkgreen")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -182,7 +191,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const aqua = new LeonardoColor({
     name: "aqua",
-    colorKeys: [brand.aqua.pantone as CssColor],
+    colorKeys: [getBrandColor("aqua")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -190,7 +199,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const blue = new LeonardoColor({
     name: "blue",
-    colorKeys: [brand.blue.pantone as CssColor],
+    colorKeys: [getBrandColor("blue")],
     ratios: LEONARDO_RATIOS,
     colorspace: "RGB",
     smooth: true,
@@ -198,7 +207,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const bluvy = new LeonardoColor({
     name: "bluvy",
-    colorKeys: [brand.blue.pantone as CssColor, brand.navy.pantone as CssColor],
+    colorKeys: [getBrandColor("blue"), getBrandColor("navy")],
     ratios: LEONARDO_RATIOS,
     colorspace: "RGB",
     smooth: true,
@@ -206,7 +215,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const navy = new LeonardoColor({
     name: "navy",
-    colorKeys: [brand.navy.pantone as CssColor],
+    colorKeys: [getBrandColor("navy")],
     ratios: LEONARDO_RATIOS,
     colorspace: "RGB",
     smooth: true,
@@ -214,7 +223,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const purple = new LeonardoColor({
     name: "purple",
-    colorKeys: [brand.purple.pantone as CssColor],
+    colorKeys: [getBrandColor("purple")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -222,7 +231,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const purpundy = new LeonardoColor({
     name: "purpundy",
-    colorKeys: [brand.purple.pantone as CssColor, brand.burgundy.pantone as CssColor],
+    colorKeys: [getBrandColor("purple"), getBrandColor("burgundy")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
@@ -230,7 +239,7 @@ function createLeonardoPalette(): LeonardoTokens {
 
   const burgundy = new LeonardoColor({
     name: "burgundy",
-    colorKeys: [brand.burgundy.pantone as CssColor],
+    colorKeys: [getBrandColor("burgundy")],
     ratios: LEONARDO_RATIOS,
     colorspace: "OKLCH",
     smooth: true,
