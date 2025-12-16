@@ -457,7 +457,7 @@ export default function ColorPalette() {
     // "purple"
   ]
   const steps = [
-    0,
+    // 0,
     50,
     100,
     200,
