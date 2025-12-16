@@ -89,7 +89,6 @@ const brand = {
 // Toggle this between "pantone" and "wfp" to switch all Leonardo inputs
 const BRAND_SOURCE = "pantone" as const
 
-
 const LEONARDO_BACKGROUND = "#ffffff"
 
 const LEONARDO_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 5, 7.8, 11.3, 15, 18]
@@ -105,8 +104,6 @@ type LeonardoTokens = {
   Background: LeonardoToken
   [name: string]: any
 }
-
-type BrandSource = "pantone" | "wfp"
 
 function getBrandColor(name: keyof typeof brand): CssColor {
   return brand[name][BRAND_SOURCE] as CssColor
