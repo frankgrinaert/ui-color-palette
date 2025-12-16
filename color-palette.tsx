@@ -34,23 +34,6 @@ function shouldUseWhiteText(hexColor: string): boolean {
   return chroma.contrast(hexColor, "#ffffff") >= chroma.contrast(hexColor, "#000000")
 }
 
-// Leonardo configuration and dynamic palette generation
-const LEONARDO_BACKGROUND = "#ffffff"
-
-const LEONARDO_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 5, 7.8, 11.3, 15, 18]
-
-type LeonardoToken = {
-  value: string
-  type: "color"
-  description: string
-}
-
-type LeonardoTokens = {
-  description: string
-  Background: LeonardoToken
-  [name: string]: any
-}
-
 const brand = {
   'blue': {
     'pantone': '#0077C8',
@@ -84,6 +67,10 @@ const brand = {
     'pantone': '#FC4C02',
     'wfp': '#F0512D',
   },
+  'yorange': {
+    'pantone': '#FC4C02',
+    'wfp': '#F0512D',
+  },
   'red': {
     'pantone': '#E4002B',
     'wfp': '#E3002B',
@@ -98,10 +85,28 @@ const brand = {
   },
 }
 
-type BrandSource = "pantone" | "wfp"
-
+// Leonardo configuration and dynamic palette generation
 // Toggle this between "pantone" and "wfp" to switch all Leonardo inputs
-const BRAND_SOURCE: BrandSource = "pantone"
+const BRAND_SOURCE = "pantone" as const
+
+
+const LEONARDO_BACKGROUND = "#ffffff"
+
+const LEONARDO_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 5, 7.8, 11.3, 15, 18]
+
+type LeonardoToken = {
+  value: string
+  type: "color"
+  description: string
+}
+
+type LeonardoTokens = {
+  description: string
+  Background: LeonardoToken
+  [name: string]: any
+}
+
+type BrandSource = "pantone" | "wfp"
 
 function getBrandColor(name: keyof typeof brand): CssColor {
   return brand[name][BRAND_SOURCE] as CssColor
