@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import chroma from "chroma-js"
+import { Theme as LeonardoTheme, Color as LeonardoColor, CssColor, BackgroundColor } from "@adobe/leonardo-contrast-colors"
 
 // Type definitions
 type ColorStep = {
@@ -23,8 +24,9 @@ function getContrastRatio(hex: string): number {
   return chroma.contrast(hex, "#ffffff")
 }
 
-function truncateToTwoDecimals(num: number): string {
-  return (Math.floor(num * 100) / 100).toString()
+function truncateDecimals(num: number, decimals: number): string {
+  const multiplier = Math.pow(10, decimals)
+  return (Math.floor(num * multiplier) / multiplier).toString()
 }
 
 // Function to determine if text should be white or black based on background color
@@ -33,379 +35,441 @@ function shouldUseWhiteText(hexColor: string): boolean {
 }
 
 const brand = {
-  'wfp': '#007dbc',
-  'navy': '#000f59',
-  'aquamarine': '#008eb2',
-  'darkgreen': '#005d45',
-  'green': '#03924a',
-  'ivory': '#ece1b1',
-  'earthybrown': '#aa5628',
-  'orange': '#f24c02',
-  'red': '#e3002b',
-  'purple': '#ac1294',
-  'burgundy': '#950158',
+  'blue': {
+    'pantone': '#0077C8',
+    'wfp': '#007DBC',
+  },
+  'navy': {
+    'pantone': '#002E5D',
+    'wfp': '#002F5A',
+  },
+  'aqua': {
+    'pantone': '#00AEC7',
+    'wfp': '#008EB2',
+  },
+  'darkgreen': {
+    "pantone": '#00664F',
+    "wfp": '#005D45',
+  },
+  'green': {
+    'pantone': '#009F4D',
+    'wfp': '#009F4D',
+  },
+  'ivory': {
+    'pantone': '#F1E6B2',
+    'wfp': '#ECE1B1',
+  },
+  'earthybrown': {
+    'pantone': '#B86125',
+    'wfp': '#AA5628',
+  },
+  'orange': {
+    'pantone': '#FC4C02',
+    'wfp': '#F0512D',
+  },
+  'yellorange': {
+    'pantone': '#FC4C02',
+    'wfp': '#F0512D',
+  },
+  'red': {
+    'pantone': '#E4002B',
+    'wfp': '#E3002B',
+  },
+  'purple': {
+    'pantone': '#AD1AAC',
+    'wfp': '#AC1294',
+  },
+  'burgundy': {
+    'pantone': '#890C58',
+    'wfp': '#950158',
+  },
+  'black': {
+    'pantone': '#000000',
+    'wfp': '#000000',
+  },
 }
 
-const carbon = {
-  yellow: {
-    10: "#fcf4d6",
-    20: "#fddc69",
-    30: "#f1c21b",
-    40: "#d2a106",
-    50: "#b28600",
-    60: "#8e6a00",
-    70: "#684e00",
-    80: "#483700",
-    90: "#302400",
-    100: "#1c1500",
-  },
-  orange: {
-    10: "#fff2e8",
-    20: "#ffd9be",
-    30: "#ffb784",
-    40: "#ff832b",
-    50: "#eb6200",
-    60: "#ba4e00",
-    70: "#8a3800",
-    80: "#5e2900",
-    90: "#3e1a00",
-    100: "#231000",
-  },
-  red: {
-    10: "#fff1f1",
-    20: "#ffd7d9",
-    30: "#ffb3b8",
-    40: "#ff8389",
-    50: "#fa4d56",
-    60: "#da1e28",
-    70: "#a2191f",
-    80: "#750e13",
-    90: "#520408",
-    100: "#2d0709",
-  },
-  magenta: {
-    10: "#fff0f7",
-    20: "#ffd6e8",
-    30: "#ffafd2",
-    40: "#ff7eb6",
-    50: "#ee5396",
-    60: "#d02670",
-    70: "#9f1853",
-    80: "#740937",
-    90: "#510224",
-    100: "#2a0a18",
-  },
-  purple: {
-    10: "#f6f2ff",
-    20: "#e8daff",
-    30: "#d4bbff",
-    40: "#be95ff",
-    50: "#a56eff",
-    60: "#8a3ffc",
-    70: "#6929c4",
-    80: "#491d8b",
-    90: "#31135e",
-    100: "#1c0f30",
-  },
-  blue: {
-    10: "#edf5ff",
-    20: "#d0e2ff",
-    30: "#a6c8ff",
-    40: "#78a9ff",
-    50: "#4589ff",
-    60: "#0f62fe",
-    70: "#0043ce",
-    80: "#002d9c",
-    90: "#001d6c",
-    100: "#001141",
-  },
-  cyan: {
-    10: "#e5f6ff",
-    20: "#bae6ff",
-    30: "#82cfff",
-    40: "#33b1ff",
-    50: "#1192e8",
-    60: "#0072c3",
-    70: "#00539a",
-    80: "#003a6d",
-    90: "#012749",
-    100: "#061727",
-  },
-  teal: {
-    10: "#d9fbfb",
-    20: "#9ef0f0",
-    30: "#3ddbd9",
-    40: "#08bdba",
-    50: "#009d9a",
-    60: "#007d79",
-    70: "#005d5d",
-    80: "#004144",
-    90: "#022b30",
-    100: "#081a1c",
-  },
-  green: {
-    10: "#defbe6",
-    20: "#a7f0ba",
-    30: "#6fdc8c",
-    40: "#42be65",
-    50: "#24a148",
-    60: "#198038",
-    70: "#0e6027",
-    80: "#044317",
-    90: "#022d0d",
-    100: "#071908",
-  },
-  coolGray: {
-    10: "#f2f4f8",
-    20: "#dde1e6",
-    30: "#c1c7cd",
-    40: "#a2a9b0",
-    50: "#878d96",
-    60: "#697077",
-    70: "#4d5358",
-    80: "#343a3f",
-    90: "#21272a",
-    100: "#121619",
-  },
-  gray: {
-    10: "#f4f4f4",
-    20: "#e0e0e0",
-    30: "#c6c6c6",
-    40: "#a8a8a8",
-    50: "#8d8d8d",
-    60: "#6f6f6f",
-    70: "#525252",
-    80: "#393939",
-    90: "#262626",
-    100: "#161616",
-  },
-  warmGray: {
-    10: "#f7f3f2",
-    20: "#e5e0df",
-    30: "#cac5c4",
-    40: "#ada8a8",
-    50: "#8f8b8b",
-    60: "#726e6e",
-    70: "#565151",
-    80: "#3c3838",
-    90: "#272525",
-    100: "#171414",
-  },
+// Leonardo configuration and dynamic palette generation
+// Toggle this between "pantone" and "wfp" to switch all Leonardo inputs
+const BRAND_SOURCE = "pantone" as const
+
+const LEONARDO_BACKGROUND = "#ffffff"
+
+const LEONARDO_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 5, 7.8, 11.3, 15, 18]
+
+type LeonardoToken = {
+  value: string
+  type: "color"
+  description: string
 }
+
+type LeonardoTokens = {
+  description: string
+  Background: LeonardoToken
+  [name: string]: any
+}
+
+function getBrandColor(name: keyof typeof brand): CssColor {
+  return brand[name][BRAND_SOURCE] as CssColor
+}
+
+type ColorSpace = "OKLCH" | "RGB"
+
+type ColorConfig =
+  | { name: string; keys: CssColor[]; colorspace: ColorSpace; smooth: boolean }
+  | { name: string; keys: string[]; colorspace: ColorSpace; smooth: boolean }
+
+function createLeonardoPalette(): LeonardoTokens {
+  const configs: ColorConfig[] = [
+    { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
+    { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
+    { name: "orange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
+    { name: "yellorange", keys: [getBrandColor("yellorange")], colorspace: "OKLCH", smooth: true },
+    { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
+    { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
+    { name: "green", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
+    {
+      name: "greenmix",
+      keys: [getBrandColor("green"), getBrandColor("darkgreen")],
+      colorspace: "OKLCH",
+      smooth: true,
+    },
+    { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
+    { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
+    { name: "blue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
+    {
+      name: "bluemix",
+      keys: [getBrandColor("blue"), getBrandColor("navy")],
+      colorspace: "RGB",
+      smooth: true,
+    },
+    { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
+    { name: "purple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
+    {
+      name: "purplemix",
+      keys: [getBrandColor("purple"), getBrandColor("burgundy")],
+      colorspace: "OKLCH",
+      smooth: true,
+    },
+    { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
+  ]
+
+  const colors = configs.map(
+    ({ name, keys, colorspace, smooth }) =>
+      new LeonardoColor({
+        name,
+        colorKeys: keys as CssColor[],
+        ratios: LEONARDO_RATIOS,
+        colorspace,
+        smooth,
+      }),
+  )
+
+  const theme = new LeonardoTheme({
+    colors,
+    backgroundColor: LEONARDO_BACKGROUND as unknown as BackgroundColor,
+    lightness: 100,
+    contrast: 1,
+    saturation: 100,
+    output: "HEX",
+    formula: "wcag2",
+  })
+
+  const tokens: LeonardoTokens = {
+    description: "Color theme tokens at lightness of 100%",
+    Background: {
+      value: LEONARDO_BACKGROUND,
+      type: "color",
+      description:
+        "UI background color. All color contrasts evaluated and generated against this color.",
+    },
+  }
+
+    // theme.contrastColors returns an array grouped by base color,
+    // each with a `values` array of named swatches like "neutral100"
+    ; (theme.contrastColors || []).forEach((group: any) => {
+      if (!group || !Array.isArray(group.values)) return
+
+      group.values.forEach((swatch: any) => {
+        if (!swatch || !swatch.name || !swatch.value) return
+
+        tokens[swatch.name] = {
+          value: swatch.value,
+          type: "color",
+          description: `WCAG 2.x (relative luminance) contrast is ${truncateDecimals(
+            swatch.contrast,
+            2,
+          )}:1 against background ${LEONARDO_BACKGROUND}`,
+        }
+      })
+    })
+
+  return tokens
+}
+
+const leonardo = createLeonardoPalette()
 
 const originalColorScales: ColorScales = {
-  blue: { /* merged */
-    10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
-    20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
-    30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.16).hex(),
-    40: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.16).hex(),
-    50: chroma.mix(carbon.cyan[50], carbon.teal[50], 0.16).hex(),
-    60: chroma.mix(carbon.cyan[60], carbon.teal[60], 0.16).hex(),
-    70: chroma.mix(carbon.cyan[70], carbon.blue[70], 0).hex(),
-    80: chroma.mix(carbon.cyan[80], carbon.blue[80], 0.3).hex(),
-    90: chroma.mix(carbon.cyan[90], carbon.blue[90], 0.8).hex(),
-    100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
+  bluemix: {
+    0: getBrandColor("blue"),
+    50: leonardo.bluemix100.value,
+    100: leonardo.bluemix200.value,
+    200: leonardo.bluemix300.value,
+    300: leonardo.bluemix400.value,
+    400: leonardo.bluemix500.value,
+    500: leonardo.bluemix600.value,
+    600: leonardo.bluemix700.value,
+    700: leonardo.bluemix800.value,
+    800: leonardo.bluemix900.value,
+    900: leonardo.bluemix1000.value,
+    950: leonardo.bluemix1100.value,
   },
-  // blue: { /* brand */
-  //   10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.16).hex(),
-  //   20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.16).hex(),
-  //   30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.16).hex(),
-  //   40: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.16).hex(),
-  //   50: chroma.mix(carbon.cyan[50], carbon.teal[50], 0.16).hex(),
-  //   60: chroma.mix(carbon.cyan[60], carbon.teal[60], 0.16).hex(),
-  //   70: chroma.mix(carbon.cyan[70], carbon.teal[70], 0.16).hex(),
-  //   80: chroma.mix(carbon.cyan[80], carbon.teal[80], 0.16).hex(),
-  //   90: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.16).hex(),
-  //   100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.16).hex(),
-  // },
-  // navy: { /* brand */
-  //   10: chroma.mix(carbon.cyan[10], carbon.blue[10], 1.0).hex(),
-  //   20: chroma.mix(carbon.cyan[20], carbon.blue[20], 1.0).hex(),
-  //   30: chroma.mix(carbon.cyan[30], carbon.blue[30], 1.0).hex(),
-  //   40: chroma.mix(carbon.cyan[40], carbon.blue[40], 1.0).hex(),
-  //   50: chroma.mix(carbon.cyan[50], carbon.blue[50], 1.0).hex(),
-  //   60: chroma.mix(carbon.cyan[60], carbon.blue[60], 1.0).hex(),
-  //   70: chroma.mix(carbon.cyan[70], carbon.blue[70], 1.0).hex(),
-  //   80: chroma.mix(carbon.cyan[80], carbon.blue[80], 1.0).hex(),
-  //   90: chroma.mix(carbon.cyan[90], carbon.blue[90], 1.0).hex(),
-  //   100: chroma.mix(carbon.cyan[100], carbon.blue[100], 1.0).hex(),
-  // },
-  green: { /* merged */
-    10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
-    20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
-    30: chroma.mix(carbon.green[30], carbon.teal[30], 0.2).hex(),
-    40: chroma.mix(carbon.green[40], carbon.teal[40], 0.2).hex(),
-    50: chroma.mix(carbon.green[50], carbon.teal[50], 0.2).hex(),
-    60: chroma.mix(carbon.green[60], carbon.teal[60], 0.3).hex(),
-    70: chroma.mix(carbon.green[70], carbon.teal[70], 0.4).hex(),
-    80: chroma.mix(carbon.green[80], carbon.teal[80], 0.5).hex(),
-    90: chroma.mix(carbon.green[90], carbon.teal[90], 0.5).hex(),
-    100: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
+  blue: {
+    0: getBrandColor("blue"),
+    50: leonardo.blue100.value,
+    100: leonardo.blue200.value,
+    200: leonardo.blue300.value,
+    300: leonardo.blue400.value,
+    400: leonardo.blue500.value,
+    500: leonardo.blue600.value,
+    600: leonardo.blue700.value,
+    700: leonardo.blue800.value,
+    800: leonardo.blue900.value,
+    900: leonardo.blue1000.value,
+    950: leonardo.blue1100.value,
   },
-  // green: { /* brand */
-  //   10: chroma.mix(carbon.green[10], carbon.teal[10], 0.2).hex(),
-  //   20: chroma.mix(carbon.green[20], carbon.teal[20], 0.2).hex(),
-  //   30: chroma.mix(carbon.green[30], carbon.teal[30], 0.2).hex(),
-  //   40: chroma.mix(carbon.green[40], carbon.teal[40], 0.2).hex(),
-  //   50: chroma.mix(carbon.green[50], carbon.teal[50], 0.2).hex(),
-  //   60: chroma.mix(carbon.green[60], carbon.teal[60], 0.2).hex(),
-  //   70: chroma.mix(carbon.green[70], carbon.teal[70], 0.2).hex(),
-  //   80: chroma.mix(carbon.green[80], carbon.teal[80], 0.2).hex(),
-  //   90: chroma.mix(carbon.green[90], carbon.teal[90], 0.2).hex(),
-  //   100: chroma.mix(carbon.green[100], carbon.teal[100], 0.2).hex(),
-  // },
-  // darkgreen: { /* brand */
-  //   10: chroma.mix(carbon.green[10], carbon.teal[10], 0.5).hex(),
-  //   20: chroma.mix(carbon.green[20], carbon.teal[20], 0.5).hex(),
-  //   30: chroma.mix(carbon.green[30], carbon.teal[30], 0.5).hex(),
-  //   40: chroma.mix(carbon.green[40], carbon.teal[40], 0.5).hex(),
-  //   50: chroma.mix(carbon.green[50], carbon.teal[50], 0.5).hex(),
-  //   60: chroma.mix(carbon.green[60], carbon.teal[60], 0.5).hex(),
-  //   70: chroma.mix(carbon.green[70], carbon.teal[70], 0.5).hex(),
-  //   80: chroma.mix(carbon.green[80], carbon.teal[80], 0.5).hex(),
-  //   90: chroma.mix(carbon.green[90], carbon.teal[90], 0.5).hex(),
-  //   100: chroma.mix(carbon.green[100], carbon.teal[100], 0.5).hex(),
-  // },
-  // yellow: {
-  //   10: carbon.yellow[10],
-  //   20: carbon.yellow[20],
-  //   30: carbon.yellow[30],
-  //   40: carbon.yellow[40],
-  //   50: carbon.yellow[50],
-  //   60: carbon.yellow[60],
-  //   70: carbon.yellow[70],
-  //   80: carbon.yellow[80],
-  //   90: carbon.yellow[90],
-  //   100: carbon.yellow[100],
-  // },
+  navy: {
+    0: getBrandColor("navy"),
+    50: leonardo.navy100.value,
+    100: leonardo.navy200.value,
+    200: leonardo.navy300.value,
+    300: leonardo.navy400.value,
+    400: leonardo.navy500.value,
+    500: leonardo.navy600.value,
+    600: leonardo.navy700.value,
+    700: leonardo.navy800.value,
+    800: leonardo.navy900.value,
+    900: leonardo.navy1000.value,
+    950: leonardo.navy1100.value,
+  },
+  greenmix: {
+    0: getBrandColor("green"),
+    50: leonardo.greenmix100.value,
+    100: leonardo.greenmix200.value,
+    200: leonardo.greenmix300.value,
+    300: leonardo.greenmix400.value,
+    400: leonardo.greenmix500.value,
+    500: leonardo.greenmix600.value,
+    600: leonardo.greenmix700.value,
+    700: leonardo.greenmix800.value,
+    800: leonardo.greenmix900.value,
+    900: leonardo.greenmix1000.value,
+    950: leonardo.greenmix1100.value,
+  },
+  green: {
+    0: getBrandColor("green"),
+    50: leonardo.green100.value,
+    100: leonardo.green200.value,
+    200: leonardo.green300.value,
+    300: leonardo.green400.value,
+    400: leonardo.green500.value,
+    500: leonardo.green600.value,
+    600: leonardo.green700.value,
+    700: leonardo.green800.value,
+    800: leonardo.green900.value,
+    900: leonardo.green1000.value,
+    950: leonardo.green1100.value,
+  },
+  darkgreen: {
+    0: getBrandColor("darkgreen"),
+    50: leonardo.darkgreen100.value,
+    100: leonardo.darkgreen200.value,
+    200: leonardo.darkgreen300.value,
+    300: leonardo.darkgreen400.value,
+    400: leonardo.darkgreen500.value,
+    500: leonardo.darkgreen600.value,
+    600: leonardo.darkgreen700.value,
+    700: leonardo.darkgreen800.value,
+    800: leonardo.darkgreen900.value,
+    900: leonardo.darkgreen1000.value,
+    950: leonardo.darkgreen1100.value,
+  },
   orange: {
-    10: chroma.mix(carbon.orange[10], carbon.yellow[10], 0.0).hex(),
-    20: chroma.mix(carbon.orange[20], carbon.yellow[20], 0.1).hex(),
-    30: chroma.mix(carbon.orange[30], carbon.red[30], 0.2).hex(),
-    40: chroma.mix(carbon.orange[40], carbon.red[40], 0.3).hex(),
-    50: chroma.mix(carbon.orange[50], carbon.red[50], 0.4).hex(),
-    61: brand.orange,
-    60: chroma.mix(carbon.orange[60], carbon.red[60], 0.4).hex(),
-    70: chroma.mix(carbon.orange[70], carbon.red[70], 0.4).hex(),
-    80: chroma.mix(carbon.orange[80], carbon.red[80], 0.4).hex(),
-    90: chroma.mix(carbon.orange[90], carbon.red[90], 0.4).hex(),
-    100: chroma.mix(carbon.orange[100], carbon.red[100], 0.4).hex(),
+    0: getBrandColor("orange"),
+    50: leonardo.orange100.value,
+    100: leonardo.orange200.value,
+    200: leonardo.orange300.value,
+    300: leonardo.orange400.value,
+    400: leonardo.orange500.value,
+    500: leonardo.orange600.value,
+    600: leonardo.orange700.value,
+    700: leonardo.orange800.value,
+    800: leonardo.orange900.value,
+    900: leonardo.orange1000.value,
+    950: leonardo.orange1100.value,
+  },
+  yellorange: {
+    0: getBrandColor("yellorange"),
+    50: leonardo.yellorange100.value,
+    100: leonardo.yellorange200.value,
+    200: leonardo.yellorange300.value,
+    300: leonardo.yellorange400.value,
+    400: leonardo.yellorange500.value,
+    500: leonardo.yellorange600.value,
+    600: leonardo.yellorange700.value,
+    700: leonardo.yellorange800.value,
+    800: leonardo.yellorange900.value,
+    900: leonardo.yellorange1000.value,
+    950: leonardo.yellorange1100.value,
   },
   red: {
-    10: chroma.mix(carbon.red[10], carbon.magenta[10], 0.2).hex(),
-    20: chroma.mix(carbon.red[20], carbon.magenta[20], 0.2).hex(),
-    30: chroma.mix(carbon.red[30], carbon.magenta[30], 0.2).hex(),
-    40: chroma.mix(carbon.red[40], carbon.magenta[40], 0.2).hex(),
-    50: chroma.mix(carbon.red[50], carbon.magenta[50], 0.2).hex(),
-    60: chroma.mix(carbon.red[60], carbon.magenta[60], 0.2).hex(),
-    70: chroma.mix(carbon.red[70], carbon.magenta[70], 0.2).hex(),
-    80: chroma.mix(carbon.red[80], carbon.magenta[80], 0.2).hex(),
-    90: chroma.mix(carbon.red[90], carbon.magenta[90], 0.2).hex(),
-    100: chroma.mix(carbon.red[100], carbon.magenta[100], 0.2).hex(),
+    0: getBrandColor("red"),
+    50: leonardo.red100.value,
+    100: leonardo.red200.value,
+    200: leonardo.red300.value,
+    300: leonardo.red400.value,
+    400: leonardo.red500.value,
+    500: leonardo.red600.value,
+    600: leonardo.red700.value,
+    700: leonardo.red800.value,
+    800: leonardo.red900.value,
+    900: leonardo.red1000.value,
+    950: leonardo.red1100.value,
   },
   aqua: {
-    10: chroma.mix(carbon.cyan[10], carbon.teal[10], 0.5).hex(),
-    20: chroma.mix(carbon.cyan[20], carbon.teal[20], 0.5).hex(),
-    30: chroma.mix(carbon.cyan[30], carbon.teal[30], 0.5).hex(),
-    40: chroma.mix(carbon.cyan[40], carbon.teal[40], 0.5).hex(),
-    50: chroma.mix(carbon.cyan[50], carbon.teal[50], 0.5).hex(),
-    60: chroma.mix(carbon.cyan[60], carbon.teal[60], 0.5).hex(),
-    70: chroma.mix(carbon.cyan[70], carbon.teal[70], 0.5).hex(),
-    80: chroma.mix(carbon.cyan[80], carbon.teal[80], 0.5).hex(),
-    90: chroma.mix(carbon.cyan[90], carbon.teal[90], 0.5).hex(),
-    100: chroma.mix(carbon.cyan[100], carbon.teal[100], 0.5).hex(),
+    0: getBrandColor("aqua"),
+    50: leonardo.aqua100.value,
+    100: leonardo.aqua200.value,
+    200: leonardo.aqua300.value,
+    300: leonardo.aqua400.value,
+    400: leonardo.aqua500.value,
+    500: leonardo.aqua600.value,
+    600: leonardo.aqua700.value,
+    700: leonardo.aqua800.value,
+    800: leonardo.aqua900.value,
+    900: leonardo.aqua1000.value,
+    950: leonardo.aqua1100.value,
   },
-  purple: { /* merged */
-    10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
-    20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
-    30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
-    40: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.35).hex(),
-    50: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.35).hex(),
-    60: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.3).hex(),
-    70: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.2).hex(),
-    80: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.1).hex(),
-    90: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
-    100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
+  purplemix: {
+    0: getBrandColor("purple"),
+    50: leonardo.purplemix100.value,
+    100: leonardo.purplemix200.value,
+    200: leonardo.purplemix300.value,
+    300: leonardo.purplemix400.value,
+    400: leonardo.purplemix500.value,
+    500: leonardo.purplemix600.value,
+    600: leonardo.purplemix700.value,
+    700: leonardo.purplemix800.value,
+    800: leonardo.purplemix900.value,
+    900: leonardo.purplemix1000.value,
+    950: leonardo.purplemix1100.value,
   },
-  // purple: { /* brand */
-  //   10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.35).hex(),
-  //   20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.35).hex(),
-  //   30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.35).hex(),
-  //   40: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.35).hex(),
-  //   50: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.35).hex(),
-  //   60: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.35).hex(),
-  //   70: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.35).hex(),
-  //   80: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.35).hex(),
-  //   90: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.35).hex(),
-  //   100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.35).hex(),
-  // },
-  // burgundy: { /* brand */
-  //   10: chroma.mix(carbon.magenta[10], carbon.purple[10], 0.1).hex(),
-  //   20: chroma.mix(carbon.magenta[20], carbon.purple[20], 0.1).hex(),
-  //   30: chroma.mix(carbon.magenta[30], carbon.purple[30], 0.1).hex(),
-  //   40: chroma.mix(carbon.magenta[40], carbon.purple[40], 0.1).hex(),
-  //   50: chroma.mix(carbon.magenta[50], carbon.purple[50], 0.1).hex(),
-  //   60: chroma.mix(carbon.magenta[60], carbon.purple[60], 0.1).hex(),
-  //   70: chroma.mix(carbon.magenta[70], carbon.purple[70], 0.1).hex(),
-  //   80: chroma.mix(carbon.magenta[80], carbon.purple[80], 0.1).hex(),
-  //   90: chroma.mix(carbon.magenta[90], carbon.purple[90], 0.1).hex(),
-  //   100: chroma.mix(carbon.magenta[100], carbon.purple[100], 0.1).hex(),
-  // },
-  // ivory: { /* brand */
-  //   10: chroma.mix(carbon.yellow[10], carbon.gray[10], 0.55).hex(),
-  //   20: chroma.mix(carbon.yellow[20], carbon.gray[20], 0.55).hex(),
-  //   30: chroma.mix(carbon.yellow[30], carbon.gray[30], 0.55).hex(),
-  //   40: chroma.mix(carbon.yellow[40], carbon.gray[40], 0.55).hex(),
-  //   50: chroma.mix(carbon.yellow[50], carbon.gray[50], 0.55).hex(),
-  //   60: chroma.mix(carbon.yellow[60], carbon.gray[60], 0.55).hex(),
-  //   70: chroma.mix(carbon.yellow[70], carbon.gray[70], 0.55).hex(),
-  //   80: chroma.mix(carbon.yellow[80], carbon.gray[80], 0.55).hex(),
-  //   90: chroma.mix(carbon.yellow[90], carbon.gray[90], 0.55).hex(),
-  //   100: chroma.mix(carbon.yellow[100], carbon.gray[100], 0.55).hex(),
-  // },
-  // brown: { /* brand */
-  //   10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 8, 1.5]).hex(),
-  //   20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 8, 1.5]).hex(),
-  //   30: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 8, 1.5]).hex(),
-  //   40: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 8, 1.5]).hex(),
-  //   50: chroma.average([carbon.yellow[50], carbon.orange[50], carbon.gray[50]], 'oklab', [1, 8, 1.5]).hex(),
-  //   60: brand.earthybrown,
-  //   60: chroma.average([carbon.yellow[60], carbon.orange[60], carbon.gray[60]], 'oklab', [1, 8, 1.5]).hex(),
-  //   70: chroma.average([carbon.yellow[70], carbon.orange[70], carbon.gray[70]], 'oklab', [1, 8, 1.5]).hex(),
-  //   80: chroma.average([carbon.yellow[80], carbon.orange[80], carbon.gray[80]], 'oklab', [1, 8, 1.5]).hex(),
-  //   90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [1, 8, 1.5]).hex(),
-  //   100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 8, 1.5]).hex(),
-  // },
-  brown: { /* merged */
-    10: chroma.average([carbon.yellow[10], carbon.orange[10], carbon.gray[10]], 'oklab', [1, 0, 1.5]).hex(),
-    20: chroma.average([carbon.yellow[20], carbon.orange[20], carbon.gray[20]], 'oklab', [1, 0, 1.5]).hex(),
-    30: chroma.average([carbon.yellow[30], carbon.orange[30], carbon.gray[30]], 'oklab', [1, 0.5, 1.5]).hex(),
-    40: chroma.average([carbon.yellow[40], carbon.orange[40], carbon.gray[40]], 'oklab', [1, 1, 1.5]).hex(),
-    50: chroma.average([carbon.yellow[50], carbon.orange[50], carbon.gray[50]], 'oklab', [1, 2.5, 1.5]).hex(),
-    60: chroma.average([carbon.yellow[60], carbon.orange[60], carbon.gray[60]], 'oklab', [1, 7, 1.5]).hex(),
-    70: chroma.average([carbon.yellow[70], carbon.orange[70], carbon.gray[70]], 'oklab', [1, 10, 1.5]).hex(),
-    80: chroma.average([carbon.yellow[80], carbon.orange[80], carbon.gray[80]], 'oklab', [1, 10, 1.5]).hex(),
-    90: chroma.average([carbon.yellow[90], carbon.orange[90], carbon.gray[90]], 'oklab', [1, 10, 1.5]).hex(),
-    100: chroma.average([carbon.yellow[100], carbon.orange[100], carbon.gray[100]], 'oklab', [1, 10, 1.5]).hex(),
+  purple: {
+    0: getBrandColor("purple"),
+    50: leonardo.purple100.value,
+    100: leonardo.purple200.value,
+    200: leonardo.purple300.value,
+    300: leonardo.purple400.value,
+    400: leonardo.purple500.value,
+    500: leonardo.purple600.value,
+    600: leonardo.purple700.value,
+    700: leonardo.purple800.value,
+    800: leonardo.purple900.value,
+    900: leonardo.purple1000.value,
+    950: leonardo.purple1100.value,
+  },
+  burgundy: {
+    0: getBrandColor("burgundy"),
+    50: leonardo.burgundy100.value,
+    100: leonardo.burgundy200.value,
+    200: leonardo.burgundy300.value,
+    300: leonardo.burgundy400.value,
+    400: leonardo.burgundy500.value,
+    500: leonardo.burgundy600.value,
+    600: leonardo.burgundy700.value,
+    700: leonardo.burgundy800.value,
+    800: leonardo.burgundy900.value,
+    900: leonardo.burgundy1000.value,
+    950: leonardo.burgundy1100.value,
+  },
+  ivory: {
+    0: getBrandColor("ivory"),
+    50: leonardo.ivory100.value,
+    100: leonardo.ivory200.value,
+    200: leonardo.ivory300.value,
+    300: leonardo.ivory400.value,
+    400: leonardo.ivory500.value,
+    500: leonardo.ivory600.value,
+    600: leonardo.ivory700.value,
+    700: leonardo.ivory800.value,
+    800: leonardo.ivory900.value,
+    900: leonardo.ivory1000.value,
+    950: leonardo.ivory1100.value,
+  },
+  brown: {
+    0: getBrandColor("earthybrown"),
+    50: leonardo.brown100.value,
+    100: leonardo.brown200.value,
+    200: leonardo.brown300.value,
+    300: leonardo.brown400.value,
+    400: leonardo.brown500.value,
+    500: leonardo.brown600.value,
+    600: leonardo.brown700.value,
+    700: leonardo.brown800.value,
+    800: leonardo.brown900.value,
+    900: leonardo.brown1000.value,
+    950: leonardo.brown1100.value,
   },
   neutral: {
-    10: carbon.coolGray[10],
-    20: carbon.coolGray[20],
-    30: carbon.coolGray[30],
-    40: carbon.coolGray[40],
-    50: carbon.coolGray[50],
-    60: carbon.coolGray[60],
-    70: carbon.coolGray[70],
-    80: carbon.coolGray[80],
-    90: carbon.coolGray[90],
-    100: carbon.coolGray[100],
+    0: getBrandColor("black"),
+    50: leonardo.neutral100.value,
+    100: leonardo.neutral200.value,
+    200: leonardo.neutral300.value,
+    300: leonardo.neutral400.value,
+    400: leonardo.neutral500.value,
+    500: leonardo.neutral600.value,
+    600: leonardo.neutral700.value,
+    700: leonardo.neutral800.value,
+    800: leonardo.neutral900.value,
+    900: leonardo.neutral1000.value,
+    950: leonardo.neutral1100.value,
   },
 }
 
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
-  const colorNames = Object.keys(originalColorScales)
-  const steps = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  const colorNames = [
+    "neutral",
+    // "navy",
+    "bluemix",
+    // "blue",
+    "aqua",
+    // "green",
+    "greenmix",
+    // "darkgreen",
+    "ivory",
+    "brown",
+    "yellorange",
+    "orange",
+    "red",
+    // "burgundy",
+    "purplemix",
+    // "purple"
+  ]
+  const steps = [
+    0,
+    50,
+    100,
+    200,
+    300,
+    400,
+    500,
+    600,
+    700,
+    800,
+    900,
+    950
+  ]
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text)
@@ -434,7 +498,7 @@ export default function ColorPalette() {
 
   return (
     <div className="font-mono">
-      <div className="w-full overflow-x-auto">
+      <div className="w-full overflow-x-auto p-4">
         <table className="w-full border-collapse table-fixed">
           <tbody>
             {steps.map((step) => (
@@ -481,7 +545,7 @@ export default function ColorPalette() {
                             useWhiteText ? "text-white text-xs font-semibold" : "text-black text-xs font-semibold"
                           }
                         >
-                          {truncateToTwoDecimals(contrastRatio)}
+                          {truncateDecimals(contrastRatio, 1)}
                         </div>
                       </div>
                       {copied === hexColor && (
@@ -492,20 +556,20 @@ export default function ColorPalette() {
                     </td>
                   )
                 })}
-                <td className="p-0 relative w-20">
+                <td className="p-0 relative w-12">
                   <div className="w-full flex flex-col justify-between p-3">
                     <div className="text-sm">
                       {(() => {
-                        const avgContrast = colorNames.reduce((sum, colorName) => {
+                        const minContrast = colorNames.reduce((acc, colorName) => {
                           const hexColor = colorScales[colorName][step]
-                          return hexColor ? sum + getContrastRatio(hexColor) : sum
-                        }, 0) / colorNames.length
+                          return hexColor ? Math.min(acc, getContrastRatio(hexColor)) : acc
+                        }, Infinity)
 
-                        const contrastValue = avgContrast.toFixed(1)
+                        const contrastValue = truncateDecimals(minContrast, 1)
                         const style = {
-                          color: avgContrast >= 4.5 ? colorScales.green[50] :
-                            avgContrast >= 3 ? colorScales.orange[50] :
-                              colorScales.red[50]
+                          color: minContrast >= 4.5 ? colorScales.greenmix[500] :
+                            minContrast >= 3 ? colorScales.orange[500] :
+                              colorScales.red[500]
                         }
 
                         return <span style={style}>{contrastValue}</span>
