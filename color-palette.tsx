@@ -95,7 +95,7 @@ const BRAND_SOURCE = "pantone" as const
 
 const LEONARDO_BACKGROUND = "#ffffff"
 
-const LEONARDO_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 5, 7.8, 11.3, 15, 18]
+const LEONARDO_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18]
 
 type LeonardoToken = {
   value: string
