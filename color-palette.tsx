@@ -483,10 +483,10 @@ export default function ColorPalette() {
       return acc
     }, {} as Record<number, string>)
 
-    const formattedOutput = `"${colorName}": {\n${Object.entries(columnData)
-      .map(([step, hex]) => `  "${step}": "${hex}"`)
-      .join(',\n')
-      }\n}`
+    const formattedOutput = `${Object.entries(columnData)
+      .map(([step, hex]) => `"${colorName}-${step}": "${hex}",`)
+      .join('\n')
+      }`
 
     navigator.clipboard.writeText(formattedOutput)
     setCopied(`${colorName}-column`)
