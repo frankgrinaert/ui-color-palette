@@ -440,21 +440,21 @@ export default function ColorPalette() {
   const [copied, setCopied] = useState("")
   const colorNames = [
     "neutral",
-    "navy",
+    // "navy",
     "blue",
-    "xblue",
+    // "xblue",
     "aqua",
-    "xgreen",
+    // "xgreen",
     "green",
-    "darkgreen",
+    // "darkgreen",
     "ivory",
     "brown",
     "orange",
-    "xorange",
+    // "xorange",
     "red",
-    "burgundy",
+    // "burgundy",
     "purple",
-    "xpurple",
+    // "xpurple",
   ]
   const steps = [
     // 0,
