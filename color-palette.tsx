@@ -493,6 +493,20 @@ export default function ColorPalette() {
     setTimeout(() => setCopied(""), 1000)
   }
 
+  const copyAllColumnsToClipboard = () => {
+    const allData = colorNames.flatMap((colorName) => {
+      return steps.map((step) => {
+        const hex = colorScales[colorName][step]
+        return `"${colorName}-${step}": "${hex}",`
+      })
+    })
+
+    const formattedOutput = allData.join('\n')
+    navigator.clipboard.writeText(formattedOutput)
+    setCopied("all-columns")
+    setTimeout(() => setCopied(""), 1000)
+  }
+
   // Use the original color scales directly
   const colorScales = originalColorScales
 
@@ -591,6 +605,16 @@ export default function ColorPalette() {
                 </td>
               ))}
               <td className="p-0 relative w-20"></td>
+            </tr>
+            <tr>
+              <td colSpan={colorNames.length} className="p-0 relative">
+                <button
+                  onClick={copyAllColumnsToClipboard}
+                  className="w-full p-3 text-sm hover:bg-gray-200 transition-colors font-semibold"
+                >
+                  {copied === "all-columns" ? "Copied!" : "Copy all"}
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
