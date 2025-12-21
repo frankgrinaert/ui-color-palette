@@ -90,14 +90,17 @@ const brand = {
 }
 
 // Leonardo configuration and dynamic palette generation
-// Toggle this between "pantone" and "wfp" to switch all Leonardo inputs
+
+// Select variant of the input brand colors. Toggle between "pantone" and "wfp".
 const BRAND_SOURCE = "pantone" as const
 
+// UI background color. All color contrasts evaluated and generated against this color
 const LEONARDO_BACKGROUND = "#ffffff"
 
-// Define color steps and their corresponding contrast ratios
-// Each step maps to a Leonardo color token: step at index i -> {colorName}{(i+1)*100}
+// Define the color steps to be used in the color palette
 const COLOR_STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
+
+// Define the target contrast ratios for each of the color steps
 const CONTRAST_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18] as const
 
 const LEONARDO_RATIOS = [...CONTRAST_RATIOS]
@@ -191,8 +194,6 @@ function createLeonardoPalette(): LeonardoTokens {
     },
   }
 
-    // theme.contrastColors returns an array grouped by base color,
-    // each with a `values` array of named swatches like "neutral100"
     ; (theme.contrastColors || []).forEach((group: any) => {
       if (!group || !Array.isArray(group.values)) return
 
@@ -243,24 +244,7 @@ const originalColorScales = generateColorScales(leonardo, COLOR_STEPS)
 
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
-  const colorNames = [
-    "neutral",
-    // "navy",
-    "blue",
-    // "xblue",
-    "aqua",
-    // "xgreen",
-    "green",
-    // "darkgreen",
-    "ivory",
-    "brown",
-    "orange",
-    // "xorange",
-    "red",
-    // "burgundy",
-    "purple",
-    // "xpurple",
-  ]
+  const colorNames = colorConfigs.map((config) => config.name)
   const steps = [...COLOR_STEPS]
 
   const copyToClipboard = (text: string) => {
