@@ -111,9 +111,12 @@ function getBrandColor(name: keyof typeof brand): CssColor {
 }
 
 // Type definitions for color configuration
-type ColorConfig =
-  | { name: string; keys: CssColor[]; colorspace: string; smooth: boolean }
-  | { name: string; keys: string[]; colorspace: string; smooth: boolean }
+type ColorConfig = {
+  name: string
+  keys: string[]
+  colorspace: string
+  smooth: boolean
+}
 
 // Input color configurations for the Leonardo palette.
 // name: name of the color scale
