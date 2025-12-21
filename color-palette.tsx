@@ -128,24 +128,15 @@ type ColorConfig =
   | { name: string; keys: string[]; colorspace: ColorSpace; smooth: boolean }
 
 // Get all color names from the Leonardo configs
+// prettier-ignore
 const colorConfigs: ColorConfig[] = [
   { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
   { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
-  {
-    name: "blue",
-    keys: [getBrandColor("blue"), getBrandColor("navy")],
-    colorspace: "RGB",
-    smooth: true,
-  },
+  { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "RGB", smooth: true },
   { name: "xblue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
   { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
   { name: "xgreen", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
-  {
-    name: "green",
-    keys: [getBrandColor("green"), getBrandColor("darkgreen")],
-    colorspace: "OKLCH",
-    smooth: true,
-  },
+  { name: "green", keys: [getBrandColor("green"), getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
   { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
   { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
   { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
@@ -153,12 +144,7 @@ const colorConfigs: ColorConfig[] = [
   { name: "xorange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
   { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
   { name: "xpurple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
-  {
-    name: "purple",
-    keys: [getBrandColor("purple"), getBrandColor("burgundy")],
-    colorspace: "OKLCH",
-    smooth: true,
-  },
+  { name: "purple", keys: [getBrandColor("purple"), getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
   { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
 ]
 
