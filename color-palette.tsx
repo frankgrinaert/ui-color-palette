@@ -125,7 +125,7 @@ type ColorConfig = {
 // smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
 // prettier-ignore
 const colorConfigs: ColorConfig[] = [
-  { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
+  { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: true },
   // { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
   { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "RGB", smooth: true },
   // { name: "blue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
