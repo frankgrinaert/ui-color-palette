@@ -233,7 +233,7 @@ function generateColorScales(leonardoTokens: LeonardoTokens, steps: readonly num
   return scales
 }
 
-const originalColorScales = generateColorScales(leonardo, COLOR_STEPS)
+const colorScales = generateColorScales(leonardo, COLOR_STEPS)
 
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
@@ -275,9 +275,6 @@ export default function ColorPalette() {
     setCopied("all-columns")
     setTimeout(() => setCopied(""), 1000)
   }
-
-  // Use the original color scales directly
-  const colorScales = originalColorScales
 
   return (
     <div className="font-mono">
