@@ -111,16 +111,14 @@ function getBrandColor(name: keyof typeof brand): CssColor {
 }
 
 // Type definitions for color configuration
-type ColorSpace = "OKLCH" | "RGB"
-
 type ColorConfig =
-  | { name: string; keys: CssColor[]; colorspace: ColorSpace; smooth: boolean }
-  | { name: string; keys: string[]; colorspace: ColorSpace; smooth: boolean }
+  | { name: string; keys: CssColor[]; colorspace: string; smooth: boolean }
+  | { name: string; keys: string[]; colorspace: string; smooth: boolean }
 
 // Input color configurations for the Leonardo palette.
 // name: name of the color scale
 // keys: array of input colors (from the brand palette)
-// colorspace: colorspace to use to generate the color scale (OKLCH or RGB)
+// colorspace: colorspace to use to generate the color scale (options: CAM02, CAM02p, LCH, LAB, HSL, HSLuv, HSV, RGB, OKLAB, OKLCH)
 // smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
 // prettier-ignore
 const colorConfigs: ColorConfig[] = [
@@ -161,7 +159,7 @@ function createLeonardoPalette(): LeonardoTokens {
         name,
         colorKeys: keys as CssColor[],
         ratios: LEONARDO_RATIOS,
-        colorspace,
+        colorspace: colorspace as any,
         smooth,
       }),
   )
