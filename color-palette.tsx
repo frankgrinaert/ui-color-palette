@@ -127,9 +127,13 @@ type ColorConfig =
   | { name: string; keys: CssColor[]; colorspace: ColorSpace; smooth: boolean }
   | { name: string; keys: string[]; colorspace: ColorSpace; smooth: boolean }
 
-// Get all color names from the Leonardo configs
 // prettier-ignore
 const colorConfigs: ColorConfig[] = [
+  // Input color configurations for the Leonardo palette.
+  // name: name of the color scale
+  // keys: array of input colors (from the brand palette)
+  // colorspace: colorspace to use to generate the color scale (OKLCH or RGB)
+  // smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
   { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
   { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
   { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "RGB", smooth: true },
