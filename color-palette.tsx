@@ -358,7 +358,7 @@ export default function ColorPalette() {
                         const contrastValue = truncateDecimals(minContrast, 1)
                         const style = {
                           color: minContrast >= 4.5 ? colorScales.green[500] :
-                            minContrast >= 3 ? colorScales.xorange[500] :
+                            minContrast >= 3 ? colorScales.orange[500] :
                               colorScales.red[500]
                         }
 
