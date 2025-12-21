@@ -68,8 +68,8 @@ const brand = {
     'wfp': '#F0512D',
   },
   'orange-adjusted': {
-    'pantone': chroma("#FC4C02").set('oklch.h', '+15').hex(),
-    'wfp': chroma("#F0512D").set('oklch.h', '+15').hex(),
+    'pantone': chroma("#FC4C02").set('oklch.h', '+18').hex(),
+    'wfp': chroma("#F0512D").set('oklch.h', '+18').hex(),
   },
   'red': {
     'pantone': '#E4002B',
@@ -135,7 +135,7 @@ const colorConfigs: ColorConfig[] = [
   // { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
   { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
   { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
-  { name: "orange", keys: [getBrandColor("orange-adjusted")], colorspace: "RGB", smooth: true },
+  { name: "orange", keys: [getBrandColor("orange-adjusted")], colorspace: "OKLCH", smooth: true },
   // { name: "orange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
   { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
   // { name: "purple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
