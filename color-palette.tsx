@@ -105,35 +105,25 @@ const CONTRAST_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18
 
 const LEONARDO_RATIOS = [...CONTRAST_RATIOS]
 
-type LeonardoToken = {
-  value: string
-  type: "color"
-  description: string
-}
-
-type LeonardoTokens = {
-  description: string
-  Background: LeonardoToken
-  [name: string]: any
-}
-
+// Helper function to get brand colors
 function getBrandColor(name: keyof typeof brand): CssColor {
   return brand[name][BRAND_SOURCE] as CssColor
 }
 
+// Type definitions for color configuration
 type ColorSpace = "OKLCH" | "RGB"
 
 type ColorConfig =
   | { name: string; keys: CssColor[]; colorspace: ColorSpace; smooth: boolean }
   | { name: string; keys: string[]; colorspace: ColorSpace; smooth: boolean }
 
+// Input color configurations for the Leonardo palette.
+// name: name of the color scale
+// keys: array of input colors (from the brand palette)
+// colorspace: colorspace to use to generate the color scale (OKLCH or RGB)
+// smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
 // prettier-ignore
 const colorConfigs: ColorConfig[] = [
-  // Input color configurations for the Leonardo palette.
-  // name: name of the color scale
-  // keys: array of input colors (from the brand palette)
-  // colorspace: colorspace to use to generate the color scale (OKLCH or RGB)
-  // smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
   { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
   { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
   { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "RGB", smooth: true },
@@ -151,6 +141,18 @@ const colorConfigs: ColorConfig[] = [
   { name: "purple", keys: [getBrandColor("purple"), getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
   { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
 ]
+
+type LeonardoToken = {
+  value: string
+  type: "color"
+  description: string
+}
+
+type LeonardoTokens = {
+  description: string
+  Background: LeonardoToken
+  [name: string]: any
+}
 
 function createLeonardoPalette(): LeonardoTokens {
   const colors = colorConfigs.map(
