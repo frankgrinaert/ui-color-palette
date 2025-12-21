@@ -95,7 +95,12 @@ const BRAND_SOURCE = "pantone" as const
 
 const LEONARDO_BACKGROUND = "#ffffff"
 
-const LEONARDO_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18]
+// Define color steps and their corresponding contrast ratios
+// Each step maps to a Leonardo color token: step at index i -> {colorName}{(i+1)*100}
+const COLOR_STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
+const CONTRAST_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18] as const
+
+const LEONARDO_RATIOS = [...CONTRAST_RATIOS]
 
 type LeonardoToken = {
   value: string
@@ -119,42 +124,43 @@ type ColorConfig =
   | { name: string; keys: CssColor[]; colorspace: ColorSpace; smooth: boolean }
   | { name: string; keys: string[]; colorspace: ColorSpace; smooth: boolean }
 
-function createLeonardoPalette(): LeonardoTokens {
-  const configs: ColorConfig[] = [
-    { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
-    { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
-    {
-      name: "blue",
-      keys: [getBrandColor("blue"), getBrandColor("navy")],
-      colorspace: "RGB",
-      smooth: true,
-    },
-    { name: "xblue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
-    { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
-    { name: "xgreen", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
-    {
-      name: "green",
-      keys: [getBrandColor("green"), getBrandColor("darkgreen")],
-      colorspace: "OKLCH",
-      smooth: true,
-    },
-    { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
-    { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
-    { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
-    { name: "orange", keys: [getBrandColor("yellorange")], colorspace: "RGB", smooth: true },
-    { name: "xorange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
-    { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
-    { name: "xpurple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
-    {
-      name: "purple",
-      keys: [getBrandColor("purple"), getBrandColor("burgundy")],
-      colorspace: "OKLCH",
-      smooth: true,
-    },
-    { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
-  ]
+// Get all color names from the Leonardo configs
+const colorConfigs: ColorConfig[] = [
+  { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
+  { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
+  {
+    name: "blue",
+    keys: [getBrandColor("blue"), getBrandColor("navy")],
+    colorspace: "RGB",
+    smooth: true,
+  },
+  { name: "xblue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
+  { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
+  { name: "xgreen", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
+  {
+    name: "green",
+    keys: [getBrandColor("green"), getBrandColor("darkgreen")],
+    colorspace: "OKLCH",
+    smooth: true,
+  },
+  { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
+  { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
+  { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
+  { name: "orange", keys: [getBrandColor("yellorange")], colorspace: "RGB", smooth: true },
+  { name: "xorange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
+  { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
+  { name: "xpurple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
+  {
+    name: "purple",
+    keys: [getBrandColor("purple"), getBrandColor("burgundy")],
+    colorspace: "OKLCH",
+    smooth: true,
+  },
+  { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
+]
 
-  const colors = configs.map(
+function createLeonardoPalette(): LeonardoTokens {
+  const colors = colorConfigs.map(
     ({ name, keys, colorspace, smooth }) =>
       new LeonardoColor({
         name,
@@ -209,232 +215,31 @@ function createLeonardoPalette(): LeonardoTokens {
 
 const leonardo = createLeonardoPalette()
 
-const originalColorScales: ColorScales = {
-  neutral: {
-    0: getBrandColor("black"),
-    50: leonardo.neutral100.value,
-    100: leonardo.neutral200.value,
-    200: leonardo.neutral300.value,
-    300: leonardo.neutral400.value,
-    400: leonardo.neutral500.value,
-    500: leonardo.neutral600.value,
-    600: leonardo.neutral700.value,
-    700: leonardo.neutral800.value,
-    800: leonardo.neutral900.value,
-    900: leonardo.neutral1000.value,
-    950: leonardo.neutral1100.value,
-  },
-  navy: {
-    0: getBrandColor("navy"),
-    50: leonardo.navy100.value,
-    100: leonardo.navy200.value,
-    200: leonardo.navy300.value,
-    300: leonardo.navy400.value,
-    400: leonardo.navy500.value,
-    500: leonardo.navy600.value,
-    600: leonardo.navy700.value,
-    700: leonardo.navy800.value,
-    800: leonardo.navy900.value,
-    900: leonardo.navy1000.value,
-    950: leonardo.navy1100.value,
-  },
-  blue: {
-    0: getBrandColor("blue"),
-    50: leonardo.blue100.value,
-    100: leonardo.blue200.value,
-    200: leonardo.blue300.value,
-    300: leonardo.blue400.value,
-    400: leonardo.blue500.value,
-    500: leonardo.blue600.value,
-    600: leonardo.blue700.value,
-    700: leonardo.blue800.value,
-    800: leonardo.blue900.value,
-    900: leonardo.blue1000.value,
-    950: leonardo.blue1100.value,
-  },
-  xblue: {
-    0: getBrandColor("blue"),
-    50: leonardo.xblue100.value,
-    100: leonardo.xblue200.value,
-    200: leonardo.xblue300.value,
-    300: leonardo.xblue400.value,
-    400: leonardo.xblue500.value,
-    500: leonardo.xblue600.value,
-    600: leonardo.xblue700.value,
-    700: leonardo.xblue800.value,
-    800: leonardo.xblue900.value,
-    900: leonardo.xblue1000.value,
-    950: leonardo.xblue1100.value,
-  },
-  aqua: {
-    0: getBrandColor("aqua"),
-    50: leonardo.aqua100.value,
-    100: leonardo.aqua200.value,
-    200: leonardo.aqua300.value,
-    300: leonardo.aqua400.value,
-    400: leonardo.aqua500.value,
-    500: leonardo.aqua600.value,
-    600: leonardo.aqua700.value,
-    700: leonardo.aqua800.value,
-    800: leonardo.aqua900.value,
-    900: leonardo.aqua1000.value,
-    950: leonardo.aqua1100.value,
-  },
-  xgreen: {
-    0: getBrandColor("green"),
-    50: leonardo.xgreen100.value,
-    100: leonardo.xgreen200.value,
-    200: leonardo.xgreen300.value,
-    300: leonardo.xgreen400.value,
-    400: leonardo.xgreen500.value,
-    500: leonardo.xgreen600.value,
-    600: leonardo.xgreen700.value,
-    700: leonardo.xgreen800.value,
-    800: leonardo.xgreen900.value,
-    900: leonardo.xgreen1000.value,
-    950: leonardo.xgreen1100.value,
-  },
-  green: {
-    0: getBrandColor("green"),
-    50: leonardo.green100.value,
-    100: leonardo.green200.value,
-    200: leonardo.green300.value,
-    300: leonardo.green400.value,
-    400: leonardo.green500.value,
-    500: leonardo.green600.value,
-    600: leonardo.green700.value,
-    700: leonardo.green800.value,
-    800: leonardo.green900.value,
-    900: leonardo.green1000.value,
-    950: leonardo.green1100.value,
-  },
-  darkgreen: {
-    0: getBrandColor("darkgreen"),
-    50: leonardo.darkgreen100.value,
-    100: leonardo.darkgreen200.value,
-    200: leonardo.darkgreen300.value,
-    300: leonardo.darkgreen400.value,
-    400: leonardo.darkgreen500.value,
-    500: leonardo.darkgreen600.value,
-    600: leonardo.darkgreen700.value,
-    700: leonardo.darkgreen800.value,
-    800: leonardo.darkgreen900.value,
-    900: leonardo.darkgreen1000.value,
-    950: leonardo.darkgreen1100.value,
-  },
-  ivory: {
-    0: getBrandColor("ivory"),
-    50: leonardo.ivory100.value,
-    100: leonardo.ivory200.value,
-    200: leonardo.ivory300.value,
-    300: leonardo.ivory400.value,
-    400: leonardo.ivory500.value,
-    500: leonardo.ivory600.value,
-    600: leonardo.ivory700.value,
-    700: leonardo.ivory800.value,
-    800: leonardo.ivory900.value,
-    900: leonardo.ivory1000.value,
-    950: leonardo.ivory1100.value,
-  },
-  brown: {
-    0: getBrandColor("earthybrown"),
-    50: leonardo.brown100.value,
-    100: leonardo.brown200.value,
-    200: leonardo.brown300.value,
-    300: leonardo.brown400.value,
-    400: leonardo.brown500.value,
-    500: leonardo.brown600.value,
-    600: leonardo.brown700.value,
-    700: leonardo.brown800.value,
-    800: leonardo.brown900.value,
-    900: leonardo.brown1000.value,
-    950: leonardo.brown1100.value,
-  },
-  orange: {
-    0: getBrandColor("orange"),
-    50: leonardo.orange100.value,
-    100: leonardo.orange200.value,
-    200: leonardo.orange300.value,
-    300: leonardo.orange400.value,
-    400: leonardo.orange500.value,
-    500: leonardo.orange600.value,
-    600: leonardo.orange700.value,
-    700: leonardo.orange800.value,
-    800: leonardo.orange900.value,
-    900: leonardo.orange1000.value,
-    950: leonardo.orange1100.value,
-  },
-  xorange: {
-    0: getBrandColor("orange"),
-    50: leonardo.xorange100.value,
-    100: leonardo.xorange200.value,
-    200: leonardo.xorange300.value,
-    300: leonardo.xorange400.value,
-    400: leonardo.xorange500.value,
-    500: leonardo.xorange600.value,
-    600: leonardo.xorange700.value,
-    700: leonardo.xorange800.value,
-    800: leonardo.xorange900.value,
-    900: leonardo.xorange1000.value,
-    950: leonardo.xorange1100.value,
-  },
-  red: {
-    0: getBrandColor("red"),
-    50: leonardo.red100.value,
-    100: leonardo.red200.value,
-    200: leonardo.red300.value,
-    300: leonardo.red400.value,
-    400: leonardo.red500.value,
-    500: leonardo.red600.value,
-    600: leonardo.red700.value,
-    700: leonardo.red800.value,
-    800: leonardo.red900.value,
-    900: leonardo.red1000.value,
-    950: leonardo.red1100.value,
-  },
-  burgundy: {
-    0: getBrandColor("burgundy"),
-    50: leonardo.burgundy100.value,
-    100: leonardo.burgundy200.value,
-    200: leonardo.burgundy300.value,
-    300: leonardo.burgundy400.value,
-    400: leonardo.burgundy500.value,
-    500: leonardo.burgundy600.value,
-    600: leonardo.burgundy700.value,
-    700: leonardo.burgundy800.value,
-    800: leonardo.burgundy900.value,
-    900: leonardo.burgundy1000.value,
-    950: leonardo.burgundy1100.value,
-  },
-  xpurple: {
-    0: getBrandColor("purple"),
-    50: leonardo.xpurple100.value,
-    100: leonardo.xpurple200.value,
-    200: leonardo.xpurple300.value,
-    300: leonardo.xpurple400.value,
-    400: leonardo.xpurple500.value,
-    500: leonardo.xpurple600.value,
-    600: leonardo.xpurple700.value,
-    700: leonardo.xpurple800.value,
-    800: leonardo.xpurple900.value,
-    900: leonardo.xpurple1000.value,
-    950: leonardo.xpurple1100.value,
-  },
-  purple: {
-    0: getBrandColor("purple"),
-    50: leonardo.purple100.value,
-    100: leonardo.purple200.value,
-    200: leonardo.purple300.value,
-    300: leonardo.purple400.value,
-    400: leonardo.purple500.value,
-    500: leonardo.purple600.value,
-    600: leonardo.purple700.value,
-    700: leonardo.purple800.value,
-    800: leonardo.purple900.value,
-    900: leonardo.purple1000.value,
-    950: leonardo.purple1100.value,
-  },
+// Generate color scales dynamically based on steps and Leonardo tokens
+function generateColorScales(leonardoTokens: LeonardoTokens, steps: readonly number[]): ColorScales {
+  const scales: ColorScales = {}
+
+  colorConfigs.forEach((config) => {
+    const colorName = config.name
+    const colorScale: ColorStep = {}
+
+    steps.forEach((step, index) => {
+      // Map step index to Leonardo token name: index 0 -> 100, index 1 -> 200, etc.
+      const leonardoTokenName = `${colorName}${(index + 1) * 100}`
+      const token = leonardoTokens[leonardoTokenName]
+
+      if (token && token.value) {
+        colorScale[step] = token.value
+      }
+    })
+
+    scales[colorName] = colorScale
+  })
+
+  return scales
 }
+
+const originalColorScales = generateColorScales(leonardo, COLOR_STEPS)
 
 export default function ColorPalette() {
   const [copied, setCopied] = useState("")
@@ -456,20 +261,7 @@ export default function ColorPalette() {
     "purple",
     // "xpurple",
   ]
-  const steps = [
-    // 0,
-    50,
-    100,
-    200,
-    300,
-    400,
-    500,
-    600,
-    700,
-    800,
-    900,
-    950
-  ]
+  const steps = [...COLOR_STEPS]
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text)
