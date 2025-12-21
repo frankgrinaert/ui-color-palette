@@ -162,7 +162,7 @@ function createLeonardoPalette(): LeonardoTokens {
         name,
         colorKeys: keys as CssColor[],
         ratios: LEONARDO_RATIOS,
-        colorspace: colorspace as any,
+        colorspace,
         smooth,
       }),
   )
@@ -248,7 +248,10 @@ export default function ColorPalette() {
 
   const copyColumnToClipboard = (colorName: string) => {
     const columnData = steps.reduce((acc, step) => {
-      acc[step] = colorScales[colorName][step]
+      const hex = colorScales[colorName]?.[step]
+      if (hex) {
+        acc[step] = hex
+      }
       return acc
     }, {} as Record<number, string>)
 
@@ -265,9 +268,9 @@ export default function ColorPalette() {
   const copyAllColumnsToClipboard = () => {
     const allData = colorNames.flatMap((colorName) => {
       return steps.map((step) => {
-        const hex = colorScales[colorName][step]
-        return `"${colorName}-${step}": "${hex}",`
-      })
+        const hex = colorScales[colorName]?.[step]
+        return hex ? `"${colorName}-${step}": "${hex}",` : null
+      }).filter((line): line is string => line !== null)
     })
 
     const formattedOutput = allData.join('\n')
@@ -347,9 +350,11 @@ export default function ColorPalette() {
 
                         const contrastValue = truncateDecimals(minContrast, 1)
                         const style = {
-                          color: minContrast >= 4.5 ? colorScales.green[500] :
-                            minContrast >= 3 ? colorScales.orange[500] :
-                              colorScales.red[500]
+                          color: minContrast >= 4.5
+                            ? "green" :
+                            minContrast >= 3
+                              ? "darkorange" :
+                              "red"
                         }
 
                         return <span style={style}>{contrastValue}</span>
