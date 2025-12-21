@@ -67,7 +67,7 @@ const brand = {
     'pantone': '#FC4C02',
     'wfp': '#F0512D',
   },
-  'yellorange': {
+  'orange-adjusted': {
     'pantone': chroma("#FC4C02").set('oklch.h', '+15').hex(),
     'wfp': chroma("#F0512D").set('oklch.h', '+15').hex(),
   },
@@ -114,7 +114,7 @@ function getBrandColor(name: keyof typeof brand): CssColor {
 type ColorConfig = {
   name: string
   keys: string[]
-  colorspace: string
+  colorspace: "CAM02" | "CAM02p" | "LCH" | "LAB" | "HSL" | "HSLuv" | "HSV" | "RGB" | "OKLAB" | "OKLCH"
   smooth: boolean
 }
 
@@ -126,21 +126,21 @@ type ColorConfig = {
 // prettier-ignore
 const colorConfigs: ColorConfig[] = [
   { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: false },
-  { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
+  // { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
   { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "RGB", smooth: true },
-  { name: "xblue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
+  // { name: "xblue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
   { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
-  { name: "xgreen", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
+  // { name: "xgreen", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
   { name: "green", keys: [getBrandColor("green"), getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
-  { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
+  // { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
   { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
   { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
-  { name: "orange", keys: [getBrandColor("yellorange")], colorspace: "RGB", smooth: true },
-  { name: "xorange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
+  { name: "orange", keys: [getBrandColor("orange-adjusted")], colorspace: "RGB", smooth: true },
+  // { name: "xorange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
   { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
-  { name: "xpurple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
+  // { name: "xpurple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
   { name: "purple", keys: [getBrandColor("purple"), getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
-  { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
+  // { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
 ]
 
 type LeonardoToken = {
