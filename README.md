@@ -141,9 +141,9 @@ pnpm start
 
 ## Related links
 
-- [Designing accessible color systems][https://stripe.com/blog/accessible-color-systems)
-- [Using color at scale for aesthetics and accessibility - Ashley Seto (Config 2023) - YouTube][https://www.youtube.com/watch?v=B6Qk_j9UGU8)
-- [Accessible Palette: stop using HSL for color systems | Wildbit][https://www.wildbit.com/blog/accessible-palette-stop-using-hsl-for-color-systems)
-- [Perceptually uniform color spaces - Programming Design Systems][https://programmingdesignsystems.com/color/perceptually-uniform-color-spaces/index.html)
-- [Color Spaces – Bartosz Ciechanowski][https://ciechanow.ski/color-spaces/)
-- [Web Content Accessibility Guidelines (WCAG) 2.1][https://www.w3.org/TR/WCAG21/#dfn-relative-luminance)
+- [Designing accessible color systems](https://stripe.com/blog/accessible-color-systems)
+- [Using color at scale for aesthetics and accessibility - Ashley Seto (Config 2023) - YouTube](https://www.youtube.com/watch?v=B6Qk_j9UGU8)
+- [Accessible Palette: stop using HSL for color systems | Wildbit](https://www.wildbit.com/blog/accessible-palette-stop-using-hsl-for-color-systems)
+- [Perceptually uniform color spaces - Programming Design Systems](https://programmingdesignsystems.com/color/perceptually-uniform-color-spaces/index.html)
+- [Color Spaces – Bartosz Ciechanowski](https://ciechanow.ski/color-spaces/)
+- [Web Content Accessibility Guidelines (WCAG) 2.1](https://www.w3.org/TR/WCAG21/#dfn-relative-luminance)
