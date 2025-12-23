@@ -78,8 +78,6 @@ const COLOR_STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as co
 // Define the target contrast ratios for each of the color steps
 const CONTRAST_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18] as const
 
-const LEONARDO_RATIOS = [...CONTRAST_RATIOS]
-
 // Helper function to get brand colors
 function getBrandColor(name: keyof typeof brand): CssColor {
   return brand[name] as CssColor
@@ -136,7 +134,7 @@ function createLeonardoPalette(): LeonardoTokens {
       new LeonardoColor({
         name,
         colorKeys: keys as CssColor[],
-        ratios: LEONARDO_RATIOS,
+        ratios: [...CONTRAST_RATIOS],
         colorspace,
         smooth,
       }),
