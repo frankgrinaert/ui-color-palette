@@ -53,7 +53,7 @@ const brand = {
   },
   'green': {
     'pantone': '#009F4D',
-    'wfp': '#009F4D',
+    'wfp': '#03924A',
   },
   'ivory': {
     'pantone': '#F1E6B2',
@@ -92,7 +92,7 @@ const brand = {
 // Leonardo configuration and dynamic palette generation
 
 // Select variant of the input brand colors. Toggle between "pantone" and "wfp".
-const BRAND_SOURCE = "pantone" as const
+const BRAND_SOURCE = "wfp" as const
 
 // UI background color. All color contrasts evaluated and generated against this color
 const LEONARDO_BACKGROUND = "#ffffff"
@@ -266,14 +266,17 @@ export default function ColorPalette() {
   }
 
   const copyAllColumnsToClipboard = () => {
-    const allData = colorNames.flatMap((colorName) => {
-      return steps.map((step) => {
-        const hex = colorScales[colorName]?.[step]
-        return hex ? `"${colorName}-${step}": "${hex}",` : null
-      }).filter((line): line is string => line !== null)
+    const allData = colorNames.map((colorName) => {
+      return steps
+        .map((step) => {
+          const hex = colorScales[colorName]?.[step]
+          return hex ? `"${colorName}-${step}": "${hex}",` : null
+        })
+        .filter((line): line is string => line !== null)
+        .join('\n')
     })
 
-    const formattedOutput = allData.join('\n')
+    const formattedOutput = allData.join('\n\n')
     navigator.clipboard.writeText(formattedOutput)
     setCopied("all-columns")
     setTimeout(() => setCopied(""), 1000)
