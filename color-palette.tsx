@@ -34,65 +34,40 @@ function shouldUseWhiteText(hexColor: string): boolean {
   return chroma.contrast(hexColor, "#ffffff") >= chroma.contrast(hexColor, "#000000")
 }
 
-const brand = {
-  'blue': {
-    'pantone': '#0077C8',
-    'wfp': '#007DBC',
-  },
-  'navy': {
-    'pantone': '#002E5D',
-    'wfp': '#002F5A',
-  },
-  'aqua': {
-    'pantone': '#00AEC7',
-    'wfp': '#008EB2',
-  },
-  'darkgreen': {
-    "pantone": '#00664F',
-    "wfp": '#005D45',
-  },
-  'green': {
-    'pantone': '#009F4D',
-    'wfp': '#03924A',
-  },
-  'ivory': {
-    'pantone': '#F1E6B2',
-    'wfp': '#ECE1B1',
-  },
-  'earthybrown': {
-    'pantone': '#B86125',
-    'wfp': '#AA5628',
-  },
-  'orange': {
-    'pantone': '#FC4C02',
-    'wfp': '#F0512D',
-  },
-  'orange-adjusted': {
-    'pantone': chroma("#FC4C02").set('oklch.h', '+18').hex(),
-    'wfp': chroma("#F0512D").set('oklch.h', '+18').hex(),
-  },
-  'red': {
-    'pantone': '#E4002B',
-    'wfp': '#E3002B',
-  },
-  'purple': {
-    'pantone': '#AD1AAC',
-    'wfp': '#AC1294',
-  },
-  'burgundy': {
-    'pantone': '#890C58',
-    'wfp': '#950158',
-  },
-  'black': {
-    'pantone': '#000000',
-    'wfp': '#000000',
-  },
+// Input colors for the color palette.
+const brand = { // WFP color codes
+  'blue': '#007DBC',
+  'navy': '#002F5A',
+  'aqua': '#008EB2',
+  'darkgreen': '#005D45',
+  'green': '#03924A',
+  'ivory': '#ECE1B1',
+  'earthybrown': '#AA5628',
+  'orange': '#F0512D',
+  'orange-adjusted': chroma("#F0512D").set('oklch.h', '+18').hex(),
+  'red': '#E3002B',
+  'purple': '#AC1294',
+  'burgundy': '#950158',
+  'black': '#000000',
 }
 
-// Leonardo configuration and dynamic palette generation
+// const brand = { // Pantone color codes
+//   'blue': '#0077C8',
+//   'navy': '#002E5D',
+//   'aqua': '#00AEC7',
+//   'darkgreen': '#00664F',
+//   'green': '#009F4D',
+//   'ivory': '#F1E6B2',
+//   'earthybrown': '#B86125',
+//   'orange': '#FC4C02',
+//   'orange-adjusted': chroma('#FC4C02').set('oklch.h', '+18').hex(),
+//   'red': '#E4002B',
+//   'purple': '#AD1AAC',
+//   'burgundy': '#890C58',
+//   'black': '#000000'
+// }
 
-// Select variant of the input brand colors. Toggle between "pantone" and "wfp".
-const BRAND_SOURCE = "wfp" as const
+// Leonardo configuration and dynamic palette generation
 
 // UI background color. All color contrasts evaluated and generated against this color
 const LEONARDO_BACKGROUND = "#ffffff"
@@ -107,7 +82,7 @@ const LEONARDO_RATIOS = [...CONTRAST_RATIOS]
 
 // Helper function to get brand colors
 function getBrandColor(name: keyof typeof brand): CssColor {
-  return brand[name][BRAND_SOURCE] as CssColor
+  return brand[name] as CssColor
 }
 
 // Type definitions for color configuration
