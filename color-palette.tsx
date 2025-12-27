@@ -76,7 +76,7 @@ const LEONARDO_BACKGROUND = "#ffffff"
 const COLOR_STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
 
 // Define the target contrast ratios for each of the color steps
-const CONTRAST_RATIOS = [1.07, 1.15, 1.33, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18] as const
+const CONTRAST_RATIOS = [1.06, 1.13, 1.3, 1.6, 2.2, 3.3, 4.9, 7.8, 11.3, 15, 18] as const
 
 // Helper function to get brand colors
 function getBrandColor(name: keyof typeof brand): CssColor {
