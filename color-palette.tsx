@@ -50,7 +50,7 @@ const brand = {
   ivory: "#ECE1B1",
   earthybrown: "#AA5628",
   orange: "#F0512D",
-  "orange-adjusted": chroma("#F0512D").set("oklch.h", "+30").hex(),
+  "orange-adjusted": chroma("#F0512D").set("oklch.h", "+35").hex(),
   red: "#E3002B",
   purple: "#AC1294",
   burgundy: "#950158",
