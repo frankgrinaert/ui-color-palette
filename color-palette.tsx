@@ -2,7 +2,12 @@
 
 import { useState } from "react"
 import chroma from "chroma-js"
-import { Theme as LeonardoTheme, Color as LeonardoColor, CssColor, BackgroundColor } from "@adobe/leonardo-contrast-colors"
+import {
+  Theme as LeonardoTheme,
+  Color as LeonardoColor,
+  CssColor,
+  BackgroundColor,
+} from "@adobe/leonardo-contrast-colors"
 
 // Type definitions
 type ColorStep = {
@@ -35,23 +40,27 @@ function shouldUseWhiteText(hexColor: string): boolean {
 }
 
 // Input colors for the color palette.
-const brand = { // WFP color codes
-  'blue': '#007DBC',
-  'navy': '#002F5A',
-  'aqua': '#008EB2',
-  'darkgreen': '#005D45',
-  'green': '#03924A',
-  'ivory': '#ECE1B1',
-  'earthybrown': '#AA5628',
-  'orange': '#F0512D',
-  'orange-adjusted': chroma("#F0512D").set('oklch.h', '+25').hex(),
-  'red': '#E3002B',
-  'purple': '#AC1294',
-  'burgundy': '#950158',
-  'black': '#000000',
+const brand = {
+  // WFP HEX codes
+  blue: "#007DBC",
+  navy: "#002F5A",
+  aqua: "#008EB2",
+  darkgreen: "#005D45",
+  green: "#03924A",
+  ivory: "#ECE1B1",
+  earthybrown: "#AA5628",
+  orange: "#F0512D",
+  "orange-adjusted": chroma("#F0512D").set("oklch.h", "+25").hex(),
+  red: "#E3002B",
+  purple: "#AC1294",
+  burgundy: "#950158",
+  black: "#000000",
+
+  // ShareTheMeal
+  yellow: "#FEBB00" /* from ShareTheMeal */,
 }
 
-// const brand = { // Pantone color codes
+// const brand = { // WFP Pantone codes
 //   'blue': '#0077C8',
 //   'navy': '#002E5D',
 //   'aqua': '#00AEC7',
@@ -100,16 +109,17 @@ type ColorConfig = {
 const colorConfigs: ColorConfig[] = [
   { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: true },
   // { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
-  { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "RGB", smooth: true },
+  { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "OKLCH", smooth: true },
   // { name: "blue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
   { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
   // { name: "green", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
   { name: "green", keys: [getBrandColor("green"), getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
   // { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
   { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
+  { name: "yellow", keys: [getBrandColor("yellow")], colorspace: "OKLCH", smooth: false },
   { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
-  { name: "orange", keys: [getBrandColor("orange-adjusted")], colorspace: "OKLCH", smooth: true },
-  // { name: "orange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
+  // { name: "orange", keys: [getBrandColor("orange-adjusted")], colorspace: "OKLCH", smooth: true },
+  { name: "orange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
   { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
   // { name: "purple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
   { name: "purple", keys: [getBrandColor("purple"), getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
@@ -137,7 +147,7 @@ function createLeonardoPalette(): LeonardoTokens {
         ratios: [...CONTRAST_RATIOS],
         colorspace,
         smooth,
-      }),
+      })
   )
 
   const theme = new LeonardoTheme({
@@ -155,27 +165,26 @@ function createLeonardoPalette(): LeonardoTokens {
     Background: {
       value: LEONARDO_BACKGROUND,
       type: "color",
-      description:
-        "UI background color. All color contrasts evaluated and generated against this color.",
+      description: "UI background color. All color contrasts evaluated and generated against this color.",
     },
   }
 
-    ; (theme.contrastColors || []).forEach((group: any) => {
-      if (!group || !Array.isArray(group.values)) return
+  ;(theme.contrastColors || []).forEach((group: any) => {
+    if (!group || !Array.isArray(group.values)) return
 
-      group.values.forEach((swatch: any) => {
-        if (!swatch || !swatch.name || !swatch.value) return
+    group.values.forEach((swatch: any) => {
+      if (!swatch || !swatch.name || !swatch.value) return
 
-        tokens[swatch.name] = {
-          value: swatch.value,
-          type: "color",
-          description: `WCAG 2.x (relative luminance) contrast is ${truncateDecimals(
-            swatch.contrast,
-            2,
-          )}:1 against background ${LEONARDO_BACKGROUND}`,
-        }
-      })
+      tokens[swatch.name] = {
+        value: swatch.value,
+        type: "color",
+        description: `WCAG 2.x (relative luminance) contrast is ${truncateDecimals(
+          swatch.contrast,
+          2
+        )}:1 against background ${LEONARDO_BACKGROUND}`,
+      }
     })
+  })
 
   return tokens
 }
@@ -230,8 +239,7 @@ export default function ColorPalette() {
 
     const formattedOutput = `${Object.entries(columnData)
       .map(([step, hex]) => `"${colorName}-${step}": "${hex}",`)
-      .join('\n')
-      }`
+      .join("\n")}`
 
     navigator.clipboard.writeText(formattedOutput)
     setCopied(`${colorName}-column`)
@@ -246,10 +254,10 @@ export default function ColorPalette() {
           return hex ? `"${colorName}-${step}": "${hex}",` : null
         })
         .filter((line): line is string => line !== null)
-        .join('\n')
+        .join("\n")
     })
 
-    const formattedOutput = allData.join('\n\n')
+    const formattedOutput = allData.join("\n\n")
     navigator.clipboard.writeText(formattedOutput)
     setCopied("all-columns")
     setTimeout(() => setCopied(""), 1000)
@@ -290,7 +298,13 @@ export default function ColorPalette() {
                       onClick={() => copyToClipboard(hexColor)}
                     >
                       <div className="w-full flex flex-col justify-between p-3">
-                        <div className={useWhiteText ? "text-white text-xs font-semibold mb-1" : "text-black text-xs font-semibold mb-1"}>
+                        <div
+                          className={
+                            useWhiteText
+                              ? "text-white text-xs font-semibold mb-1"
+                              : "text-black text-xs font-semibold mb-1"
+                          }
+                        >
                           {colorName}-{step}
                         </div>
                         <div className={useWhiteText ? "text-white text-xs mb-1" : "text-black text-xs mb-1"}>
@@ -326,11 +340,7 @@ export default function ColorPalette() {
 
                         const contrastValue = truncateDecimals(minContrast, 1)
                         const style = {
-                          color: minContrast >= 4.5
-                            ? "green" :
-                            minContrast >= 3
-                              ? "darkorange" :
-                              "red"
+                          color: minContrast >= 4.5 ? "green" : minContrast >= 3 ? "darkorange" : "red",
                         }
 
                         return <span style={style}>{contrastValue}</span>
