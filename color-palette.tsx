@@ -42,38 +42,44 @@ function shouldUseWhiteText(hexColor: string): boolean {
 // Input colors for the color palette.
 const brand = {
   // WFP HEX codes
-  blue: "#007DBC",
-  navy: "#002F5A",
-  aqua: "#008EB2",
-  darkgreen: "#005D45",
-  green: "#03924A",
-  ivory: "#ECE1B1",
-  earthybrown: "#AA5628",
-  orange: "#F0512D",
-  "orange-adjusted": chroma("#F0512D").set("oklch.h", "+35").hex(),
-  red: "#E3002B",
-  purple: "#AC1294",
-  burgundy: "#950158",
-  black: "#000000",
+  "wfp-blue": "#007DBC",
+  "wfp-navy": "#002F5A",
+  "wfp-aqua": "#008EB2",
+  "wfp-darkgreen": "#005D45",
+  "wfp-green": "#03924A",
+  "wfp-ivory": "#ECE1B1",
+  "wfp-earthybrown": "#AA5628",
+  "wfp-orange": "#F0512D",
+  "wfp-orange-adjusted": chroma("#F0512D").set("oklch.h", "+35").hex(),
+  "wfp-red": "#E3002B",
+  "wfp-purple": "#AC1294",
+  "wfp-burgundy": "#950158",
+  "wfp-black": "#000000",
 
   // ShareTheMeal
   yellow: "#FEBB00" /* from ShareTheMeal */,
+
+  //LogCluster
+  "logcluster-red": "#C03A2A",
+  "logcluster-blue": "#34495D",
+  "logcluster-teal": "#26A69A",
+  "logcluster-tan": "#EEDECD",
 }
 
 // const brand = { // WFP Pantone codes
-//   'blue': '#0077C8',
-//   'navy': '#002E5D',
-//   'aqua': '#00AEC7',
-//   'darkgreen': '#00664F',
-//   'green': '#009F4D',
-//   'ivory': '#F1E6B2',
-//   'earthybrown': '#B86125',
-//   'orange': '#FC4C02',
-//   'orange-adjusted': chroma('#FC4C02').set('oklch.h', '+25').hex(),
-//   'red': '#E4002B',
-//   'purple': '#AD1AAC',
-//   'burgundy': '#890C58',
-//   'black': '#000000'
+//   'wfp-blue': '#0077C8',
+//   'wfp-navy': '#002E5D',
+//   'wfp-aqua': '#00AEC7',
+//   'wfp-darkgreen': '#00664F',
+//   'wfp-green': '#009F4D',
+//   'wfp-ivory': '#F1E6B2',
+//   'wfp-earthybrown': '#B86125',
+//   'wfp-orange': '#FC4C02',
+//   'wfp-orange-adjusted': chroma('#FC4C02').set('oklch.h', '+25').hex(),
+//   'wfp-red': '#E4002B',
+//   'wfp-purple': '#AD1AAC',
+//   'wfp-burgundy': '#890C58',
+//   'wfp-black': '#000000'
 // }
 
 // Leonardo configuration and dynamic palette generation
@@ -107,22 +113,22 @@ type ColorConfig = {
 // smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
 // prettier-ignore
 const colorConfigs: ColorConfig[] = [
-  { name: "neutral", keys: [getBrandColor("black")], colorspace: "OKLCH", smooth: true },
+  { name: "neutral", keys: [getBrandColor("wfp-black")], colorspace: "OKLCH", smooth: true },
   // { name: "navy", keys: [getBrandColor("navy")], colorspace: "RGB", smooth: true },
-  { name: "blue", keys: [getBrandColor("blue"), getBrandColor("navy")], colorspace: "OKLCH", smooth: true },
+  { name: "blue", keys: [getBrandColor("wfp-blue"), getBrandColor("wfp-navy")], colorspace: "OKLCH", smooth: true },
   // { name: "blue", keys: [getBrandColor("blue")], colorspace: "RGB", smooth: true },
-  { name: "aqua", keys: [getBrandColor("aqua")], colorspace: "OKLCH", smooth: true },
+  { name: "aqua", keys: [getBrandColor("wfp-aqua")], colorspace: "OKLCH", smooth: true },
   // { name: "green", keys: [getBrandColor("green")], colorspace: "OKLCH", smooth: true },
-  { name: "green", keys: [getBrandColor("green"), getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
+  { name: "green", keys: [getBrandColor("wfp-green"), getBrandColor("wfp-darkgreen")], colorspace: "OKLCH", smooth: true },
   // { name: "darkgreen", keys: [getBrandColor("darkgreen")], colorspace: "OKLCH", smooth: true },
-  { name: "ivory", keys: [getBrandColor("ivory")], colorspace: "OKLCH", smooth: false },
+  { name: "ivory", keys: [getBrandColor("wfp-ivory")], colorspace: "OKLCH", smooth: false },
   // { name: "yellow", keys: [getBrandColor("yellow")], colorspace: "OKLCH", smooth: false },
-  { name: "brown", keys: [getBrandColor("earthybrown")], colorspace: "OKLCH", smooth: true },
-  { name: "orange", keys: [getBrandColor("orange-adjusted")], colorspace: "OKLCH", smooth: true },
+  { name: "brown", keys: [getBrandColor("wfp-earthybrown")], colorspace: "OKLCH", smooth: true },
+  { name: "orange", keys: [getBrandColor("wfp-orange-adjusted")], colorspace: "OKLCH", smooth: true },
   // { name: "orange", keys: [getBrandColor("orange")], colorspace: "OKLCH", smooth: true },
-  { name: "red", keys: [getBrandColor("red")], colorspace: "OKLCH", smooth: true },
+  { name: "red", keys: [getBrandColor("wfp-red")], colorspace: "OKLCH", smooth: true },
   // { name: "purple", keys: [getBrandColor("purple")], colorspace: "OKLCH", smooth: true },
-  { name: "purple", keys: [getBrandColor("purple"), getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
+  { name: "purple", keys: [getBrandColor("wfp-purple"), getBrandColor("wfp-burgundy")], colorspace: "OKLCH", smooth: true },
   // { name: "burgundy", keys: [getBrandColor("burgundy")], colorspace: "OKLCH", smooth: true },
 ]
 
