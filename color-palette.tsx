@@ -25,6 +25,12 @@ const KEYCOLORS = {
   lightPurple: "#FAEAF8",
   grey: "#E1E4E6",
   lightGrey2: "#F0F1F3",
+
+  danger: "#C73131",
+  warning: "#E3B000",
+  success: "#0DB87B",
+  
+  violet: "#7156FF",
 } as const satisfies Record<string, CssColor>
 
 // Background against which all contrast ratios are evaluated and generated
@@ -49,11 +55,15 @@ type ColorConfig = {
 // colorSpace: color space to use to generate the color scale (options: CAM02, CAM02p, LCH, LAB, HSL, HSLuv, HSV, RGB, OKLAB, OKLCH)
 // smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
 const colorConfigs: ColorConfig[] = [
-  { name: "lime", keys: ["lime"], colorSpace: "OKLCH", smooth: true },
-  { name: "neutral", keys: ["graphite", "lightGrey"], colorSpace: "OKLCH", smooth: true },
+  { name: "neutral", keys: ["graphite"], colorSpace: "OKLCH", smooth: true },
   { name: "blue", keys: ["blue", "lightBlue"], colorSpace: "OKLCH", smooth: true },
+  { name: "success", keys: ["success"], colorSpace: "OKLCH", smooth: true },
+  { name: "lime", keys: ["lime"], colorSpace: "OKLCH", smooth: true },
+  { name: "warning", keys: ["warning", "lightOrange"], colorSpace: "OKLCH", smooth: true },
   { name: "orange", keys: ["orange", "lightOrange"], colorSpace: "OKLCH", smooth: true },
+  { name: "danger", keys: ["danger"], colorSpace: "OKLCH", smooth: true },
   { name: "purple", keys: ["purple", "lightPurple"], colorSpace: "OKLCH", smooth: true },
+  { name: "violet", keys: ["violet"], colorSpace: "OKLCH", smooth: true },
 ]
 
 const COLOR_NAMES = colorConfigs.map((config) => config.name)
