@@ -25,14 +25,24 @@ const KEYCOLORS = {
   lightPurple: "#FAEAF8",
   grey: "#E1E4E6",
   lightGrey2: "#F0F1F3",
+
+  danger: "#C73131",
+  warning: "#E3B000",
+  success: "#0DB87B",
+  
+  violet: "#7156FF",
 } as const satisfies Record<string, CssColor>
 
-// Background against which all contrast ratios are evaluated and generated
+// Background against which all contrast values are evaluated and generated
 const BACKGROUND = "white" as CssColor
 
-// Scale steps and matching target contrast ratios vs BACKGROUND
+// Scale steps and matching target APCA Lc contrast values vs BACKGROUND
+// (Lc ≈ 60 ≈ large text; Lc ≈ 75 ≈ body text — see APCA guidance)
 const COLOR_STEPS = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 950] as const
-const CONTRAST_RATIOS = [1.05, 1.13, 1.28, 1.6, 2.2, 3.3, 4.8, 7.5, 11.3, 15, 18] as const
+const CONTRAST_RATIOS = [1, 5, 15, 30, 45, 60, 75, 85, 95, 100, 105] as const
+
+// APCA Lc threshold roughly equivalent to WCAG 4.5:1 for body / UI text
+const APCA_BODY_TEXT_LC = 75
 
 type keys = keyof typeof KEYCOLORS
 
@@ -49,11 +59,15 @@ type ColorConfig = {
 // colorSpace: color space to use to generate the color scale (options: CAM02, CAM02p, LCH, LAB, HSL, HSLuv, HSV, RGB, OKLAB, OKLCH)
 // smooth: boolean flag to indicate if the color scale should be smoothed (true for smooth, false for sharp)
 const colorConfigs: ColorConfig[] = [
-  { name: "lime", keys: ["lime"], colorSpace: "OKLCH", smooth: true },
-  { name: "neutral", keys: ["graphite", "lightGrey"], colorSpace: "OKLCH", smooth: true },
+  { name: "neutral", keys: ["graphite"], colorSpace: "OKLCH", smooth: true },
   { name: "blue", keys: ["blue", "lightBlue"], colorSpace: "OKLCH", smooth: true },
+  { name: "success", keys: ["success"], colorSpace: "OKLCH", smooth: true },
+  { name: "lime", keys: ["lime"], colorSpace: "OKLCH", smooth: true },
+  { name: "warning", keys: ["warning", "lightOrange"], colorSpace: "OKLCH", smooth: true },
   { name: "orange", keys: ["orange", "lightOrange"], colorSpace: "OKLCH", smooth: true },
+  { name: "danger", keys: ["danger"], colorSpace: "OKLCH", smooth: true },
   { name: "purple", keys: ["purple", "lightPurple"], colorSpace: "OKLCH", smooth: true },
+  { name: "violet", keys: ["violet"], colorSpace: "OKLCH", smooth: true },
 ]
 
 const COLOR_NAMES = colorConfigs.map((config) => config.name)
@@ -107,7 +121,7 @@ function createLeonardoPalette(): LeonardoTokens {
     contrast: 1,
     saturation: 100,
     output: "HEX",
-    formula: "wcag2",
+    formula: "wcag3",
   })
 
   const tokens: LeonardoTokens = {
@@ -129,10 +143,10 @@ function createLeonardoPalette(): LeonardoTokens {
         value: swatch.value,
         contrast: swatch.contrast,
         type: "color",
-        description: `WCAG 2.x (relative luminance) contrast is ${truncateDecimals(
+        description: `APCA (Lc) contrast is ${truncateDecimals(
           swatch.contrast,
-          2
-        )}:1 against background ${BACKGROUND}`,
+          1
+        )} against background ${BACKGROUND}`,
       }
     }
   }
@@ -211,7 +225,7 @@ export default function ColorPalette() {
                       )
                     }
 
-                    const useWhiteText = CONTRAST_RATIOS[stepIndex] >= 4.5
+                    const useWhiteText = CONTRAST_RATIOS[stepIndex] >= APCA_BODY_TEXT_LC
 
                     return (
                       <td
@@ -242,7 +256,11 @@ export default function ColorPalette() {
                   <td className="p-0 relative w-14">
                     <div className="w-full flex flex-col justify-between p-3">
                       <div className="text-xs text-end">
-                        <span style={{ color: minContrast >= 4.5 ? "green" : "red" }}>
+                        <span
+                          style={{
+                            color: minContrast >= APCA_BODY_TEXT_LC ? "green" : "red",
+                          }}
+                        >
                           {truncateDecimals(minContrast, 1)}
                         </span>
                       </div>
