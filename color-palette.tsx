@@ -6,6 +6,8 @@ import {
   Color as LeonardoColor,
   CssColor,
   BackgroundColor,
+  contrast,
+  convertColorValue,
 } from "@adobe/leonardo-contrast-colors"
 
 // ------------------------------------------------------------------------------
@@ -79,6 +81,7 @@ const COLOR_NAMES = colorConfigs.map((config) => config.name)
 type ScaleSwatch = {
   value: string
   contrast: number
+  wcag2: number
 }
 
 type ColorScales = Record<string, Partial<Record<number, ScaleSwatch>>>
@@ -99,6 +102,15 @@ type LeonardoTokens = {
 function truncateDecimals(num: number, decimals: number): string {
   const factor = 10 ** decimals
   return (Math.floor(num * factor) / factor).toFixed(decimals)
+}
+
+function rgbChannels(color: string): [number, number, number] {
+  const { r, g, b } = convertColorValue(color, "RGB", true)
+  return [r, g, b]
+}
+
+function getWcag2Contrast(foreground: string, background: CssColor): number {
+  return Math.abs(contrast(rgbChannels(foreground), rgbChannels(background), undefined, "wcag2"))
 }
 
 function createLeonardoPalette(): LeonardoTokens {
@@ -163,7 +175,11 @@ function generateColorScales(leonardoTokens: LeonardoTokens): ColorScales {
     COLOR_STEPS.forEach((step, index) => {
       const token = leonardoTokens[`${name}${(index + 1) * 100}`]
       if (typeof token === "object" && token.value != null && token.contrast != null) {
-        colorScale[step] = { value: token.value, contrast: token.contrast }
+        colorScale[step] = {
+          value: token.value,
+          contrast: token.contrast,
+          wcag2: getWcag2Contrast(token.value, BACKGROUND),
+        }
       }
     })
 
@@ -243,7 +259,8 @@ export default function ColorPalette() {
                             {colorName}-{step}
                           </p>
                           <p>{swatch.value}</p>
-                          <p>{truncateDecimals(swatch.contrast, 1)}</p>
+                          {/* <p>{truncateDecimals(swatch.contrast, 1)}</p> */}
+                          <p>{truncateDecimals(swatch.wcag2, 2)}</p>
                         </div>
                         {copied === swatch.value && (
                           <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
